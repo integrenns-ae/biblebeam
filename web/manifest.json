@@ -1,11 +1,11 @@
 {
-    "name": "bibelquiz",
-    "short_name": "bibelquiz",
+    "name": "Lichtpfad – Bibelquiz",
+    "short_name": "Lichtpfad",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#0E1330",
+    "theme_color": "#0E1330",
+    "description": "Bibelquiz mit 3000 Fragen – allein oder zu zweit, in Deutsch und Englisch.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
