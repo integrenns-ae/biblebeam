@@ -20,12 +20,15 @@
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="Bibelquiz mit 3000 Fragen – allein oder zu zweit, in Deutsch und Englisch. Offline spielbar.">
   <meta name="theme-color" content="#0E1330">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- iOS meta tags & icons -->
+  <!-- iOS meta tags & icons.
+       WICHTIG: status-bar-style NICHT auf "black-translucent" setzen –
+       Inhalt rutscht dann unter die Statusleiste und Flutter-Web trifft
+       Taps ~60px versetzt (Quick Play traf das Duell darunter). -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Lichtpfad">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
