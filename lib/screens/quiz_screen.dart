@@ -41,8 +41,21 @@ class _QuizScreenState extends State<QuizScreen>
   @override
   void initState() {
     super.initState();
-    final shuffled = widget.pool.toList()..shuffle(Random(20260606));
-    _questions = shuffled.take(min(_roundLength, shuffled.length)).toList();
+    // Echter Zufall pro Runde (vorher fester Seed -> immer dieselben Fragen).
+    // Auch die Antwort-Positionen werden je Runde neu gemischt.
+    final rnd = Random();
+    final shuffled = widget.pool.toList()..shuffle(rnd);
+    _questions = shuffled
+        .take(min(_roundLength, shuffled.length))
+        .map((q) => Question(
+              id: q.id,
+              categories: q.categories,
+              difficulty: q.difficulty,
+              question: q.question,
+              options: q.options.toList()..shuffle(rnd),
+              answer: q.answer,
+            ))
+        .toList();
     _timer = AnimationController(
       vsync: this,
       duration: const Duration(seconds: _secondsPerQuestion),

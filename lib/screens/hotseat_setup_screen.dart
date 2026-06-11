@@ -62,10 +62,19 @@ class _HotseatSetupScreenState extends State<HotseatSetupScreen> {
       return;
     }
     SoundService.instance.play(Sfx.tap);
+    // Antwort-Positionen pro Spiel neu mischen
+    Question shuffleOptions(Question q) => Question(
+          id: q.id,
+          categories: q.categories,
+          difficulty: q.difficulty,
+          question: q.question,
+          options: q.options.toList()..shuffle(rnd),
+          answer: q.answer,
+        );
     Navigator.of(context).push(MaterialPageRoute(
       builder: (_) => HotseatGameScreen(
-        questions1: q1,
-        questions2: q2,
+        questions1: q1.map(shuffleOptions).toList(),
+        questions2: q2.map(shuffleOptions).toList(),
         name1: _name1.text.trim().isEmpty ? tr('player1') : _name1.text.trim(),
         name2: _name2.text.trim().isEmpty ? tr('player2') : _name2.text.trim(),
         diff1: _diff1,
