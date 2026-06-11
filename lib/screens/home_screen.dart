@@ -195,8 +195,10 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
           ),
+          // Einmaliger Effekt statt Endlosschleife – Dauer-Animationen
+          // erzwingen sonst permanente Repaints (laggt auf Handys).
           Icon(Icons.auto_awesome, color: AppColors.goldBright, size: 40)
-              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .animate()
               .fadeIn(duration: 600.ms)
               .then()
               .shimmer(duration: 2400.ms, color: AppColors.cream),

@@ -16,8 +16,8 @@ echo "==> Assets neu bauen (questions, seed, übersetzungen)"
 node scripts/build_questions.mjs >/dev/null
 node scripts/build_translations.mjs >/dev/null
 
-echo "==> Flutter-Web-Build (ohne Service-Worker, einfacheres Cache-Verhalten)"
-flutter build web --pwa-strategy=none
+echo "==> Flutter-Web-Build (WASM-Renderer; eigener sw.js statt Flutters deprecated SW)"
+flutter build web --wasm --pwa-strategy=none
 
 read -r -s -p "SFTP-Passwort für $USER: " PW
 echo

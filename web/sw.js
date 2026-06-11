@@ -1,15 +1,27 @@
 // Lichtpfad PWA Service-Worker.
-// Strategie: network-first mit Cache-Fallback.
-//  - online: immer frische Dateien (kein Versions-Skew nach Deploys),
-//    jede erfolgreiche Antwort wird gecached
-//  - offline: alles bisher Geladene wird aus dem Cache bedient
+// Strategie: stale-while-revalidate (Cache sofort, Update im Hintergrund).
+//  - Start ist schnell, auch bei langsamem Netz (alles kommt aus dem Cache)
+//  - jede Antwort wird im Hintergrund aktualisiert -> neue Deploys greifen
+//    beim übernächsten Start automatisch
+//  - offline: alles bisher Geladene funktioniert
 //  - Supabase-Aufrufe werden NIE gecached (dynamisch/auth)
 'use strict';
 
-const CACHE = 'lichtpfad-v1';
+const CACHE = 'lichtpfad-v2';
 
 self.addEventListener('install', () => self.skipWaiting());
-self.addEventListener('activate', (event) => event.waitUntil(self.clients.claim()));
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    (async () => {
+      // alte Cache-Versionen aufräumen
+      for (const name of await caches.keys()) {
+        if (name !== CACHE) await caches.delete(name);
+      }
+      await self.clients.claim();
+    })(),
+  );
+});
 
 self.addEventListener('fetch', (event) => {
   const req = event.request;
@@ -24,22 +36,32 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     (async () => {
       const cache = await caches.open(CACHE);
-      try {
-        const fresh = await fetch(req);
-        if (fresh && (fresh.ok || fresh.type === 'opaque')) {
-          cache.put(req, fresh.clone());
-        }
-        return fresh;
-      } catch (err) {
-        const cached = await cache.match(req);
-        if (cached) return cached;
-        if (req.mode === 'navigate') {
-          const index =
-            (await cache.match('index.html')) || (await cache.match('./'));
-          if (index) return index;
-        }
-        throw err;
+      const cached = await cache.match(req);
+
+      const refresh = fetch(req)
+        .then((fresh) => {
+          if (fresh && (fresh.ok || fresh.type === 'opaque')) {
+            cache.put(req, fresh.clone());
+          }
+          return fresh;
+        })
+        .catch(() => undefined);
+
+      if (cached) {
+        // sofort aus dem Cache antworten, Update läuft im Hintergrund weiter
+        event.waitUntil(refresh);
+        return cached;
       }
+
+      const fresh = await refresh;
+      if (fresh) return fresh;
+
+      if (req.mode === 'navigate') {
+        const index =
+          (await cache.match('index.html')) || (await cache.match('./'));
+        if (index) return index;
+      }
+      return Response.error();
     })(),
   );
 });

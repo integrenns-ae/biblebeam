@@ -45,20 +45,31 @@ class HotseatResultScreen extends StatelessWidget {
                       .then()
                       .shimmer(duration: 1600.ms, color: AppColors.cream)
                 else
-                  // Sieger-Pokal hüpft dauerhaft
-                  Icon(Icons.emoji_events_rounded, size: 96, color: winnerColor)
-                      .animate(onPlay: (c) => c.repeat())
-                      .moveY(
-                          begin: 0,
-                          end: -26,
-                          duration: 350.ms,
-                          curve: Curves.easeOut)
-                      .then()
-                      .moveY(
-                          begin: -26,
-                          end: 0,
-                          duration: 600.ms,
-                          curve: Curves.bounceOut),
+                  // Sieger-Pokal hüpft dauerhaft. RepaintBoundary + fester
+                  // Platzhalter: nur der Pokal wird neu gezeichnet, nicht
+                  // der ganze Screen (Performance auf Handys).
+                  SizedBox(
+                    height: 96 + 26,
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: RepaintBoundary(
+                        child: Icon(Icons.emoji_events_rounded,
+                                size: 96, color: winnerColor)
+                            .animate(onPlay: (c) => c.repeat())
+                            .moveY(
+                                begin: 0,
+                                end: -26,
+                                duration: 350.ms,
+                                curve: Curves.easeOut)
+                            .then()
+                            .moveY(
+                                begin: -26,
+                                end: 0,
+                                duration: 600.ms,
+                                curve: Curves.bounceOut),
+                      ),
+                    ),
+                  ),
                 const SizedBox(height: 18),
                 Text(
                   draw ? tr('draw') : '$winnerName ${tr('wins')}',

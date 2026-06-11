@@ -5,9 +5,28 @@ import '../theme/app_theme.dart';
 
 /// Ruhiger Nachthimmel-Hintergrund mit sanftem Goldschein oben –
 /// Basis der "Lichtpfad"-Optik. Sterne deterministisch (fester Seed).
+///
+/// Performance: Der Hintergrund liegt in einer eigenen RepaintBoundary-
+/// Ebene. Animationen im Vordergrund (Timer, Effekte) zwingen so NICHT
+/// den Gradient + ~100 Sterne zum Neuzeichnen – wichtig auf Mobilgeräten.
 class Starfield extends StatelessWidget {
   final Widget child;
   const Starfield({super.key, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        const RepaintBoundary(child: _Background()),
+        child,
+      ],
+    );
+  }
+}
+
+class _Background extends StatelessWidget {
+  const _Background();
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +39,7 @@ class Starfield extends StatelessWidget {
           stops: [0.0, 0.55, 1.0],
         ),
       ),
-      child: CustomPaint(
-        painter: _StarPainter(),
-        child: child,
-      ),
+      child: CustomPaint(painter: _StarPainter(), size: Size.infinite),
     );
   }
 }
