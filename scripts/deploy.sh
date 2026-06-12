@@ -12,9 +12,12 @@ cd "$ROOT"
 HOST="59543682.ssh.w1.strato.hosting"
 USER="stu152339249"
 
-echo "==> Assets neu bauen (questions, seed, übersetzungen)"
-node scripts/build_questions.mjs >/dev/null
-node scripts/build_translations.mjs >/dev/null
+# HINWEIS: Die Assets (assets/questions_*.json) sind ab 2026-06-11 die
+# AUS DER SUPABASE-DB generierte Variante (Single Source of Truth) – sie
+# enthalten Admin-Edits + Grammatik-Korrekturen, die NICHT im Roh-Katalog
+# data/questions_raw.json stehen. Deshalb hier KEIN build_questions/
+# build_translations mehr (würde die Korrekturen überschreiben).
+# Inhalte aktualisieren -> scripts/refresh-assets.sh (zieht frisch aus der DB).
 
 echo "==> Flutter-Web-Build (WASM-Renderer; eigener sw.js statt Flutters deprecated SW)"
 flutter build web --wasm --pwa-strategy=none
