@@ -67,10 +67,10 @@
       "difficulty": 1,
       "question": "Wie viele Jünger hatte Jesus?",
       "options": [
-        "84",
+        "10",
         "14",
         "12",
-        "7000"
+        "7"
       ],
       "answer": "12"
     },
@@ -172,9 +172,9 @@
       "difficulty": 2,
       "question": "Wie viele Tage dauerte die Schöpfung nach der Bibel?",
       "options": [
-        "777",
-        "950",
-        "350",
+        "7",
+        "3",
+        "8",
         "6"
       ],
       "answer": "6"
@@ -457,9 +457,9 @@
       "difficulty": 2,
       "question": "Wie viele Plagen trafen Ägypten?",
       "options": [
-        "1",
-        "144000",
         "7",
+        "12",
+        "9",
         "10"
       ],
       "answer": "10"
@@ -847,10 +847,10 @@
       "difficulty": 3,
       "question": "Wie alt war Noah, als die Flut begann?",
       "options": [
-        "100",
+        "500 Jahre",
         "600 Jahre",
-        "3",
-        "666"
+        "480 Jahre",
+        "700 Jahre"
       ],
       "answer": "600 Jahre"
     },
@@ -937,10 +937,10 @@
       "difficulty": 2,
       "question": "Wie viele Söhne hatte Jakob?",
       "options": [
-        "7000",
+        "Sieben",
         "Zehn",
         "Zwölf",
-        "3000"
+        "Vierzehn"
       ],
       "answer": "Zwölf"
     },
@@ -1012,10 +1012,10 @@
       "difficulty": 1,
       "question": "Wie viele Hungerjahre wurden in Pharaos Traum vorhergesagt?",
       "options": [
-        "147",
+        "Drei",
         "Sieben",
-        "einer",
-        "Vierzig Jahre"
+        "Fünf",
+        "Zwölf"
       ],
       "answer": "Sieben"
     },
@@ -1087,10 +1087,10 @@
       "difficulty": 2,
       "question": "Wie viele aus Jakobs Familie zogen nach Ägypten?",
       "options": [
-        "32000",
+        "Fünfzig",
         "Siebzig",
-        "144000",
-        "300"
+        "Hundert",
+        "Vierzig"
       ],
       "answer": "Siebzig"
     },
@@ -1237,8 +1237,8 @@
       "difficulty": 1,
       "question": "Wie viele Gebote gab Gott?",
       "options": [
-        "5",
-        "60",
+        "Sieben",
+        "Zwölf",
         "Zwanzig",
         "Zehn"
       ],
@@ -1372,9 +1372,9 @@
       "difficulty": 1,
       "question": "Wie lange blieb Mose auf dem Berg Sinai?",
       "options": [
-        "180000",
-        "300",
-        "70",
+        "Zwanzig Tage",
+        "Sieben Tage",
+        "Dreißig Tage",
         "Vierzig Tage"
       ],
       "answer": "Vierzig Tage"
@@ -1717,10 +1717,10 @@
       "difficulty": 2,
       "question": "Wie viele Kundschafter wurden ausgesandt, um Kanaan zu erkunden?",
       "options": [
-        "7000",
+        "Sieben",
         "Zwölf",
-        "2",
-        "4000"
+        "Zwei",
+        "Zehn"
       ],
       "answer": "Zwölf"
     },
@@ -1747,10 +1747,10 @@
       "difficulty": 1,
       "question": "Wie lange wanderte Israel in der Wüste?",
       "options": [
-        "1. Korinther",
+        "Dreißig Jahre",
         "Vierzig Jahre",
-        "17",
-        "1100"
+        "Fünfzig Jahre",
+        "Zwanzig Jahre"
       ],
       "answer": "Vierzig Jahre"
     },
@@ -1927,10 +1927,10 @@
       "difficulty": 2,
       "question": "Wie oft wurde Israel im 4. Buch Mose gezählt?",
       "options": [
-        "17",
+        "Eins",
         "Zwei",
-        "400",
-        "110"
+        "Drei",
+        "Vier"
       ],
       "answer": "Zwei"
     },
@@ -2048,9 +2048,9 @@
       "question": "Wie alt war Mose, als er starb?",
       "options": [
         "120 Jahre",
-        "3. Johannes",
-        "12",
-        "31"
+        "90 Jahre",
+        "100 Jahre",
+        "110 Jahre"
       ],
       "answer": "120 Jahre"
     },
@@ -2212,9 +2212,9 @@
       "difficulty": 2,
       "question": "Wie oft sollte das Gesetz öffentlich vorgelesen werden?",
       "options": [
-        "50",
-        "6",
-        "175",
+        "Jedes Jahr",
+        "Alle drei Jahre",
+        "Alle fünfzig Jahre",
         "Alle sieben Jahre"
       ],
       "answer": "Alle sieben Jahre"
@@ -3217,10 +3217,10 @@
       "difficulty": 2,
       "question": "Wie viele Freunde kamen, um Hiob zu trösten?",
       "options": [
-        "200",
-        "1000",
+        "Drei",
+        "Sieben",
         "Vier",
-        "5000"
+        "Zwei"
       ],
       "answer": "Vier"
     },
@@ -3277,10 +3277,10 @@
       "difficulty": 2,
       "question": "Welcher Psalm beginnt mit 'Der HERR ist mein Hirte'?",
       "options": [
-        "2",
+        "19",
         "23",
-        "Zwölf",
-        "350"
+        "Vierundzwanzig",
+        "27"
       ],
       "answer": "23"
     },
@@ -3848,9 +3848,9 @@
       "question": "Wie viele Tage fastete Jesus in der Wüste?",
       "options": [
         "Vierzig",
-        "Vier",
-        "950",
-        "66"
+        "Zwanzig",
+        "Dreißig",
+        "Fünfzig"
       ],
       "answer": "Vierzig"
     },
@@ -3878,9 +3878,9 @@
       "question": "Wie viele Jünger erwählte Jesus?",
       "options": [
         "Zwölf",
-        "3000",
-        "17",
-        "72"
+        "Sieben",
+        "Zehn",
+        "Vierzehn"
       ],
       "answer": "Zwölf"
     },
@@ -4087,10 +4087,10 @@
       "difficulty": 2,
       "question": "Wie viele Menschen wurden an Pfingsten getauft?",
       "options": [
-        "430",
-        "86",
+        "Zweitausend",
+        "Fünftausend",
         "Dreitausend",
-        "31"
+        "Tausend"
       ],
       "answer": "Dreitausend"
     },
@@ -4237,10 +4237,10 @@
       "difficulty": 2,
       "question": "Welcher Brief behandelt Spaltungen in der Gemeinde von Korinth?",
       "options": [
-        "Zwölf",
+        "2. Korinther",
         "1. Korinther",
-        "480",
-        "666"
+        "Galater",
+        "Epheser"
       ],
       "answer": "1. Korinther"
     },
@@ -4253,9 +4253,9 @@
       "question": "Welcher Brief enthält das Kapitel über die Liebe?",
       "options": [
         "1. Korinther",
-        "8",
-        "276",
-        "50"
+        "Römer",
+        "Galater",
+        "Epheser"
       ],
       "answer": "1. Korinther"
     },
@@ -4267,9 +4267,9 @@
       "difficulty": 3,
       "question": "Welcher Brief verteidigt das Apostelamt des Paulus?",
       "options": [
-        "einer",
-        "2",
-        "800000",
+        "Galater",
+        "Philipper",
+        "Römer",
         "2. Korinther"
       ],
       "answer": "2. Korinther"
@@ -4447,9 +4447,9 @@
       "difficulty": 2,
       "question": "Welcher Brief lehrt, dass Gott die Liebe ist?",
       "options": [
-        "600",
-        "15",
-        "3",
+        "Jakobus",
+        "2. Petrus",
+        "Judas",
         "1. Johannes"
       ],
       "answer": "1. Johannes"
@@ -4462,10 +4462,10 @@
       "difficulty": 3,
       "question": "Welcher Brief wurde an eine auserwählte Herrin und ihre Kinder geschrieben?",
       "options": [
-        "6",
-        "Drei",
+        "1. Johannes",
+        "3. Johannes",
         "2. Johannes",
-        "700"
+        "Philemon"
       ],
       "answer": "2. Johannes"
     },
@@ -4477,9 +4477,9 @@
       "difficulty": 3,
       "question": "Welcher Brief lobt die Gastfreundschaft gegenüber Missionaren?",
       "options": [
-        "150",
-        "430",
-        "1000",
+        "2. Johannes",
+        "1. Johannes",
+        "Judas",
         "3. Johannes"
       ],
       "answer": "3. Johannes"
@@ -4537,10 +4537,10 @@
       "difficulty": 1,
       "question": "Wie viele Gemeinden werden in der Offenbarung angesprochen?",
       "options": [
-        "4",
+        "Vier",
         "Sieben",
-        "365",
-        "14"
+        "Neun",
+        "Zwölf"
       ],
       "answer": "Sieben"
     },
@@ -4582,10 +4582,10 @@
       "difficulty": 1,
       "question": "Wie viele Siegel sind auf der Buchrolle?",
       "options": [
-        "1100",
+        "Fünf",
         "Sieben",
-        "66",
-        "100"
+        "Zwölf",
+        "Zehn"
       ],
       "answer": "Sieben"
     },
@@ -4597,8 +4597,8 @@
       "difficulty": 1,
       "question": "Wie viele Posaunen werden in der Offenbarung geblasen?",
       "options": [
-        "einer",
-        "930",
+        "Drei",
+        "Zehn",
         "Sieben",
         "Zwölf"
       ],
@@ -4612,9 +4612,9 @@
       "difficulty": 1,
       "question": "Wie viele Zornschalen werden ausgegossen?",
       "options": [
-        "3000",
-        "127",
-        "1260",
+        "Drei",
+        "Zehn",
+        "Zwölf",
         "Sieben"
       ],
       "answer": "Sieben"
@@ -4627,10 +4627,10 @@
       "difficulty": 2,
       "question": "Welche Zahl wird die Zahl des Tieres genannt?",
       "options": [
-        "24",
-        "120000",
+        "616",
+        "777",
         "666",
-        "Vierzig Jahre"
+        "888"
       ],
       "answer": "666"
     },
@@ -6879,7 +6879,7 @@
       "options": [
         "einer",
         "drei",
-        "viele",
+        "zwei",
         "keiner"
       ],
       "answer": "einer"
@@ -7762,10 +7762,10 @@
       "difficulty": 1,
       "question": "Wie viele steinerne Krüge wurden in Kana mit Wasser gefüllt?",
       "options": [
-        "185000",
-        "66",
+        "Vier",
+        "Zehn",
         "Sechs",
-        "777"
+        "Acht"
       ],
       "answer": "Sechs"
     },
@@ -7777,9 +7777,9 @@
       "difficulty": 2,
       "question": "Wie viele Brote wurden zur Speisung der Fünftausend verwendet?",
       "options": [
-        "600 Jahre",
-        "7000",
-        "1. Korinther",
+        "Drei",
+        "Sieben",
+        "Zwei",
         "Fünf"
       ],
       "answer": "Fünf"
@@ -7793,9 +7793,9 @@
       "question": "Wie viele Fische wurden zur Speisung der Fünftausend verwendet?",
       "options": [
         "Zwei",
-        "66",
-        "17",
-        "365"
+        "Drei",
+        "Fünf",
+        "Sieben"
       ],
       "answer": "Zwei"
     },
@@ -7807,10 +7807,10 @@
       "difficulty": 2,
       "question": "Wie viele Körbe mit Resten blieben nach der Speisung der Fünftausend übrig?",
       "options": [
-        "15",
+        "Sieben",
         "Zwölf",
-        "119",
-        "450"
+        "Zehn",
+        "Fünf"
       ],
       "answer": "Zwölf"
     },
@@ -7944,8 +7944,8 @@
       "options": [
         "Drei",
         "Zehn",
-        "7",
-        "969"
+        "Sieben",
+        "Zwölf"
       ],
       "answer": "Zehn"
     },
@@ -7957,8 +7957,8 @@
       "difficulty": 2,
       "question": "Wie viele der zehn geheilten Aussätzigen kehrten zurück, um zu danken?",
       "options": [
-        "120",
-        "300",
+        "Drei",
+        "Zwei",
         "Einer",
         "Vier"
       ],
@@ -8047,9 +8047,9 @@
       "difficulty": 2,
       "question": "Wie viele Tage lag Lazarus im Grab, bevor Jesus ihn auferweckte?",
       "options": [
-        "50",
+        "Zwei",
         "Vier",
-        "1000",
+        "Sieben",
         "Fünf"
       ],
       "answer": "Vier"
@@ -8122,10 +8122,10 @@
       "difficulty": 2,
       "question": "Wie viele Jahre litt die blutflüssige Frau?",
       "options": [
-        "200",
+        "Sieben",
         "Zwölf",
-        "147",
-        "3"
+        "Zehn",
+        "Vierzehn"
       ],
       "answer": "Zwölf"
     },
@@ -8257,8 +8257,8 @@
       "difficulty": 1,
       "question": "Jesus sagte, man solle siebzigmal wie oft vergeben?",
       "options": [
-        "950",
-        "17",
+        "Drei",
+        "Zehn",
         "Sieben",
         "Fünf"
       ],
@@ -8317,9 +8317,9 @@
       "difficulty": 2,
       "question": "Wie viele Schafe ließ der Hirte zurück, um das verlorene zu suchen?",
       "options": [
-        "2. Johannes",
-        "32000",
-        "950",
+        "Neunzig",
+        "Hundert",
+        "Achtundvierzig",
         "Neunundneunzig"
       ],
       "answer": "Neunundneunzig"
@@ -8497,10 +8497,10 @@
       "difficulty": 1,
       "question": "Wie viele Jungfrauen nahmen ihre Lampen, um dem Bräutigam entgegenzugehen?",
       "options": [
-        "84",
+        "Sieben",
         "Zehn",
-        "365",
-        "185000"
+        "Zwölf",
+        "Fünf"
       ],
       "answer": "Zehn"
     },
@@ -8512,10 +8512,10 @@
       "difficulty": 2,
       "question": "Wie viele der Jungfrauen waren klug?",
       "options": [
-        "117",
+        "Drei",
         "Fünf",
-        "180000",
-        "Zwanzig"
+        "Sieben",
+        "Zehn"
       ],
       "answer": "Fünf"
     },
@@ -8648,9 +8648,9 @@
       "question": "In welchem Alter blieb Jesus im Tempel zurück und verwunderte die Lehrer?",
       "options": [
         "Zwölf",
-        "180",
-        "40",
-        "86"
+        "Zehn",
+        "Acht",
+        "Fünfzehn"
       ],
       "answer": "Zwölf"
     },
@@ -8813,9 +8813,9 @@
       "question": "Wie viele Jünger waren Zeugen der Verklärung?",
       "options": [
         "Drei",
-        "7000",
-        "Alle sieben Jahre",
-        "72"
+        "Vier",
+        "Zwei",
+        "Fünf"
       ],
       "answer": "Drei"
     },
@@ -8918,9 +8918,9 @@
       "question": "Wie viele Silberlinge erhielt Judas für den Verrat Jesu?",
       "options": [
         "Dreißig",
-        "30",
-        "3. Johannes",
-        "17"
+        "Zwanzig",
+        "Vierzig",
+        "Fünfzig"
       ],
       "answer": "Dreißig"
     },
@@ -9067,10 +9067,10 @@
       "difficulty": 2,
       "question": "Wie viele Verbrecher wurden mit Jesus gekreuzigt?",
       "options": [
-        "2. Korinther",
+        "Drei",
         "Zwei",
-        "120000",
-        "147"
+        "Vier",
+        "Sieben"
       ],
       "answer": "Zwei"
     },
@@ -9082,10 +9082,10 @@
       "difficulty": 2,
       "question": "Wie viele Stunden bedeckte Finsternis das Land bei der Kreuzigung?",
       "options": [
-        "31",
+        "Sechs",
         "Zwölf",
         "Drei",
-        "390"
+        "Neun"
       ],
       "answer": "Drei"
     },
@@ -9187,9 +9187,9 @@
       "difficulty": 3,
       "question": "Wie viele Fische fingen die Jünger nach der Auferstehung in Johannes 21?",
       "options": [
-        "127",
-        "4",
-        "72",
+        "120",
+        "99",
+        "200",
         "153"
       ],
       "answer": "153"
@@ -9202,9 +9202,9 @@
       "difficulty": 1,
       "question": "Wie viele Tage erschien Jesus nach seiner Auferstehung?",
       "options": [
-        "930",
-        "300",
-        "tausend",
+        "Dreißig",
+        "Zwanzig",
+        "Fünfzig",
         "Vierzig"
       ],
       "answer": "Vierzig"
@@ -9247,9 +9247,9 @@
       "difficulty": 3,
       "question": "Wie viele Jahre lebte Metuschelach?",
       "options": [
-        "Neunundneunzig",
+        "Neunhundertzwölf",
         "969",
-        "Vier",
+        "Achthundertfünfundneunzig",
         "930"
       ],
       "answer": "969"
@@ -9398,9 +9398,9 @@
       "question": "Wie viele von jedem reinen Tier nahm Noah in die Arche?",
       "options": [
         "Sieben",
-        "150",
-        "120000",
-        "15"
+        "Zwei",
+        "Zehn",
+        "Fünf"
       ],
       "answer": "Sieben"
     },
@@ -9413,9 +9413,9 @@
       "question": "Wie viele Tage und Nächte regnete es während der Flut?",
       "options": [
         "Vierzig",
-        "147",
-        "127",
-        "Zwei"
+        "Dreißig",
+        "Sieben",
+        "Fünfzig"
       ],
       "answer": "Vierzig"
     },
@@ -9489,8 +9489,8 @@
       "options": [
         "Sechs",
         "Drei",
-        "117",
-        "6"
+        "Zwei",
+        "Fünf"
       ],
       "answer": "Drei"
     },
@@ -9623,9 +9623,9 @@
       "question": "Wie alt war Abraham, als Isaak geboren wurde?",
       "options": [
         "100",
-        "5000",
-        "tausend",
-        "20"
+        "75",
+        "90",
+        "120"
       ],
       "answer": "100"
     },
@@ -9832,10 +9832,10 @@
       "difficulty": 1,
       "question": "Wie viele Jahre arbeitete Jakob für jede seiner Frauen?",
       "options": [
-        "180000",
-        "175",
+        "Fünf",
+        "Zehn",
         "Sieben",
-        "1. Korinther"
+        "Drei"
       ],
       "answer": "Sieben"
     },
@@ -9878,9 +9878,9 @@
       "question": "Für wie viele Silberlinge wurde Josef verkauft?",
       "options": [
         "Zwölf",
-        "800000",
+        "Dreißig",
         "Zwanzig",
-        "205"
+        "Fünfundzwanzig"
       ],
       "answer": "Zwanzig"
     },
@@ -10252,9 +10252,9 @@
       "difficulty": 2,
       "question": "Wie viele Gedenksteine wurden aus dem Flussbett des Jordan genommen?",
       "options": [
-        "3000",
-        "300",
-        "Siebzig",
+        "Sieben",
+        "Zehn",
+        "Vierzehn",
         "Zwölf"
       ],
       "answer": "Zwölf"
@@ -10297,10 +10297,10 @@
       "difficulty": 3,
       "question": "Wie viele Füchse fing Simson und ließ sie mit Fackeln los?",
       "options": [
-        "276",
-        "Achtzehn",
+        "200",
+        "500",
         "300",
-        "120 Jahre"
+        "150"
       ],
       "answer": "300"
     },
@@ -10477,10 +10477,10 @@
       "difficulty": 1,
       "question": "Wie viele ältere Brüder hatte David?",
       "options": [
-        "4",
-        "205",
+        "Vier",
+        "Fünf",
         "Sieben",
-        "3"
+        "Drei"
       ],
       "answer": "Sieben"
     },
@@ -10507,10 +10507,10 @@
       "difficulty": 2,
       "question": "Wie viele glatte Steine nahm David aus dem Bach?",
       "options": [
-        "50",
+        "Drei",
         "Fünf",
-        "1000",
-        "70"
+        "Sieben",
+        "Zwölf"
       ],
       "answer": "Fünf"
     },
@@ -10688,9 +10688,9 @@
       "question": "Wie viele Jahre brauchte Salomo, um den Tempel zu bauen?",
       "options": [
         "Sieben",
-        "5000",
-        "1",
-        "einer"
+        "Fünf",
+        "Vier",
+        "Zehn"
       ],
       "answer": "Sieben"
     },
@@ -10703,9 +10703,9 @@
       "question": "Wie viele Frauen hatte Salomo?",
       "options": [
         "700",
-        "120 Jahre",
-        "Acht",
-        "72"
+        "300",
+        "500",
+        "1000"
       ],
       "answer": "700"
     },
@@ -10732,9 +10732,9 @@
       "difficulty": 1,
       "question": "Wie viele Stämme bildeten das Nordreich?",
       "options": [
-        "365",
+        "Zwei",
         "Acht",
-        "120",
+        "Zwölf",
         "Zehn"
       ],
       "answer": "Zehn"
@@ -10853,9 +10853,9 @@
       "question": "Wie vielen Baalspropheten stellte sich Elia am Berg Karmel?",
       "options": [
         "450",
-        "Neunundneunzig",
-        "Fünf",
-        "666"
+        "300",
+        "850",
+        "400"
       ],
       "answer": "450"
     },
@@ -10957,9 +10957,9 @@
       "difficulty": 1,
       "question": "Wie oft tauchte Naaman im Jordan unter?",
       "options": [
-        "Vierzig",
-        "144000",
-        "127",
+        "Drei",
+        "Zwölf",
+        "Fünf",
         "Sieben"
       ],
       "answer": "Sieben"
@@ -11167,9 +11167,9 @@
       "difficulty": 2,
       "question": "Wie viele Männer sah Nebukadnezar im Feuerofen umhergehen?",
       "options": [
-        "666",
-        "950",
-        "1. Korinther",
+        "Sechs",
+        "Drei",
+        "Sieben",
         "Vier"
       ],
       "answer": "Vier"
@@ -11273,9 +11273,9 @@
       "question": "Wie oft am Tag betete Daniel an seinem offenen Fenster?",
       "options": [
         "Dreimal",
-        "27",
-        "1005",
-        "12000"
+        "Zweimal",
+        "Fünfmal",
+        "Siebenmal"
       ],
       "answer": "Dreimal"
     },
@@ -11332,9 +11332,9 @@
       "difficulty": 2,
       "question": "Wie viele Tage war Jona im großen Fisch?",
       "options": [
-        "800000",
-        "32000",
-        "Vierzig Tage",
+        "Sieben",
+        "Fünf",
+        "Zwei",
         "Drei"
       ],
       "answer": "Drei"
@@ -11363,9 +11363,9 @@
       "question": "Wie viele Tage predigte Jona, bis Ninive zerstört würde?",
       "options": [
         "Vierzig",
-        "66",
-        "Neunundneunzig",
-        "Achtzehn"
+        "Dreißig",
+        "Zwanzig",
+        "Fünfzig"
       ],
       "answer": "Vierzig"
     },
@@ -11453,8 +11453,8 @@
       "question": "Wie viele Tage bat Ester die Juden, für sie zu fasten?",
       "options": [
         "Zwei",
-        "tausend",
-        "200",
+        "Sieben",
+        "Vier",
         "Drei"
       ],
       "answer": "Drei"
@@ -11498,8 +11498,8 @@
       "question": "In wie vielen Tagen wurde die Mauer Jerusalems unter Nehemia wieder aufgebaut?",
       "options": [
         "52",
-        "276",
-        "Vierzig",
+        "40",
+        "Sechzig",
         "39"
       ],
       "answer": "52"
@@ -11858,9 +11858,9 @@
       "question": "Wie viele Tage war Saulus nach seiner Bekehrung blind?",
       "options": [
         "Drei",
-        "205",
-        "100",
-        "24"
+        "Sieben",
+        "Zwei",
+        "Fünf"
       ],
       "answer": "Drei"
     },
@@ -12142,9 +12142,9 @@
       "difficulty": 2,
       "question": "Wie viele Bücher hat die Bibel?",
       "options": [
-        "Acht",
-        "1000",
-        "120",
+        "72",
+        "49",
+        "80",
         "66"
       ],
       "answer": "66"
@@ -12158,9 +12158,9 @@
       "question": "Wie viele Bücher hat das Alte Testament?",
       "options": [
         "39",
-        "1000",
-        "1. Johannes",
-        "5000"
+        "27",
+        "46",
+        "24"
       ],
       "answer": "39"
     },
@@ -12172,10 +12172,10 @@
       "difficulty": 2,
       "question": "Wie viele Bücher hat das Neue Testament?",
       "options": [
-        "38",
+        "39",
         "27",
-        "12",
-        "99"
+        "24",
+        "31"
       ],
       "answer": "27"
     },
@@ -12187,9 +12187,9 @@
       "difficulty": 2,
       "question": "Wie viele Evangelien gibt es?",
       "options": [
-        "930",
-        "72",
-        "400",
+        "Drei",
+        "Sieben",
+        "Fünf",
         "Vier"
       ],
       "answer": "Vier"
@@ -12307,9 +12307,9 @@
       "difficulty": 2,
       "question": "Wie viele Psalmen hat das Buch der Psalmen?",
       "options": [
-        "Acht",
+        "120",
         "100",
-        "110",
+        "180",
         "150"
       ],
       "answer": "150"
@@ -12322,10 +12322,10 @@
       "difficulty": 2,
       "question": "Welcher Psalm ist das längste Kapitel der Bibel?",
       "options": [
-        "2. Korinther",
+        "100",
         "119",
-        "23",
-        "930"
+        "73",
+        "139"
       ],
       "answer": "119"
     },
@@ -12337,10 +12337,10 @@
       "difficulty": 2,
       "question": "Welcher Psalm ist das kürzeste Kapitel der Bibel?",
       "options": [
-        "969",
-        "10",
+        "100",
+        "131",
         "117",
-        "86"
+        "150"
       ],
       "answer": "117"
     },
@@ -12683,9 +12683,9 @@
       "question": "Wie viele Männer hatte die Samariterin gehabt?",
       "options": [
         "Fünf",
-        "39",
-        "200",
-        "390"
+        "Drei",
+        "Sieben",
+        "Vier"
       ],
       "answer": "Fünf"
     },
@@ -12772,10 +12772,10 @@
       "difficulty": 3,
       "question": "Wie viele Menschen überlebten Paulus' Schiffbruch?",
       "options": [
-        "Vierzig Tage",
-        "23",
+        "153",
+        "200",
         "276",
-        "24"
+        "300"
       ],
       "answer": "276"
     },
@@ -12847,10 +12847,10 @@
       "difficulty": 2,
       "question": "Wie viele Missionsreisen des Paulus berichtet die Apostelgeschichte?",
       "options": [
-        "60",
-        "40",
+        "Vier",
+        "Zwei",
         "Drei",
-        "Zehn"
+        "Fünf"
       ],
       "answer": "Drei"
     },
@@ -12922,10 +12922,10 @@
       "difficulty": 3,
       "question": "Wie viele Älteste sitzen um den Thron in der Offenbarung?",
       "options": [
-        "Neun",
+        "Zwölf",
         "24",
-        "38",
-        "23"
+        "30",
+        "12"
       ],
       "answer": "24"
     },
@@ -12937,10 +12937,10 @@
       "difficulty": 2,
       "question": "Wie viele lebendige Wesen umgeben den Thron Gottes in der Offenbarung?",
       "options": [
-        "Neun",
+        "Drei",
         "Vier",
-        "70",
-        "7"
+        "Sechs",
+        "Sieben"
       ],
       "answer": "Vier"
     },
@@ -12952,10 +12952,10 @@
       "difficulty": 2,
       "question": "Wie viele apokalyptische Reiter gibt es?",
       "options": [
-        "120 Jahre",
-        "120",
+        "Drei",
+        "Sechs",
         "Vier",
-        "119"
+        "Sieben"
       ],
       "answer": "Vier"
     },
@@ -13012,9 +13012,9 @@
       "difficulty": 2,
       "question": "Wie viele Zeugen weissagen in Offenbarung 11?",
       "options": [
-        "1005",
-        "31",
-        "38",
+        "Drei",
+        "Sieben",
+        "Vier",
         "Zwei"
       ],
       "answer": "Zwei"
@@ -13027,10 +13027,10 @@
       "difficulty": 3,
       "question": "Wie viele Versiegelte aus den Stämmen Israels werden in der Offenbarung gezählt?",
       "options": [
-        "Vier",
-        "250",
+        "120000",
+        "72000",
         "144000",
-        "180000"
+        "100000"
       ],
       "answer": "144000"
     },
@@ -13042,9 +13042,9 @@
       "difficulty": 2,
       "question": "Für wie viele Jahre wird der Satan in Offenbarung 20 gebunden?",
       "options": [
-        "31",
-        "318",
-        "Acht",
+        "500",
+        "2000",
+        "1260",
         "1000"
       ],
       "answer": "1000"
@@ -13087,10 +13087,10 @@
       "difficulty": 1,
       "question": "Wie viele Köpfe hat der große rote Drache?",
       "options": [
-        "700",
+        "Vier",
         "Sieben",
-        "15",
-        "Zwanzig"
+        "Zehn",
+        "Zwölf"
       ],
       "answer": "Sieben"
     },
@@ -13103,8 +13103,8 @@
       "question": "Wie viele Tore hat das neue Jerusalem?",
       "options": [
         "Acht",
-        "99",
-        "2",
+        "Sieben",
+        "Zehn",
         "Zwölf"
       ],
       "answer": "Zwölf"
@@ -13177,10 +13177,10 @@
       "difficulty": 1,
       "question": "Wie viele Flügel hatte jeder Seraph in Jesajas Vision?",
       "options": [
-        "Vierzig Tage",
-        "300",
+        "Vier",
+        "Acht",
         "Sechs",
-        "117"
+        "Zwölf"
       ],
       "answer": "Sechs"
     },
@@ -13193,9 +13193,9 @@
       "question": "Wie viele Ströme flossen aus Eden?",
       "options": [
         "Vier",
-        "39",
-        "Neunundneunzig",
-        "1100"
+        "Sieben",
+        "Zwei",
+        "Sechs"
       ],
       "answer": "Vier"
     },
@@ -13312,10 +13312,10 @@
       "difficulty": 2,
       "question": "Wie viele Denare gab der Samariter dem Wirt?",
       "options": [
-        "1000",
+        "Fünf",
         "Zwei",
-        "Dreitausend",
-        "666"
+        "Zehn",
+        "Drei"
       ],
       "answer": "Zwei"
     },
@@ -13327,10 +13327,10 @@
       "difficulty": 2,
       "question": "Wie viele kleine Münzen legte die arme Witwe in den Opferkasten?",
       "options": [
-        "Vierzig",
+        "Drei",
         "Zwei",
-        "390",
-        "1"
+        "Fünf",
+        "Eine"
       ],
       "answer": "Zwei"
     },
@@ -13372,10 +13372,10 @@
       "difficulty": 2,
       "question": "Wie viele Jahre war die gekrümmte Frau verkrüppelt, bevor Jesus sie heilte?",
       "options": [
-        "30",
-        "Fünf",
+        "Zwölf",
+        "Zwanzig",
         "Achtzehn",
-        "777"
+        "Acht"
       ],
       "answer": "Achtzehn"
     },
@@ -13402,9 +13402,9 @@
       "difficulty": 1,
       "question": "Wie viele Arme hatte der goldene Leuchter?",
       "options": [
-        "66",
-        "390",
-        "Dreitausend",
+        "Fünf",
+        "Neun",
+        "Drei",
         "Sieben"
       ],
       "answer": "Sieben"
@@ -13447,9 +13447,9 @@
       "difficulty": 2,
       "question": "Wie viele Schaubrote wurden ausgelegt?",
       "options": [
-        "Fünf",
-        "1",
+        "Zehn",
         "Sieben",
+        "Vierzehn",
         "Zwölf"
       ],
       "answer": "Zwölf"
@@ -13507,10 +13507,10 @@
       "difficulty": 2,
       "question": "Wie viele Steine waren auf dem Brustschild des Hohepriesters?",
       "options": [
-        "27",
+        "Zehn",
         "Vier",
         "Zwölf",
-        "Zehn"
+        "Sieben"
       ],
       "answer": "Zwölf"
     },
@@ -13553,9 +13553,9 @@
       "question": "Wie viele Freistädte wurden in Israel bestimmt?",
       "options": [
         "Sechs",
-        "1000",
-        "1. Johannes",
-        "86"
+        "Drei",
+        "Vier",
+        "Acht"
       ],
       "answer": "Sechs"
     },
@@ -13672,10 +13672,10 @@
       "difficulty": 2,
       "question": "Wie alt war Josef, als er Herrscher über Ägypten wurde?",
       "options": [
-        "2",
+        "Fünfundzwanzig",
         "Dreißig",
-        "205",
-        "66"
+        "Vierzig",
+        "Fünfunddreißig"
       ],
       "answer": "Dreißig"
     },
@@ -13687,9 +13687,9 @@
       "difficulty": 2,
       "question": "Wie alt war David, als er König wurde?",
       "options": [
-        "450",
-        "38",
-        "175",
+        "Zwanzig",
+        "Vierzig",
+        "Fünfundzwanzig",
         "Dreißig"
       ],
       "answer": "Dreißig"
@@ -13702,9 +13702,9 @@
       "difficulty": 2,
       "question": "Wie alt war Jesus etwa, als er sein Wirken begann?",
       "options": [
-        "100",
-        "1000",
-        "55",
+        "Zwölf",
+        "Vierzig",
+        "Fünfundzwanzig",
         "Dreißig"
       ],
       "answer": "Dreißig"
@@ -13717,9 +13717,9 @@
       "difficulty": 1,
       "question": "Wie viele Jahre regierte Salomo?",
       "options": [
-        "1005",
-        "365",
-        "110",
+        "Zwanzig",
+        "Sechzig",
+        "Dreißig",
         "Vierzig"
       ],
       "answer": "Vierzig"
@@ -13732,10 +13732,10 @@
       "difficulty": 1,
       "question": "Wie viele Jahre regierte David?",
       "options": [
-        "86",
+        "Dreißig",
         "Vierzig",
-        "120 Jahre",
-        "200"
+        "Fünfzig",
+        "Zwanzig"
       ],
       "answer": "Vierzig"
     },
@@ -13762,10 +13762,10 @@
       "difficulty": 2,
       "question": "Wie viele Sperlinge wurden für einen Pfennig verkauft?",
       "options": [
-        "480",
+        "Fünf",
         "Zwei",
-        "365",
-        "3"
+        "Vier",
+        "Drei"
       ],
       "answer": "Zwei"
     },
@@ -14363,9 +14363,9 @@
       "question": "Wie oft zog Israel am siebten Tag um Jericho?",
       "options": [
         "Zehn",
-        "144000",
+        "Drei",
         "Sieben",
-        "110"
+        "Zwölf"
       ],
       "answer": "Sieben"
     },
@@ -14407,10 +14407,10 @@
       "difficulty": 2,
       "question": "Wie viele Früchte des Geistes werden in Galater aufgezählt?",
       "options": [
-        "150",
+        "Sieben",
         "Neun",
-        "31",
-        "1005"
+        "Zehn",
+        "Zwölf"
       ],
       "answer": "Neun"
     },
@@ -14542,10 +14542,10 @@
       "difficulty": 1,
       "question": "Wie viele Kinder hatte Hiob vor seinen Prüfungen?",
       "options": [
-        "117",
-        "2. Korinther",
+        "Sieben",
+        "Zwölf",
         "Zehn",
-        "1260"
+        "Acht"
       ],
       "answer": "Zehn"
     },
@@ -14619,8 +14619,8 @@
       "options": [
         "400",
         "430",
-        "100",
-        "120 Jahre"
+        "250",
+        "500"
       ],
       "answer": "430"
     },
@@ -14632,10 +14632,10 @@
       "difficulty": 2,
       "question": "Wie viele Jahre babylonisches Exil sagte Jeremia voraus?",
       "options": [
-        "86",
-        "666",
+        "Vierzig",
+        "Hundert",
         "Siebzig",
-        "Drei"
+        "Fünfzig"
       ],
       "answer": "Siebzig"
     },
@@ -14692,10 +14692,10 @@
       "difficulty": 2,
       "question": "Wie viele Menschen waren in Noahs Arche?",
       "options": [
-        "205",
-        "120 Jahre",
+        "Vier",
+        "Zwölf",
         "Acht",
-        "276"
+        "Sechs"
       ],
       "answer": "Acht"
     },
@@ -14722,9 +14722,9 @@
       "difficulty": 1,
       "question": "Wie viele Gerechte hätten Sodom in Abrahams letzter Bitte gerettet?",
       "options": [
-        "600",
-        "40",
-        "144000",
+        "Sechs",
+        "Fünfzehn",
+        "Zwanzig",
         "Zehn"
       ],
       "answer": "Zehn"
@@ -15248,9 +15248,9 @@
       "question": "Vervollständige Psalm 84: 'Ein Tag in deinen Vorhöfen ist besser als sonst ___.'",
       "options": [
         "hundert",
-        "Jahr",
+        "zehntausend",
         "tausend",
-        "Monat"
+        "zweitausend"
       ],
       "answer": "tausend"
     },
@@ -20932,10 +20932,10 @@
       "difficulty": 2,
       "question": "Wie alt war Adam, als er starb?",
       "options": [
-        "12000",
+        "847",
         "930",
-        "Vierzig Jahre",
-        "10"
+        "777",
+        "905"
       ],
       "answer": "930"
     },
@@ -20947,9 +20947,9 @@
       "difficulty": 2,
       "question": "Wie alt war Henoch, als Gott ihn hinwegnahm?",
       "options": [
-        "4",
-        "150",
-        "Vierzig Jahre",
+        "300",
+        "430",
+        "500",
         "365"
       ],
       "answer": "365"
@@ -20963,9 +20963,9 @@
       "question": "Wie alt war Noah, als er starb?",
       "options": [
         "950",
-        "99",
-        "50",
-        "1260"
+        "777",
+        "600",
+        "895"
       ],
       "answer": "950"
     },
@@ -20977,9 +20977,9 @@
       "difficulty": 2,
       "question": "Wie alt war Abraham, als er starb?",
       "options": [
-        "86",
-        "Acht",
-        "70",
+        "120",
+        "147",
+        "200",
         "175"
       ],
       "answer": "175"
@@ -20992,9 +20992,9 @@
       "difficulty": 2,
       "question": "Wie alt war Sara, als sie starb?",
       "options": [
-        "180000",
-        "17",
-        "66",
+        "99",
+        "137",
+        "120",
         "127"
       ],
       "answer": "127"
@@ -21007,10 +21007,10 @@
       "difficulty": 2,
       "question": "Wie alt war Isaak, als er starb?",
       "options": [
-        "120000",
+        "120",
         "180",
-        "4000",
-        "66"
+        "205",
+        "175"
       ],
       "answer": "180"
     },
@@ -21022,9 +21022,9 @@
       "difficulty": 2,
       "question": "Wie alt war Josef, als er starb?",
       "options": [
-        "250",
-        "777",
-        "350",
+        "137",
+        "147",
+        "175",
         "110"
       ],
       "answer": "110"
@@ -21037,10 +21037,10 @@
       "difficulty": 2,
       "question": "Wie alt war Abraham, als Ismael geboren wurde?",
       "options": [
-        "205",
-        "17",
+        "70",
+        "99",
         "86",
-        "Vierzig"
+        "40"
       ],
       "answer": "86"
     },
@@ -21052,10 +21052,10 @@
       "difficulty": 2,
       "question": "Wie alt war Josua, als er starb?",
       "options": [
-        "99",
-        "Sieben",
+        "90",
+        "120",
         "110",
-        "969"
+        "100"
       ],
       "answer": "110"
     },
@@ -21068,9 +21068,9 @@
       "question": "Wie viele Jahre lebte Jakob?",
       "options": [
         "147",
-        "430",
+        "120",
         "175",
-        "600"
+        "110"
       ],
       "answer": "147"
     },
@@ -21082,10 +21082,10 @@
       "difficulty": 1,
       "question": "Wie viele Tage und Nächte stiegen die Flutwasser auf der Erde?",
       "options": [
-        "930",
+        "70",
         "40",
-        "38",
-        "4"
+        "30",
+        "50"
       ],
       "answer": "40"
     },
@@ -21097,9 +21097,9 @@
       "difficulty": 2,
       "question": "Wie viele Tage hatten die Flutwasser die Oberhand, ehe sie zurückgingen?",
       "options": [
-        "31",
-        "4000",
-        "147",
+        "100",
+        "200",
+        "90",
         "150"
       ],
       "answer": "150"
@@ -21113,9 +21113,9 @@
       "question": "Wie lang war Noahs Arche in Ellen?",
       "options": [
         "300",
-        "70",
-        "930",
-        "72"
+        "150",
+        "500",
+        "200"
       ],
       "answer": "300"
     },
@@ -21127,10 +21127,10 @@
       "difficulty": 2,
       "question": "Wie breit war Noahs Arche in Ellen?",
       "options": [
-        "800000",
+        "30",
         "50",
-        "23",
-        "950"
+        "75",
+        "100"
       ],
       "answer": "50"
     },
@@ -21143,9 +21143,9 @@
       "question": "Wie hoch war Noahs Arche in Ellen?",
       "options": [
         "30",
-        "60",
-        "Sechs",
-        "Vier"
+        "50",
+        "45",
+        "20"
       ],
       "answer": "30"
     },
@@ -21157,10 +21157,10 @@
       "difficulty": 1,
       "question": "Wie viele Menschen wurden in Noahs Arche gerettet?",
       "options": [
-        "70",
-        "1100",
+        "4",
+        "12",
         "8",
-        "250"
+        "10"
       ],
       "answer": "8"
     },
@@ -21172,9 +21172,9 @@
       "difficulty": 1,
       "question": "Wie viele Jahre dauerte die Hungersnot zur Zeit Josefs?",
       "options": [
-        "1. Johannes",
-        "Dreitausend",
-        "365",
+        "3",
+        "10",
+        "12",
         "7"
       ],
       "answer": "7"
@@ -21187,9 +21187,9 @@
       "difficulty": 1,
       "question": "Wie viele Jahre des Überflusses kamen vor der Hungersnot in Ägypten?",
       "options": [
-        "70",
-        "Neunundneunzig",
-        "38",
+        "3",
+        "10",
+        "12",
         "7"
       ],
       "answer": "7"
@@ -21203,9 +21203,9 @@
       "question": "Für wie viele Silberlinge wurde Josef an die Midianiter verkauft?",
       "options": [
         "20",
-        "480",
+        "30",
         "23",
-        "3000"
+        "15"
       ],
       "answer": "20"
     },
@@ -21217,10 +21217,10 @@
       "difficulty": 2,
       "question": "Wie viele Jahre diente Jakob Laban insgesamt?",
       "options": [
-        "119",
-        "1100",
+        "14",
+        "30",
         "20",
-        "120 Jahre"
+        "40"
       ],
       "answer": "20"
     },
@@ -21233,9 +21233,9 @@
       "question": "Wie viele aus Jakobs Familie zogen nach Ägypten hinab?",
       "options": [
         "70",
-        "350",
-        "117",
-        "Siebzig"
+        "40",
+        "60",
+        "90"
       ],
       "answer": "70"
     },
@@ -21247,10 +21247,10 @@
       "difficulty": 2,
       "question": "Wie viele Jahre lebten die Israeliten in Ägypten?",
       "options": [
-        "66",
-        "666",
+        "390",
+        "500",
         "430",
-        "Zwei"
+        "300"
       ],
       "answer": "430"
     },
@@ -21262,9 +21262,9 @@
       "difficulty": 1,
       "question": "Wie viele Plagen sandte Gott über Ägypten?",
       "options": [
-        "14",
-        "Achtzehn",
-        "13",
+        "7",
+        "Zwölf",
+        "12",
         "10"
       ],
       "answer": "10"
@@ -21278,9 +21278,9 @@
       "question": "Wie viele Tage Finsternis dauerte die neunte Plage?",
       "options": [
         "3",
-        "110",
-        "120000",
-        "127"
+        "7",
+        "2",
+        "5"
       ],
       "answer": "3"
     },
@@ -21292,9 +21292,9 @@
       "difficulty": 1,
       "question": "Wie viele Gebote gab Gott Mose?",
       "options": [
-        "600",
-        "2000",
-        "3. Johannes",
+        "7",
+        "12",
+        "5",
         "10"
       ],
       "answer": "10"
@@ -21307,10 +21307,10 @@
       "difficulty": 1,
       "question": "Wie viele Tage verbrachte Mose auf dem Berg Sinai?",
       "options": [
-        "800000",
+        "30",
         "40",
-        "2. Korinther",
-        "Vierzig Jahre"
+        "20",
+        "50"
       ],
       "answer": "40"
     },
@@ -21322,10 +21322,10 @@
       "difficulty": 1,
       "question": "Wie viele Jahre wanderten die Israeliten in der Wüste?",
       "options": [
-        "46",
+        "30",
         "40",
-        "9",
-        "1005"
+        "20",
+        "50"
       ],
       "answer": "40"
     },
@@ -21338,9 +21338,9 @@
       "question": "Wie viele Kundschafter sandte Mose nach Kanaan?",
       "options": [
         "12",
-        "Fünf",
-        "930",
-        "1100"
+        "7",
+        "10",
+        "15"
       ],
       "answer": "12"
     },
@@ -21353,9 +21353,9 @@
       "question": "Wie viele Kundschafter gaben einen guten Bericht über Kanaan?",
       "options": [
         "2",
-        "7",
-        "Vierzig Tage",
-        "86"
+        "5",
+        "3",
+        "4"
       ],
       "answer": "2"
     },
@@ -21367,10 +21367,10 @@
       "difficulty": 2,
       "question": "Wie viele Älteste setzte Mose ein, um ihm beim Richten zu helfen?",
       "options": [
-        "120",
+        "40",
         "70",
-        "Zwölf",
-        "66"
+        "60",
+        "80"
       ],
       "answer": "70"
     },
@@ -21382,10 +21382,10 @@
       "difficulty": 1,
       "question": "Wie viele Stämme Israels gab es?",
       "options": [
-        "20",
-        "Drei",
+        "10",
+        "14",
         "12",
-        "700"
+        "7"
       ],
       "answer": "12"
     },
@@ -21398,8 +21398,8 @@
       "question": "Wie viele Freistädte wurden in Israel ausgesondert?",
       "options": [
         "6",
-        "365",
-        "175",
+        "4",
+        "12",
         "Neun"
       ],
       "answer": "6"
@@ -21413,9 +21413,9 @@
       "question": "Wie viele Tage zogen die Israeliten insgesamt um Jericho?",
       "options": [
         "7",
-        "969",
-        "450",
-        "Vier"
+        "3",
+        "8",
+        "14"
       ],
       "answer": "7"
     },
@@ -21427,10 +21427,10 @@
       "difficulty": 1,
       "question": "Wie oft zog Israel am siebten Tag um Jericho?",
       "options": [
-        "Alle sieben Jahre",
-        "84",
+        "3",
+        "12",
         "7",
-        "180000"
+        "10"
       ],
       "answer": "7"
     },
@@ -21442,10 +21442,10 @@
       "difficulty": 1,
       "question": "Wie viele Priester trugen Posaunen um Jericho?",
       "options": [
-        "Dreitausend",
-        "7",
         "12",
-        "46"
+        "7",
+        "10",
+        "5"
       ],
       "answer": "7"
     },
@@ -21457,10 +21457,10 @@
       "difficulty": 1,
       "question": "Wie viele Steine richtete Josua aus dem Jordanbett auf?",
       "options": [
-        "Alle sieben Jahre",
-        "127",
+        "7",
+        "10",
         "12",
-        "1100"
+        "14"
       ],
       "answer": "12"
     },
@@ -21472,10 +21472,10 @@
       "difficulty": 2,
       "question": "Mit wie vielen Männern besiegte Gideon die Midianiter?",
       "options": [
-        "17",
+        "120",
         "300",
-        "180",
-        "4"
+        "200",
+        "500"
       ],
       "answer": "300"
     },
@@ -21487,10 +21487,10 @@
       "difficulty": 2,
       "question": "Wie viele Jahre führte Simson Israel?",
       "options": [
-        "147",
-        "5",
+        "12",
+        "40",
         "20",
-        "32000"
+        "15"
       ],
       "answer": "20"
     },
@@ -21502,9 +21502,9 @@
       "difficulty": 2,
       "question": "Wie viele Füchse fing Simson, um die Felder der Philister zu verbrennen?",
       "options": [
-        "einer",
-        "60",
         "150",
+        "200",
+        "500",
         "300"
       ],
       "answer": "300"
@@ -21518,9 +21518,9 @@
       "question": "Wie viele Männer erschlug Simson mit einem Eselskinnbacken?",
       "options": [
         "1000",
-        "24",
-        "12000",
-        "150"
+        "500",
+        "2000",
+        "800"
       ],
       "answer": "1000"
     },
@@ -21534,7 +21534,7 @@
       "options": [
         "40",
         "Zwanzig",
-        "450",
+        "Zweiunddreißig",
         "Dreißig"
       ],
       "answer": "40"
@@ -21547,9 +21547,9 @@
       "difficulty": 1,
       "question": "Wie viele Jahre regierte David insgesamt?",
       "options": [
-        "185000",
-        "150",
-        "110",
+        "33",
+        "25",
+        "50",
         "40"
       ],
       "answer": "40"
@@ -21562,10 +21562,10 @@
       "difficulty": 1,
       "question": "Wie viele Jahre regierte David in Hebron vor Jerusalem?",
       "options": [
-        "30",
-        "40",
+        "3",
+        "5",
         "7",
-        "Zehn"
+        "12"
       ],
       "answer": "7"
     },
@@ -21578,9 +21578,9 @@
       "question": "Wie viele glatte Steine wählte David aus dem Bach?",
       "options": [
         "6",
-        "950",
+        "3",
         "5",
-        "318"
+        "7"
       ],
       "answer": "5"
     },
@@ -21592,10 +21592,10 @@
       "difficulty": 1,
       "question": "Wie viele Jahre regierte Salomo über Israel?",
       "options": [
-        "180",
+        "30",
         "40",
-        "700",
-        "66"
+        "70",
+        "20"
       ],
       "answer": "40"
     },
@@ -21608,9 +21608,9 @@
       "question": "Wie viele Nebenfrauen hatte Salomo?",
       "options": [
         "300",
-        "3000",
+        "700",
         "150",
-        "Fünf"
+        "500"
       ],
       "answer": "300"
     },
@@ -21622,9 +21622,9 @@
       "difficulty": 2,
       "question": "Wie viele Sprüche redete Salomo (nach 1. Könige)?",
       "options": [
-        "480",
-        "153",
-        "Zwölf",
+        "1000",
+        "5000",
+        "2000",
         "3000"
       ],
       "answer": "3000"
@@ -21637,10 +21637,10 @@
       "difficulty": 2,
       "question": "Wie vielen Baalspropheten trat Elia am Berg Karmel entgegen?",
       "options": [
-        "930",
-        "32000",
+        "400",
+        "850",
         "450",
-        "6"
+        "300"
       ],
       "answer": "450"
     },
@@ -21653,9 +21653,9 @@
       "question": "Wie oft schaute Elias Diener nach Regen aus, bis eine Wolke erschien?",
       "options": [
         "9",
-        "119",
+        "5",
         "7",
-        "1260"
+        "12"
       ],
       "answer": "7"
     },
@@ -21668,9 +21668,9 @@
       "question": "Wie oft tauchte Naaman im Jordan unter, um geheilt zu werden?",
       "options": [
         "7",
-        "2. Korinther",
-        "18",
-        "185000"
+        "3",
+        "12",
+        "10"
       ],
       "answer": "7"
     },
@@ -21682,10 +21682,10 @@
       "difficulty": 2,
       "question": "Wie viele Jahre regierte Manasse über Juda?",
       "options": [
-        "Neunundneunzig",
-        "7",
+        "Einundvierzig",
+        "29",
         "55",
-        "7000"
+        "31"
       ],
       "answer": "55"
     },
@@ -21697,10 +21697,10 @@
       "difficulty": 1,
       "question": "Wie alt war Josia, als er König wurde?",
       "options": [
-        "127",
-        "120000",
+        "12",
+        "7",
         "8",
-        "3000"
+        "16"
       ],
       "answer": "8"
     },
@@ -21712,9 +21712,9 @@
       "difficulty": 1,
       "question": "Wie alt war Joasch, als er König wurde?",
       "options": [
-        "23",
-        "24",
-        "3",
+        "12",
+        "8",
+        "5",
         "7"
       ],
       "answer": "7"
@@ -21727,10 +21727,10 @@
       "difficulty": 1,
       "question": "Um wie viele Stufen ging der Sonnenschatten für Hiskia zurück?",
       "options": [
-        "700",
+        "7",
         "10",
-        "Vier",
-        "8"
+        "4",
+        "15"
       ],
       "answer": "10"
     },
@@ -21742,9 +21742,9 @@
       "difficulty": 2,
       "question": "Wie viele Jahre Exil in Babylon sagte Jeremia voraus?",
       "options": [
-        "66",
-        "5000",
-        "150",
+        "40",
+        "120",
+        "100",
         "70"
       ],
       "answer": "70"
@@ -21757,10 +21757,10 @@
       "difficulty": 2,
       "question": "In wie vielen Tagen wurde die Mauer Jerusalems unter Nehemia wieder aufgebaut?",
       "options": [
-        "39",
+        "40",
         "52",
-        "66",
-        "800000"
+        "70",
+        "30"
       ],
       "answer": "52"
     },
@@ -21772,9 +21772,9 @@
       "difficulty": 1,
       "question": "Wie viele Tage bat Ester die Juden zu fasten?",
       "options": [
-        "18",
-        "52",
-        "Dreißig",
+        "7",
+        "5",
+        "Zwei",
         "3"
       ],
       "answer": "3"
@@ -21787,10 +21787,10 @@
       "difficulty": 1,
       "question": "Wie viele Tage war Jona im Bauch des großen Fisches?",
       "options": [
-        "350",
+        "2",
         "3",
-        "400",
-        "180"
+        "7",
+        "5"
       ],
       "answer": "3"
     },
@@ -21802,10 +21802,10 @@
       "difficulty": 1,
       "question": "In wie vielen Tagen sollte Ninive nach Jonas Wort zerstört werden?",
       "options": [
-        "144000",
+        "30",
         "40",
-        "Vier",
-        "147"
+        "7",
+        "50"
       ],
       "answer": "40"
     },
@@ -21818,9 +21818,9 @@
       "question": "Wie viele Gerechte hätten Sodom in Abrahams letzter Bitte gerettet?",
       "options": [
         "Fünf",
-        "4",
+        "20",
         "10",
-        "Neunundneunzig"
+        "Sieben"
       ],
       "answer": "10"
     },
@@ -21832,10 +21832,10 @@
       "difficulty": 1,
       "question": "Wie viele Kinder hatte Hiob nach seiner Wiederherstellung?",
       "options": [
-        "119",
+        "7",
         "10",
-        "86",
-        "390"
+        "12",
+        "14"
       ],
       "answer": "10"
     },
@@ -21847,10 +21847,10 @@
       "difficulty": 2,
       "question": "Welcher Psalm ist das längste Kapitel der Bibel? Nenne seine Nummer.",
       "options": [
-        "17",
-        "Vierzig Jahre",
+        "117",
+        "100",
         "119",
-        "30"
+        "139"
       ],
       "answer": "119"
     },
@@ -21862,10 +21862,10 @@
       "difficulty": 1,
       "question": "Wie viele Jünger erwählte Jesus zu Aposteln?",
       "options": [
-        "480",
-        "46",
+        "10",
+        "7",
         "12",
-        "666"
+        "14"
       ],
       "answer": "12"
     },
@@ -21877,9 +21877,9 @@
       "difficulty": 1,
       "question": "Wie viele Körbe mit Resten blieben nach der Speisung der 5000?",
       "options": [
-        "110",
-        "365",
-        "einer",
+        "7",
+        "5",
+        "10",
         "12"
       ],
       "answer": "12"
@@ -21892,10 +21892,10 @@
       "difficulty": 1,
       "question": "Wie viele Körbe mit Resten blieben nach der Speisung der 4000?",
       "options": [
-        "52",
+        "5",
         "6",
         "7",
-        "3. Johannes"
+        "10"
       ],
       "answer": "7"
     },
@@ -21907,10 +21907,10 @@
       "difficulty": 1,
       "question": "Wie viele Brote speisten die Viertausend?",
       "options": [
-        "Dreitausend",
+        "Fünf",
         "7",
-        "55",
-        "38"
+        "Drei",
+        "Zwölf"
       ],
       "answer": "7"
     },
@@ -21922,10 +21922,10 @@
       "difficulty": 2,
       "question": "Wie viele tausend Männer speiste Jesus mit fünf Broten und zwei Fischen?",
       "options": [
-        "12",
+        "4000",
         "5000",
-        "12000",
-        "24"
+        "3000",
+        "7000"
       ],
       "answer": "5000"
     },
@@ -21937,10 +21937,10 @@
       "difficulty": 2,
       "question": "Wie viele Menschen speiste Jesus beim zweiten Speisungswunder (Männer)?",
       "options": [
-        "Vier",
+        "3000",
         "4000",
-        "110",
-        "84"
+        "5000",
+        "2000"
       ],
       "answer": "4000"
     },
@@ -21952,9 +21952,9 @@
       "difficulty": 2,
       "question": "Wie viele Fische fingen die Jünger beim großen Fang in Johannes 21?",
       "options": [
-        "180000",
-        "2000",
-        "32000",
+        "120",
+        "200",
+        "175",
         "153"
       ],
       "answer": "153"
@@ -21967,7 +21967,7 @@
       "difficulty": 1,
       "question": "Wie viele Jahre litt die blutflüssige Frau?",
       "options": [
-        "250",
+        "7",
         "Vier",
         "20",
         "12"
@@ -21982,10 +21982,10 @@
       "difficulty": 2,
       "question": "Wie viele Jahre war der Mann am Teich Betesda krank gewesen?",
       "options": [
-        "1",
-        "450",
+        "18",
+        "40",
         "38",
-        "20"
+        "12"
       ],
       "answer": "38"
     },
@@ -21998,9 +21998,9 @@
       "question": "Wie viele Aussätzige heilte Jesus auf einmal?",
       "options": [
         "10",
-        "250",
-        "66",
-        "1100"
+        "5",
+        "7",
+        "12"
       ],
       "answer": "10"
     },
@@ -22012,10 +22012,10 @@
       "difficulty": 1,
       "question": "Wie viele der zehn geheilten Aussätzigen kehrten zurück, um zu danken?",
       "options": [
-        "46",
+        "3",
         "2",
         "1",
-        "Dreißig"
+        "Vier"
       ],
       "answer": "1"
     },
@@ -22027,9 +22027,9 @@
       "difficulty": 1,
       "question": "Wie viele kluge Jungfrauen gab es im Gleichnis?",
       "options": [
-        "Neun",
+        "Sieben",
         "Vier",
-        "9",
+        "3",
         "5"
       ],
       "answer": "5"
@@ -22042,10 +22042,10 @@
       "difficulty": 1,
       "question": "Wie viele törichte Jungfrauen gab es im Gleichnis?",
       "options": [
-        "117",
-        "66",
+        "3",
+        "7",
         "5",
-        "153"
+        "10"
       ],
       "answer": "5"
     },
@@ -22057,9 +22057,9 @@
       "difficulty": 2,
       "question": "Wie viele Schafe ließ der Hirte zurück, um das eine zu suchen?",
       "options": [
-        "365",
-        "110",
-        "Sieben",
+        "90",
+        "100",
+        "49",
         "99"
       ],
       "answer": "99"
@@ -22072,10 +22072,10 @@
       "difficulty": 2,
       "question": "Wie viele Silberlinge erhielt Judas, um Jesus zu verraten?",
       "options": [
-        "70",
+        "40",
         "Zwanzig",
         "30",
-        "180000"
+        "50"
       ],
       "answer": "30"
     },
@@ -22087,10 +22087,10 @@
       "difficulty": 1,
       "question": "Wie oft verleugnete Petrus Jesus?",
       "options": [
-        "17",
+        "2",
         "3",
-        "180",
-        "tausend"
+        "4",
+        "7"
       ],
       "answer": "3"
     },
@@ -22102,10 +22102,10 @@
       "difficulty": 1,
       "question": "Wie oft soll man nach Jesus vergeben (siebzigmal diese Zahl)?",
       "options": [
-        "30",
+        "3",
         "7",
         "Zehn",
-        "66"
+        "12"
       ],
       "answer": "7"
     },
@@ -22117,9 +22117,9 @@
       "difficulty": 1,
       "question": "Wie viele Tage erschien Jesus seinen Jüngern nach der Auferstehung?",
       "options": [
-        "127",
-        "Dreißig",
-        "930",
+        "30",
+        "Fünfzig",
+        "50",
         "40"
       ],
       "answer": "40"
@@ -22132,10 +22132,10 @@
       "difficulty": 2,
       "question": "Wie viele wurden am Pfingsttag getauft?",
       "options": [
-        "17",
-        "einer",
+        "2000",
+        "5000",
         "3000",
-        "Neun"
+        "1500"
       ],
       "answer": "3000"
     },
@@ -22148,9 +22148,9 @@
       "question": "Wie viele Männer wurden in Apostelgeschichte 6 zum Dienst an den Tischen erwählt?",
       "options": [
         "7",
-        "Vierzig",
-        "180000",
-        "390"
+        "12",
+        "3",
+        "10"
       ],
       "answer": "7"
     },
@@ -22162,10 +22162,10 @@
       "difficulty": 1,
       "question": "Wie viele Tage war Saulus nach seiner Begegnung auf dem Weg nach Damaskus blind?",
       "options": [
-        "55",
+        "2",
         "3",
-        "6",
-        "Dreitausend"
+        "5",
+        "7"
       ],
       "answer": "3"
     },
@@ -22178,9 +22178,9 @@
       "question": "Wie viele Menschen überlebten den Schiffbruch mit Paulus?",
       "options": [
         "276",
-        "12",
-        "1. Johannes",
-        "350"
+        "150",
+        "300",
+        "200"
       ],
       "answer": "276"
     },
@@ -22192,10 +22192,10 @@
       "difficulty": 1,
       "question": "Wie viele Missionsreisen unternahm Paulus (nach der Apostelgeschichte)?",
       "options": [
-        "Neun",
+        "2",
         "3",
-        "86",
-        "Zwanzig"
+        "5",
+        "4"
       ],
       "answer": "3"
     },
@@ -22207,9 +22207,9 @@
       "difficulty": 1,
       "question": "Wie viele Gemeinden werden im Buch der Offenbarung angesprochen?",
       "options": [
-        "430",
-        "12000",
-        "39",
+        "5",
+        "12",
+        "10",
         "7"
       ],
       "answer": "7"
@@ -22222,9 +22222,9 @@
       "difficulty": 1,
       "question": "Wie viele Siegel sind auf der Buchrolle in der Offenbarung?",
       "options": [
-        "Sieben",
-        "24",
-        "84",
+        "Zwölf",
+        "10",
+        "12",
         "7"
       ],
       "answer": "7"
@@ -22237,10 +22237,10 @@
       "difficulty": 1,
       "question": "Wie viele Posaunen erklingen in der Offenbarung?",
       "options": [
-        "950",
-        "24",
+        "3",
+        "10",
         "7",
-        "17"
+        "4"
       ],
       "answer": "7"
     },
@@ -22252,10 +22252,10 @@
       "difficulty": 1,
       "question": "Wie viele Zornschalen Gottes werden in der Offenbarung ausgegossen?",
       "options": [
-        "250",
-        "318",
+        "10",
+        "12",
         "7",
-        "31"
+        "4"
       ],
       "answer": "7"
     },
@@ -22267,10 +22267,10 @@
       "difficulty": 2,
       "question": "Welche Zahl ist die Zahl des Tieres in der Offenbarung?",
       "options": [
-        "38",
+        "616",
         "666",
-        "Neun",
-        "einer"
+        "777",
+        "888"
       ],
       "answer": "666"
     },
@@ -22282,9 +22282,9 @@
       "difficulty": 1,
       "question": "Wie viele lebendige Wesen umgeben den Thron in der Offenbarung?",
       "options": [
-        "7000",
-        "Neunundneunzig",
-        "12000",
+        "7",
+        "Sechs",
+        "12",
         "4"
       ],
       "answer": "4"
@@ -22298,9 +22298,9 @@
       "question": "Wie viele wurden aus den Stämmen Israels in der Offenbarung versiegelt?",
       "options": [
         "144000",
-        "Sechs",
-        "15",
-        "666"
+        "120000",
+        "72000",
+        "100000"
       ],
       "answer": "144000"
     },
@@ -22314,8 +22314,8 @@
       "options": [
         "12",
         "24",
-        "100",
-        "84"
+        "7",
+        "10"
       ],
       "answer": "12"
     },
@@ -22327,10 +22327,10 @@
       "difficulty": 1,
       "question": "Wie viele Tage war Lazarus tot, bevor Jesus ihn auferweckte?",
       "options": [
-        "72",
+        "2",
         "4",
-        "86",
-        "950"
+        "3",
+        "7"
       ],
       "answer": "4"
     },
@@ -22342,9 +22342,9 @@
       "difficulty": 1,
       "question": "In welchem Alter blieb Jesus im Tempel zurück?",
       "options": [
-        "86",
-        "800000",
-        "119",
+        "8",
+        "16",
+        "10",
         "12"
       ],
       "answer": "12"
@@ -22357,10 +22357,10 @@
       "difficulty": 1,
       "question": "Wie viele Tage nach der Geburt wurde Jesus im Tempel dargestellt?",
       "options": [
-        "Fünf",
+        "8",
         "40",
-        "930",
-        "Vierzig Tage"
+        "30",
+        "60"
       ],
       "answer": "40"
     },
@@ -22372,9 +22372,9 @@
       "difficulty": 1,
       "question": "Wie viele Weise besuchten Jesus der Überlieferung nach (nach den Gaben)?",
       "options": [
-        "117",
-        "205",
-        "32000",
+        "2",
+        "5",
+        "7",
         "3"
       ],
       "answer": "3"
@@ -22387,10 +22387,10 @@
       "difficulty": 1,
       "question": "Wie viele Gaben brachten die Weisen Jesus?",
       "options": [
-        "Achtzehn",
+        "2",
         "3",
-        "17",
-        "66"
+        "5",
+        "7"
       ],
       "answer": "3"
     },
@@ -22402,10 +22402,10 @@
       "difficulty": 1,
       "question": "In wie vielen Tagen wollte Jesus den Tempel wieder aufbauen?",
       "options": [
-        "14",
-        "8",
+        "7",
+        "5",
         "3",
-        "2. Johannes"
+        "2"
       ],
       "answer": "3"
     },
@@ -22417,9 +22417,9 @@
       "difficulty": 1,
       "question": "Wie viele Stunden Finsternis bedeckten das Land bei der Kreuzigung?",
       "options": [
-        "117",
+        "6",
         "3",
-        "119",
+        "1",
         "2"
       ],
       "answer": "3"
@@ -22432,10 +22432,10 @@
       "difficulty": 1,
       "question": "Wie viele Verbrecher wurden mit Jesus gekreuzigt?",
       "options": [
-        "350",
-        "Zwei",
+        "3",
+        "Drei",
         "2",
-        "777"
+        "4"
       ],
       "answer": "2"
     },
@@ -22447,10 +22447,10 @@
       "difficulty": 1,
       "question": "Wie viele Jahre blieb Paulus etwa in Ephesus (Apostelgeschichte 19)?",
       "options": [
-        "10",
-        "7000",
+        "5",
+        "7",
         "3",
-        "800000"
+        "2"
       ],
       "answer": "3"
     },
@@ -22462,10 +22462,10 @@
       "difficulty": 2,
       "question": "Wie viele hatte Gott nach seinen Worten an Elia bewahrt, die sich nicht vor Baal gebeugt hatten?",
       "options": [
-        "6",
-        "350",
+        "3000",
+        "10000",
         "7000",
-        "Vier"
+        "5000"
       ],
       "answer": "7000"
     },
@@ -22477,10 +22477,10 @@
       "difficulty": 2,
       "question": "Wie viele wehrfähige Männer zählte Joab für Israel bei Davids Volkszählung?",
       "options": [
-        "2",
-        "70",
+        "500000",
+        "600000",
         "800000",
-        "Zwei"
+        "400000"
       ],
       "answer": "800000"
     },
@@ -22493,9 +22493,9 @@
       "question": "Wie viele Jahre nach dem Auszug aus Ägypten begann Salomo den Tempelbau (1. Könige 6)?",
       "options": [
         "480",
-        "Drei",
-        "180000",
-        "2000"
+        "400",
+        "600",
+        "300"
       ],
       "answer": "480"
     },
@@ -22507,9 +22507,9 @@
       "difficulty": 2,
       "question": "Wie viele Söhne hatte Gideon?",
       "options": [
-        "1",
+        "40",
         "50",
-        "153",
+        "60",
         "70"
       ],
       "answer": "70"
@@ -22522,9 +22522,9 @@
       "difficulty": 2,
       "question": "Wie viele Söhne Gideons tötete Abimelech?",
       "options": [
-        "365",
+        "50",
         "70",
-        "32000",
+        "40",
         "52"
       ],
       "answer": "70"
@@ -22538,9 +22538,9 @@
       "question": "Wie viele Richter werden im Buch der Richter beschrieben (überliefert)?",
       "options": [
         "12",
-        "1",
-        "18",
-        "120000"
+        "7",
+        "10",
+        "15"
       ],
       "answer": "12"
     },
@@ -22553,9 +22553,9 @@
       "question": "Wie viele Jahre hatte das Land Ruhe nach Deboras Sieg?",
       "options": [
         "40",
-        "Vierzig",
-        "Fünf",
-        "15"
+        "Zwanzig",
+        "Fünfzig",
+        "30"
       ],
       "answer": "40"
     },
@@ -22567,10 +22567,10 @@
       "difficulty": 1,
       "question": "Wie viele Söhne hatte Isai (David als jüngster)?",
       "options": [
-        "3. Johannes",
+        "5",
         "8",
-        "1100",
-        "450"
+        "10",
+        "12"
       ],
       "answer": "8"
     },
@@ -22583,9 +22583,9 @@
       "question": "Wie viele Helden hatte David (die berühmte Schar)?",
       "options": [
         "30",
-        "Vierzig Tage",
-        "Fünf",
-        "Zwanzig"
+        "12",
+        "20",
+        "40"
       ],
       "answer": "30"
     },
@@ -22597,9 +22597,9 @@
       "difficulty": 1,
       "question": "Wie viele Tage brauchte Gott, um die Welt zu erschaffen (Werktage)?",
       "options": [
-        "777",
-        "Acht",
-        "600 Jahre",
+        "3",
+        "5",
+        "8",
         "6"
       ],
       "answer": "6"
@@ -22612,9 +22612,9 @@
       "difficulty": 1,
       "question": "Wie viele Ströme flossen aus dem Garten Eden?",
       "options": [
-        "2. Johannes",
-        "13",
-        "147",
+        "3",
+        "7",
+        "2",
         "4"
       ],
       "answer": "4"
@@ -22628,9 +22628,9 @@
       "question": "Wie viele Menschen erweckte Jesus in den Evangelien von den Toten?",
       "options": [
         "3",
-        "3. Johannes",
-        "24",
-        "Vierzig Jahre"
+        "5",
+        "2",
+        "7"
       ],
       "answer": "3"
     },
@@ -22642,10 +22642,10 @@
       "difficulty": 1,
       "question": "Wie oft sagte Jesus seinen Tod und seine Auferstehung voraus (überliefert)?",
       "options": [
-        "30",
+        "2",
         "3",
-        "Acht",
-        "120000"
+        "4",
+        "7"
       ],
       "answer": "3"
     },
@@ -22657,9 +22657,9 @@
       "difficulty": 1,
       "question": "Wie viele Wehe rief Jesus in Matthäus 23 über die Pharisäer (überliefert)?",
       "options": [
-        "777",
-        "250",
-        "700",
+        "10",
+        "12",
+        "5",
         "7"
       ],
       "answer": "7"
@@ -22672,10 +22672,10 @@
       "difficulty": 2,
       "question": "Wie viele Bitten enthält das Vaterunser (überliefert)?",
       "options": [
-        "175",
-        "70",
+        "3",
+        "5",
         "7",
-        "24"
+        "10"
       ],
       "answer": "7"
     },
@@ -22687,10 +22687,10 @@
       "difficulty": 2,
       "question": "Wie viele Jahre war der Tempel zu Jesu Zeit im Bau (Johannes 2)?",
       "options": [
-        "144000",
+        "30",
         "46",
-        "2",
-        "250"
+        "70",
+        "40"
       ],
       "answer": "46"
     },
@@ -22703,9 +22703,9 @@
       "question": "Wie viele Krüge mit Wasser wurden in Kana zu Wein?",
       "options": [
         "6",
-        "Siebzig",
-        "24",
-        "Neunundneunzig"
+        "Vier",
+        "8",
+        "Zehn"
       ],
       "answer": "6"
     },
@@ -22717,10 +22717,10 @@
       "difficulty": 2,
       "question": "Wie viele der zwölf Stämme bildeten das Südreich Juda?",
       "options": [
-        "Dreitausend",
+        "4",
         "2",
-        "86",
-        "7000"
+        "3",
+        "6"
       ],
       "answer": "2"
     },
@@ -22733,8 +22733,8 @@
       "question": "Wie viele der zwölf Stämme bildeten das Nordreich Israel?",
       "options": [
         "10",
-        "Zwölf",
-        "700",
+        "12",
+        "7",
         "13"
       ],
       "answer": "10"
@@ -22749,8 +22749,8 @@
       "options": [
         "23",
         "15",
-        "666",
-        "Fünf"
+        "10",
+        "5"
       ],
       "answer": "15"
     },
@@ -22762,9 +22762,9 @@
       "difficulty": 2,
       "question": "Wie viele Männer bewaffnete Abraham, um Lot zu retten?",
       "options": [
-        "Siebzig",
-        "50",
-        "12",
+        "250",
+        "400",
+        "500",
         "318"
       ],
       "answer": "318"
@@ -22777,10 +22777,10 @@
       "difficulty": 2,
       "question": "Wie viele Söhne hatte Jakob mit Lea?",
       "options": [
-        "31",
-        "180",
+        "4",
+        "8",
         "6",
-        "Alle sieben Jahre"
+        "10"
       ],
       "answer": "6"
     },
@@ -22793,9 +22793,9 @@
       "question": "Wie viele der ursprünglichen Erwachsenen kamen außer Josua ins verheißene Land?",
       "options": [
         "2",
-        "400",
-        "31",
-        "2. Korinther"
+        "5",
+        "3",
+        "4"
       ],
       "answer": "2"
     },
@@ -22807,9 +22807,9 @@
       "difficulty": 2,
       "question": "Wie viele Lampen hatte der goldene Leuchter in der Stiftshütte?",
       "options": [
-        "969",
-        "Dreitausend",
-        "4000",
+        "3",
+        "5",
+        "12",
         "7"
       ],
       "answer": "7"
@@ -22822,9 +22822,9 @@
       "difficulty": 2,
       "question": "Wie viele Schaubrote wurden auf den Tisch gelegt?",
       "options": [
-        "600",
-        "1. Johannes",
-        "2000",
+        "7",
+        "10",
+        "24",
         "12"
       ],
       "answer": "12"
@@ -22837,10 +22837,10 @@
       "difficulty": 2,
       "question": "Wie viele Bretter bildeten die Südseite der Stiftshütte?",
       "options": [
-        "Dreißig",
+        "30",
         "20",
-        "120000",
-        "480"
+        "40",
+        "15"
       ],
       "answer": "20"
     },
@@ -22854,8 +22854,8 @@
       "options": [
         "30",
         "40",
-        "110",
-        "32000"
+        "25",
+        "35"
       ],
       "answer": "30"
     },
@@ -22867,9 +22867,9 @@
       "difficulty": 2,
       "question": "Wie alt war Josef, als er in die Sklaverei verkauft wurde?",
       "options": [
-        "1005",
-        "55",
-        "86",
+        "13",
+        "20",
+        "15",
         "17"
       ],
       "answer": "17"
@@ -22883,9 +22883,9 @@
       "question": "Wie viele Jahre dauerte die vorhergesagte Hungersnot, die Jakobs Familie nach Ägypten brachte?",
       "options": [
         "7",
-        "150",
-        "15",
-        "7000"
+        "3",
+        "12",
+        "10"
       ],
       "answer": "7"
     },
@@ -22897,10 +22897,10 @@
       "difficulty": 2,
       "question": "Wie viele Söhne hatte Aaron?",
       "options": [
-        "66",
+        "6",
         "4",
         "Sechs",
-        "180"
+        "3"
       ],
       "answer": "4"
     },
@@ -22912,10 +22912,10 @@
       "difficulty": 2,
       "question": "Wie viele Söhne Aarons starben, weil sie fremdes Feuer darbrachten?",
       "options": [
-        "Vierzig Jahre",
+        "4",
         "2",
         "6",
-        "3000"
+        "3"
       ],
       "answer": "2"
     },
@@ -22928,9 +22928,9 @@
       "question": "Alle wie viele Jahre war das Halljahr?",
       "options": [
         "50",
-        "55",
-        "390",
-        "1100"
+        "40",
+        "70",
+        "25"
       ],
       "answer": "50"
     },
@@ -22942,9 +22942,9 @@
       "difficulty": 2,
       "question": "Alle wie viele Tage wurde der Sabbat gehalten?",
       "options": [
-        "27",
-        "777",
-        "180000",
+        "5",
+        "10",
+        "3",
         "7"
       ],
       "answer": "7"
@@ -22957,10 +22957,10 @@
       "difficulty": 2,
       "question": "Alle wie viele Jahre ruhte das Land im Sabbatjahr?",
       "options": [
-        "Vierzig Jahre",
-        "800000",
+        "3",
+        "10",
         "7",
-        "13"
+        "5"
       ],
       "answer": "7"
     },
@@ -22973,9 +22973,9 @@
       "question": "Wie viele Feste setzte der HERR für Israel ein (jährliche Hauptfeste, überliefert)?",
       "options": [
         "12",
-        "84",
+        "3",
         "7",
-        "60"
+        "10"
       ],
       "answer": "7"
     },
@@ -22987,10 +22987,10 @@
       "difficulty": 2,
       "question": "Wie viele Tage dauerte das Fest der Ungesäuerten Brote?",
       "options": [
-        "tausend",
+        "3",
         "7",
-        "480",
-        "Fünf"
+        "10",
+        "5"
       ],
       "answer": "7"
     },
@@ -23002,9 +23002,9 @@
       "difficulty": 2,
       "question": "Wie oft im Jahr erschienen alle israelitischen Männer bei den Hauptfesten vor dem HERRN?",
       "options": [
-        "7000",
-        "12",
-        "66",
+        "2",
+        "7",
+        "4",
         "3"
       ],
       "answer": "3"
@@ -23017,10 +23017,10 @@
       "difficulty": 2,
       "question": "Wie viele Tage dauerte das Laubhüttenfest?",
       "options": [
-        "13",
+        "3",
         "7",
-        "700",
-        "4"
+        "8",
+        "14"
       ],
       "answer": "7"
     },
@@ -23032,9 +23032,9 @@
       "difficulty": 2,
       "question": "Wie oft im Jahr betrat der Hohepriester das Allerheiligste?",
       "options": [
-        "120000",
-        "52",
-        "Sieben",
+        "3",
+        "2",
+        "7",
         "1"
       ],
       "answer": "1"
@@ -23047,10 +23047,10 @@
       "difficulty": 2,
       "question": "Wie viele Böcke wurden am Versöhnungstag verwendet?",
       "options": [
+        "Drei",
         "Fünf",
-        "12000",
         "2",
-        "127"
+        "Sieben"
       ],
       "answer": "2"
     },
@@ -23062,9 +23062,9 @@
       "difficulty": 2,
       "question": "Wie viele Lämmer wurden täglich als regelmäßiges Brandopfer dargebracht?",
       "options": [
-        "430",
-        "147",
-        "1260",
+        "4",
+        "7",
+        "3",
         "2"
       ],
       "answer": "2"
@@ -23077,10 +23077,10 @@
       "difficulty": 2,
       "question": "Wie viele Tage nach der Geburt wurde ein neugeborener Junge beschnitten?",
       "options": [
-        "430",
+        "3",
         "10",
         "8",
-        "180000"
+        "7"
       ],
       "answer": "8"
     },
@@ -23092,8 +23092,8 @@
       "difficulty": 2,
       "question": "Wie viele Männer sandte Jesus zu zweit aus (die größere Gruppe, überliefert)?",
       "options": [
-        "Neunundneunzig",
-        "666",
+        "40",
+        "120",
         "Zwölf",
         "72"
       ],
@@ -23108,8 +23108,8 @@
       "question": "Wie viele Dämonen fuhren aus Maria Magdalena aus?",
       "options": [
         "12",
-        "Neunundneunzig",
-        "600",
+        "Drei",
+        "5",
         "7"
       ],
       "answer": "7"
@@ -23122,9 +23122,9 @@
       "difficulty": 2,
       "question": "Wie viele Brote wollte der Freund um Mitternacht in Jesu Gleichnis leihen?",
       "options": [
-        "Alle sieben Jahre",
-        "30",
-        "117",
+        "5",
+        "2",
+        "7",
         "3"
       ],
       "answer": "3"
@@ -23137,9 +23137,9 @@
       "difficulty": 2,
       "question": "Wie viele Talente erhielt der erste Knecht im Gleichnis von den Talenten?",
       "options": [
-        "777",
+        "7",
         "3",
-        "72",
+        "10",
         "5"
       ],
       "answer": "5"
@@ -23153,9 +23153,9 @@
       "question": "Wie viele Tage blieb Jesus noch dort, nachdem er hörte, dass Lazarus krank war?",
       "options": [
         "2",
-        "600",
-        "205",
-        "350"
+        "5",
+        "4",
+        "1"
       ],
       "answer": "2"
     },
@@ -23167,9 +23167,9 @@
       "difficulty": 2,
       "question": "Wie viele Maß fasste etwa jeder Krug in Kana (in Gallonen, etwa)?",
       "options": [
-        "600",
-        "1",
-        "12",
+        "20",
+        "15",
+        "45",
         "30"
       ],
       "answer": "30"
@@ -23182,10 +23182,10 @@
       "difficulty": 2,
       "question": "Wie viele Menschen waren vor Pfingsten im Obergemach (Apostelgeschichte 1, etwa)?",
       "options": [
-        "2",
-        "84",
+        "70",
+        "150",
         "120",
-        "Vierzig"
+        "200"
       ],
       "answer": "120"
     },
@@ -23199,8 +23199,8 @@
       "options": [
         "7",
         "4",
-        "Drei",
-        "400"
+        "3",
+        "12"
       ],
       "answer": "7"
     },
@@ -23213,9 +23213,9 @@
       "question": "Wie viele Jahre verbrachte Paulus unter Hausarrest in Rom (Ende der Apostelgeschichte)?",
       "options": [
         "2",
-        "1260",
-        "666",
-        "55"
+        "1",
+        "4",
+        "3"
       ],
       "answer": "2"
     },
@@ -23228,9 +23228,9 @@
       "question": "Wie viele Tagereisen war der Weg des Propheten Jona durch Ninive?",
       "options": [
         "3",
-        "tausend",
-        "1005",
-        "46"
+        "2",
+        "5",
+        "7"
       ],
       "answer": "3"
     },
@@ -23242,9 +23242,9 @@
       "difficulty": 2,
       "question": "Wie viele Kapitel hat das Buch Jona?",
       "options": [
-        "144000",
-        "390",
-        "4000",
+        "3",
+        "6",
+        "7",
         "4"
       ],
       "answer": "4"
@@ -23258,9 +23258,9 @@
       "question": "Wie viele Männer wurden in Daniel 3 in den Feuerofen geworfen?",
       "options": [
         "3",
-        "Zehn",
-        "666",
-        "200"
+        "Vier",
+        "7",
+        "2"
       ],
       "answer": "3"
     },
@@ -23272,9 +23272,9 @@
       "difficulty": 2,
       "question": "Wie oft am Tag betete Daniel in Richtung Jerusalem?",
       "options": [
-        "150",
-        "390",
-        "127",
+        "2",
+        "5",
+        "7",
         "3"
       ],
       "answer": "3"
@@ -23287,9 +23287,9 @@
       "difficulty": 2,
       "question": "Wie viele Tage dauerte Daniels Probe, nur Gemüse zu essen?",
       "options": [
-        "99",
-        "390",
-        "250",
+        "7",
+        "21",
+        "14",
         "10"
       ],
       "answer": "10"
@@ -23303,9 +23303,9 @@
       "question": "Wie viele 'Wochen' (Siebener) umfasst Daniels berühmte Weissagung in Daniel 9?",
       "options": [
         "70",
-        "Acht",
-        "350",
-        "276"
+        "Sieben",
+        "Hundert",
+        "Vierzig"
       ],
       "answer": "70"
     },
@@ -23317,10 +23317,10 @@
       "difficulty": 2,
       "question": "Wie viele Hörner hatte der Widder in Daniels Vision (Daniel 8)?",
       "options": [
-        "350",
+        "4",
         "2",
-        "12000",
-        "einer"
+        "7",
+        "3"
       ],
       "answer": "2"
     },
@@ -23332,9 +23332,9 @@
       "difficulty": 3,
       "question": "Wie viele Tage lag Hesekiel als Zeichen auf seiner linken Seite?",
       "options": [
-        "84",
-        "Alle sieben Jahre",
-        "Vierzig",
+        "150",
+        "300",
+        "40",
         "390"
       ],
       "answer": "390"
@@ -23347,10 +23347,10 @@
       "difficulty": 2,
       "question": "Wie viele Könige hatte das vereinte Königreich (Saul, David, Salomo)?",
       "options": [
-        "Zehn",
+        "5",
         "3",
-        "Vierzig Jahre",
-        "39"
+        "2",
+        "4"
       ],
       "answer": "3"
     },
@@ -23362,9 +23362,9 @@
       "difficulty": 2,
       "question": "Wie viele Söhne Davids sind in der Thronfolgegeschichte am bekanntesten (Amnon, Absalom, Adonija, Salomo)?",
       "options": [
-        "4000",
-        "Alle sieben Jahre",
-        "120 Jahre",
+        "7",
+        "3",
+        "6",
         "4"
       ],
       "answer": "4"
@@ -23377,10 +23377,10 @@
       "difficulty": 2,
       "question": "Wie viele Ellen hoch war das Bild, das Nebukadnezar aufstellte (Daniel 3)?",
       "options": [
-        "6",
-        "777",
+        "40",
+        "90",
         "60",
-        "einer"
+        "30"
       ],
       "answer": "60"
     },
@@ -23392,9 +23392,9 @@
       "difficulty": 2,
       "question": "Wie viele Ellen breit war Nebukadnezars goldenes Bild?",
       "options": [
-        "117",
-        "Neun",
-        "14",
+        "9",
+        "Drei",
+        "12",
         "6"
       ],
       "answer": "6"
@@ -23408,9 +23408,9 @@
       "question": "Wie viele Jahre Hungersnot überdauerten Mehl und Öl der Witwe von Sarepta etwa?",
       "options": [
         "3",
-        "Vierzig",
-        "10",
-        "55"
+        "Sieben",
+        "Zwei",
+        "Fünf"
       ],
       "answer": "3"
     },
@@ -23422,9 +23422,9 @@
       "difficulty": 1,
       "question": "Wie viele Personen umfasst die Dreieinigkeit?",
       "options": [
-        "40",
-        "4000",
-        "7000",
+        "2",
+        "4",
+        "7",
         "3"
       ],
       "answer": "3"
@@ -23437,10 +23437,10 @@
       "difficulty": 2,
       "question": "Wie viele Seligpreisungen gab Jesus in Matthäus 5 (überliefert)?",
       "options": [
-        "Achtzehn",
-        "120000",
+        "Zehn",
+        "12",
         "8",
-        "2. Johannes"
+        "6"
       ],
       "answer": "8"
     },
@@ -23452,10 +23452,10 @@
       "difficulty": 2,
       "question": "Wie viele Früchte des Geistes werden in Galater 5 aufgezählt?",
       "options": [
-        "14",
+        "7",
         "9",
-        "318",
-        "13"
+        "12",
+        "10"
       ],
       "answer": "9"
     },
@@ -23467,9 +23467,9 @@
       "difficulty": 2,
       "question": "Wie viele Tage war Saulus (Paulus) in Damaskus ohne Augenlicht, Speise und Trank?",
       "options": [
-        "480",
-        "180000",
-        "23",
+        "5",
+        "7",
+        "2",
         "3"
       ],
       "answer": "3"
@@ -23482,10 +23482,10 @@
       "difficulty": 2,
       "question": "Wie viele Tage betrauerten die Ägypter Jakob?",
       "options": [
-        "Dreitausend",
+        "40",
         "70",
-        "99",
-        "86"
+        "50",
+        "60"
       ],
       "answer": "70"
     },
@@ -23497,9 +23497,9 @@
       "difficulty": 2,
       "question": "Wie viele Söhne Israels werden als Häupter der zwölf Stämme genannt?",
       "options": [
-        "950",
-        "39",
-        "Acht",
+        "10",
+        "11",
+        "14",
         "12"
       ],
       "answer": "12"
@@ -23512,9 +23512,9 @@
       "difficulty": 2,
       "question": "Wie viele Plagen waren vergangen, bevor die Israeliten ihre Türpfosten kennzeichnen sollten?",
       "options": [
-        "9",
-        "66",
-        "Neun",
+        "7",
+        "12",
+        "Sieben",
         "10"
       ],
       "answer": "10"
@@ -23527,10 +23527,10 @@
       "difficulty": 2,
       "question": "Wie viele Kundschafter sandte Josua nach Jericho?",
       "options": [
-        "32000",
+        "3",
         "2",
-        "tausend",
-        "13"
+        "5",
+        "12"
       ],
       "answer": "2"
     },
@@ -23542,9 +23542,9 @@
       "difficulty": 3,
       "question": "Wie viele Könige besiegte Josua bei der Eroberung Kanaans (überliefert)?",
       "options": [
-        "2. Johannes",
-        "700",
-        "600",
+        "24",
+        "40",
+        "12",
         "31"
       ],
       "answer": "31"
@@ -23557,9 +23557,9 @@
       "difficulty": 3,
       "question": "Mit wie vielen Männern begann Gideon, bevor Gott das Heer verkleinerte?",
       "options": [
-        "6",
-        "480",
-        "120000",
+        "22000",
+        "40000",
+        "12000",
         "32000"
       ],
       "answer": "32000"
@@ -23572,9 +23572,9 @@
       "difficulty": 3,
       "question": "Wie viele Männer leckten Wasser wie ein Hund und wurden von Gideon behalten?",
       "options": [
-        "3",
-        "Dreitausend",
-        "390",
+        "150",
+        "200",
+        "500",
         "300"
       ],
       "answer": "300"
@@ -23588,9 +23588,9 @@
       "question": "Wie viele Benjaminiter überlebten die Schlacht in Richter 20?",
       "options": [
         "600",
-        "1005",
-        "147",
-        "120"
+        "400",
+        "700",
+        "300"
       ],
       "answer": "600"
     },
@@ -23603,9 +23603,9 @@
       "question": "Wie viele Silberstücke bot jeder Philisterfürst Delila für den Verrat Simsons?",
       "options": [
         "1100",
-        "Dreißig",
-        "24",
-        "480"
+        "900",
+        "1500",
+        "600"
       ],
       "answer": "1100"
     },
@@ -23617,10 +23617,10 @@
       "difficulty": 2,
       "question": "Wie viele Söhne hatte Jakobs Sohn Josef in Ägypten?",
       "options": [
-        "1000",
+        "1",
         "2",
-        "666",
-        "600 Jahre"
+        "3",
+        "4"
       ],
       "answer": "2"
     },
@@ -24787,9 +24787,9 @@
       "difficulty": 2,
       "question": "Wie viele Jahre aßen die Israeliten Manna in der Wüste?",
       "options": [
-        "700",
-        "777",
-        "60",
+        "30",
+        "70",
+        "50",
         "40"
       ],
       "answer": "40"
@@ -24802,10 +24802,10 @@
       "difficulty": 2,
       "question": "Wie viele Jünger sandte Jesus bei der ersten Aussendung zu zweit aus (die Zwölf)?",
       "options": [
-        "180",
+        "7",
         "12",
-        "2",
-        "4000"
+        "10",
+        "14"
       ],
       "answer": "12"
     },
@@ -24817,9 +24817,9 @@
       "difficulty": 3,
       "question": "Wie viele beteten vor Pfingsten im Obergemach?",
       "options": [
-        "15",
-        "250",
-        "2. Korinther",
+        "70",
+        "90",
+        "150",
         "120"
       ],
       "answer": "120"
@@ -24832,10 +24832,10 @@
       "difficulty": 1,
       "question": "Wie viele Bücher schrieb der Apostel Johannes im Neuen Testament (Evangelium, Briefe, Offenbarung)?",
       "options": [
-        "17",
+        "3",
         "5",
-        "Siebzig",
-        "Vierzig Jahre"
+        "Sieben",
+        "Vier"
       ],
       "answer": "5"
     },
@@ -24847,10 +24847,10 @@
       "difficulty": 2,
       "question": "Wie oft fiel Jesus der Überlieferung nach beim Tragen des Kreuzes?",
       "options": [
-        "147",
+        "7",
         "3",
-        "18",
-        "23"
+        "5",
+        "2"
       ],
       "answer": "3"
     },
@@ -24862,10 +24862,10 @@
       "difficulty": 3,
       "question": "Wie alt war die Prophetin Hanna etwa, als sie im Tempel diente?",
       "options": [
-        "40",
-        "30",
+        "77",
+        "90",
         "84",
-        "Alle sieben Jahre"
+        "99"
       ],
       "answer": "84"
     },
@@ -24877,10 +24877,10 @@
       "difficulty": 2,
       "question": "Wie viele Menschen nahm Jesus mit in das Haus des Jaïrus, um das Mädchen aufzuerwecken?",
       "options": [
-        "Alle sieben Jahre",
+        "5",
         "3",
-        "120",
-        "666"
+        "7",
+        "2"
       ],
       "answer": "3"
     },
@@ -24892,10 +24892,10 @@
       "difficulty": 3,
       "question": "Wie viele Jahre war die gekrümmte Frau verkrüppelt, bevor Jesus sie heilte?",
       "options": [
-        "350",
-        "969",
+        "12",
+        "30",
         "18",
-        "120 Jahre"
+        "8"
       ],
       "answer": "18"
     },
@@ -24907,10 +24907,10 @@
       "difficulty": 3,
       "question": "Wie viele Denare betrug die Schuld des Mitknechts im Gleichnis vom unbarmherzigen Knecht?",
       "options": [
-        "66",
+        "50",
         "100",
-        "13",
-        "950"
+        "75",
+        "150"
       ],
       "answer": "100"
     },
@@ -24922,10 +24922,10 @@
       "difficulty": 2,
       "question": "Wie viele Stunden hat der Tag nach Jesu Frage in Johannes 11?",
       "options": [
-        "1000",
-        "46",
+        "10",
+        "24",
         "12",
-        "Dreißig"
+        "Sieben"
       ],
       "answer": "12"
     },
@@ -35677,10 +35677,10 @@
       "difficulty": 3,
       "question": "Über wie viele Provinzen herrschte König Ahasveros von Indien bis Kusch?",
       "options": [
-        "15",
-        "3",
+        "100",
+        "150",
         "127",
-        "18"
+        "70"
       ],
       "answer": "127"
     },
@@ -35693,9 +35693,9 @@
       "question": "Wie viele Tage dauerte das große Eröffnungsfest des Ahasveros?",
       "options": [
         "180",
-        "250",
-        "5",
-        "86"
+        "120",
+        "90",
+        "150"
       ],
       "answer": "180"
     },
@@ -35707,10 +35707,10 @@
       "difficulty": 3,
       "question": "Wie viele Ellen hoch war der Galgen, den Haman für Mordechai baute?",
       "options": [
-        "Zwölf",
+        "30",
         "50",
-        "700",
-        "2. Korinther"
+        "60",
+        "40"
       ],
       "answer": "50"
     },
@@ -35722,10 +35722,10 @@
       "difficulty": 3,
       "question": "Wie viele Ellen lang war der Tempel, den Salomo baute?",
       "options": [
-        "13",
-        "153",
+        "40",
+        "80",
         "60",
-        "7000"
+        "100"
       ],
       "answer": "60"
     },
@@ -35738,9 +35738,9 @@
       "question": "Wie viele Ellen hoch waren die bronzenen Säulen Jachin und Boas?",
       "options": [
         "18",
-        "205",
-        "350",
-        "200"
+        "12",
+        "30",
+        "25"
       ],
       "answer": "18"
     },
@@ -35752,10 +35752,10 @@
       "difficulty": 3,
       "question": "Wie viele bronzene Rinder trugen das große Meer in Salomos Tempel?",
       "options": [
-        "480",
-        "100",
+        "10",
+        "8",
         "12",
-        "Vier"
+        "4"
       ],
       "answer": "12"
     },
@@ -35767,8 +35767,8 @@
       "difficulty": 3,
       "question": "Wie viele Jahre brauchte Salomo, um seinen eigenen Palast zu bauen?",
       "options": [
-        "1260",
-        "450",
+        "7",
+        "20",
         "13",
         "17"
       ],
@@ -35782,10 +35782,10 @@
       "difficulty": 3,
       "question": "Wie viele Talente Gold kamen Salomo in einem einzigen Jahr zu?",
       "options": [
-        "117",
+        "400",
         "666",
-        "55",
-        "5"
+        "500",
+        "888"
       ],
       "answer": "666"
     },
@@ -35797,9 +35797,9 @@
       "difficulty": 3,
       "question": "Wie viele Lieder dichtete Salomo nach 1. Könige?",
       "options": [
-        "Siebzig",
-        "20",
-        "40",
+        "750",
+        "500",
+        "2000",
         "1005"
       ],
       "answer": "1005"
@@ -35813,9 +35813,9 @@
       "question": "Wie viele Städte gab Salomo an Hiram von Tyrus?",
       "options": [
         "20",
-        "7",
-        "700",
-        "3"
+        "10",
+        "30",
+        "15"
       ],
       "answer": "20"
     },
@@ -35827,10 +35827,10 @@
       "difficulty": 3,
       "question": "Wie viele auserlesene Wagen nahm der Pharao, um Israel zu verfolgen?",
       "options": [
-        "205",
+        "300",
         "600",
-        "46",
-        "einer"
+        "900",
+        "400"
       ],
       "answer": "600"
     },
@@ -35842,10 +35842,10 @@
       "difficulty": 3,
       "question": "Wie groß war Goliat, in Ellen und einer Spanne (die Ellenzahl)?",
       "options": [
-        "3. Johannes",
+        "4",
         "6",
-        "Neunundneunzig",
-        "23"
+        "9",
+        "8"
       ],
       "answer": "6"
     },
@@ -35857,10 +35857,10 @@
       "difficulty": 3,
       "question": "Wie viele Schekel wog die Spitze von Goliats Speer?",
       "options": [
-        "Sechs",
-        "150",
+        "400",
+        "300",
         "600",
-        "276"
+        "800"
       ],
       "answer": "600"
     },
@@ -35873,9 +35873,9 @@
       "question": "Wie viele Jahre diente Jakob Laban, um Rahel zu heiraten (insgesamt)?",
       "options": [
         "14",
-        "66",
-        "430",
-        "60"
+        "7",
+        "21",
+        "10"
       ],
       "answer": "14"
     },
@@ -35887,9 +35887,9 @@
       "difficulty": 3,
       "question": "Wie viele Jahre lebte Noah nach der Flut?",
       "options": [
-        "Dreißig",
-        "Zehn",
-        "12",
+        "200",
+        "400",
+        "300",
         "350"
       ],
       "answer": "350"
@@ -35902,10 +35902,10 @@
       "difficulty": 3,
       "question": "Wie alt war Terach, als er in Haran starb?",
       "options": [
-        "2000",
+        "175",
         "205",
-        "70",
-        "600"
+        "120",
+        "240"
       ],
       "answer": "205"
     },
@@ -35918,8 +35918,8 @@
       "question": "Wie alt wurde Lamech, der Vater Noahs?",
       "options": [
         "930",
-        "39",
-        "Vierzig Tage",
+        "600",
+        "500",
         "777"
       ],
       "answer": "777"
@@ -35933,9 +35933,9 @@
       "question": "Wie viele Söhne wurden David in Hebron geboren?",
       "options": [
         "6",
-        "300",
-        "84",
-        "20"
+        "4",
+        "8",
+        "10"
       ],
       "answer": "6"
     },
@@ -35947,8 +35947,8 @@
       "difficulty": 3,
       "question": "Wie viele Aussätzige saßen während der Hungersnot am Tor von Samaria?",
       "options": [
-        "27",
-        "70",
+        "7",
+        "2",
         "3",
         "4"
       ],
@@ -35962,9 +35962,9 @@
       "difficulty": 3,
       "question": "Wie viele Propheten versteckte Obadja in Höhlen vor Isebel?",
       "options": [
-        "147",
-        "1. Johannes",
-        "Vierzig Jahre",
+        "150",
+        "50",
+        "200",
         "100"
       ],
       "answer": "100"
@@ -35977,8 +35977,8 @@
       "difficulty": 3,
       "question": "Wie viele Jahre dauerte die Dürre zur Zeit Elias?",
       "options": [
-        "144000",
-        "1260",
+        "7",
+        "5",
         "10",
         "3"
       ],
@@ -35992,9 +35992,9 @@
       "difficulty": 3,
       "question": "Wie viele Jahre regierte König Usija in Jerusalem?",
       "options": [
-        "8",
-        "1260",
-        "Acht",
+        "40",
+        "29",
+        "Einundsechzig",
         "52"
       ],
       "answer": "52"
@@ -36007,10 +36007,10 @@
       "difficulty": 3,
       "question": "Wie viele Menschen tötete Simson bei seiner letzten Tat, mehr als in seinem Leben?",
       "options": [
-        "9",
-        "1",
+        "2000",
+        "1500",
         "3000",
-        "930"
+        "5000"
       ],
       "answer": "3000"
     },
@@ -36022,10 +36022,10 @@
       "difficulty": 3,
       "question": "Wie viele Männer aus Juda und Benjamin sammelte Rehabeam, um gegen Israel zu kämpfen?",
       "options": [
-        "Zwei",
-        "1005",
+        "120000",
+        "250000",
         "180000",
-        "800000"
+        "300000"
       ],
       "answer": "180000"
     },
@@ -36037,9 +36037,9 @@
       "difficulty": 3,
       "question": "Wie viele Jahre sollten die Israeliten nach Gottes Wort an Abraham in Ägypten dienen?",
       "options": [
-        "24",
-        "777",
-        "12000",
+        "300",
+        "500",
+        "430",
         "400"
       ],
       "answer": "400"
@@ -36052,9 +36052,9 @@
       "difficulty": 2,
       "question": "Wie viele Gerechte hätten Sodom in Abrahams letzter Bitte verschont?",
       "options": [
+        "5",
         "14",
-        "120 Jahre",
-        "153",
+        "20",
         "10"
       ],
       "answer": "10"
@@ -36067,10 +36067,10 @@
       "difficulty": 3,
       "question": "Wie viele Söhne Jakobs gebar Rahel?",
       "options": [
-        "180000",
+        "4",
         "2",
-        "Vierzig Tage",
-        "27"
+        "6",
+        "3"
       ],
       "answer": "2"
     },
@@ -36083,9 +36083,9 @@
       "question": "Wie alt war Josef, als er in Ägypten starb?",
       "options": [
         "110",
-        "60",
-        "400",
-        "250"
+        "120",
+        "99",
+        "137"
       ],
       "answer": "110"
     },
@@ -36097,10 +36097,10 @@
       "difficulty": 1,
       "question": "Wie viele Plagen sandte Gott über Ägypten?",
       "options": [
-        "1000",
+        "7",
         "10",
-        "70",
-        "119"
+        "12",
+        "14"
       ],
       "answer": "10"
     },
@@ -36113,9 +36113,9 @@
       "question": "Wie viele Bretter bildeten die Südseite der Stiftshütte?",
       "options": [
         "20",
-        "1100",
         "10",
-        "600 Jahre"
+        "16",
+        "30"
       ],
       "answer": "20"
     },
@@ -36127,9 +36127,9 @@
       "difficulty": 3,
       "question": "Aus wie vielen Teppichen feiner Leinwand bestand die Stiftshütte?",
       "options": [
-        "Sieben",
-        "400",
-        "3. Johannes",
+        "7",
+        "12",
+        "8",
         "10"
       ],
       "answer": "10"
@@ -36144,8 +36144,8 @@
       "options": [
         "6",
         "3",
-        "Alle sieben Jahre",
-        "2. Korinther"
+        "4",
+        "8"
       ],
       "answer": "6"
     },
@@ -36157,8 +36157,8 @@
       "difficulty": 3,
       "question": "Wie viele Gedenksteine waren auf dem Brustschild des Hohepriesters?",
       "options": [
-        "Neun",
-        "150",
+        "Zehn",
+        "Sieben",
         "Acht",
         "12"
       ],
@@ -36172,10 +36172,10 @@
       "difficulty": 3,
       "question": "Wie viele Tage erkundeten die Kundschafter das Land Kanaan?",
       "options": [
-        "365",
+        "30",
         "40",
-        "153",
-        "52"
+        "50",
+        "20"
       ],
       "answer": "40"
     },
@@ -36187,10 +36187,10 @@
       "difficulty": 3,
       "question": "Wie viele Männer aus Korachs Aufstand verzehrte das Feuer?",
       "options": [
-        "Siebzig",
+        "100",
         "250",
-        "17",
-        "120 Jahre"
+        "150",
+        "400"
       ],
       "answer": "250"
     },
@@ -36203,9 +36203,9 @@
       "question": "Wie oft wich Bileams Eselin aus, bevor sie sprach?",
       "options": [
         "3",
-        "2. Johannes",
-        "Sieben",
-        "7000"
+        "5",
+        "7",
+        "2"
       ],
       "answer": "3"
     },
@@ -36217,9 +36217,9 @@
       "difficulty": 3,
       "question": "Wie viele Altäre ließ Balak für Bileam bauen (je sieben)?",
       "options": [
-        "205",
-        "2. Johannes",
-        "23",
+        "5",
+        "12",
+        "10",
         "7"
       ],
       "answer": "7"
@@ -36232,10 +36232,10 @@
       "difficulty": 3,
       "question": "Wie viele Könige besiegte Josua westlich des Jordan?",
       "options": [
-        "Vierzig Jahre",
+        "20",
         "31",
-        "1005",
-        "Vierzig"
+        "45",
+        "Achtundzwanzig"
       ],
       "answer": "31"
     },
@@ -36247,10 +36247,10 @@
       "difficulty": 3,
       "question": "Wie viele Männer von Ai wurden herausgelockt und durch Josuas Hinterhalt besiegt?",
       "options": [
-        "Zehn",
+        "8000",
         "12000",
-        "350",
-        "969"
+        "10000",
+        "15000"
       ],
       "answer": "12000"
     },
@@ -36262,10 +36262,10 @@
       "difficulty": 3,
       "question": "Wie viele Jahre hatte das Land Ruhe, nachdem Otniël Israel befreit hatte?",
       "options": [
-        "Vierzig Tage",
-        "200",
+        "20",
+        "80",
         "40",
-        "1260"
+        "50"
       ],
       "answer": "40"
     },
@@ -36278,9 +36278,9 @@
       "question": "Wie viele Söhne Gideons ermordete Abimelech auf einem Stein?",
       "options": [
         "70",
-        "18",
-        "38",
-        "Vierzig Jahre"
+        "50",
+        "40",
+        "90"
       ],
       "answer": "70"
     },
@@ -36293,9 +36293,9 @@
       "question": "Wie viele Jahre richtete Eli Israel?",
       "options": [
         "40",
-        "175",
-        "39",
-        "Dreißig"
+        "20",
+        "60",
+        "30"
       ],
       "answer": "40"
     },
@@ -36307,9 +36307,9 @@
       "difficulty": 3,
       "question": "Wie viele Monate blieb die Lade Gottes bei den Philistern?",
       "options": [
-        "23",
-        "276",
-        "180000",
+        "3",
+        "5",
+        "12",
         "7"
       ],
       "answer": "7"
@@ -36324,8 +36324,8 @@
       "options": [
         "7",
         "10",
-        "1. Korinther",
-        "50"
+        "5",
+        "12"
       ],
       "answer": "7"
     },
@@ -36338,9 +36338,9 @@
       "question": "Wie viele Männer zählte Davids Elitetruppe, 'die Dreißig' genannt?",
       "options": [
         "30",
-        "5000",
-        "300",
-        "Drei"
+        "12",
+        "40",
+        "Sieben"
       ],
       "answer": "30"
     },
@@ -36352,10 +36352,10 @@
       "difficulty": 2,
       "question": "Wie viele Jahre regierte David insgesamt?",
       "options": [
-        "430",
-        "7",
+        "33",
+        "25",
         "40",
-        "1000"
+        "50"
       ],
       "answer": "40"
     },
@@ -36367,10 +36367,10 @@
       "difficulty": 3,
       "question": "Wie viele waren nach Elias Wort übrig, die sich nicht vor Baal gebeugt hatten?",
       "options": [
-        "99",
-        "318",
+        "3000",
+        "10000",
         "7000",
-        "3. Johannes"
+        "5000"
       ],
       "answer": "7000"
     },
@@ -36382,7 +36382,7 @@
       "difficulty": 3,
       "question": "Wie viele Krüge Wasser wurden über Elias Altar gegossen (je vier, dreimal)?",
       "options": [
-        "tausend",
+        "7",
         "15",
         "12",
         "Neun"
@@ -36397,9 +36397,9 @@
       "difficulty": 3,
       "question": "Um wie viele Stufen ging der Schatten als Zeichen für Hiskia zurück?",
       "options": [
-        "1. Johannes",
-        "Zehn",
-        "40",
+        "5",
+        "Fünfzehn",
+        "7",
         "10"
       ],
       "answer": "10"
@@ -36412,10 +36412,10 @@
       "difficulty": 3,
       "question": "Wie viele Männer des assyrischen Heeres schlug der Engel in einer Nacht?",
       "options": [
-        "12",
-        "4000",
+        "120000",
+        "200000",
         "185000",
-        "1. Korinther"
+        "150000"
       ],
       "answer": "185000"
     },
@@ -36428,9 +36428,9 @@
       "question": "Wie viele Jahre Exil in Babylon sagte Jeremia voraus?",
       "options": [
         "70",
-        "39",
-        "2",
-        "38"
+        "40",
+        "100",
+        "50"
       ],
       "answer": "70"
     },
@@ -36443,9 +36443,9 @@
       "question": "Wie viele Satrapen setzte Darius über das Königreich (Daniel 6)?",
       "options": [
         "120",
-        "Drei",
-        "Sieben",
-        "72"
+        "70",
+        "100",
+        "150"
       ],
       "answer": "120"
     },
@@ -36458,9 +36458,9 @@
       "question": "Wie viele Tage und Nächte war Jona im großen Fisch?",
       "options": [
         "3",
-        "350",
+        "7",
         "5",
-        "119"
+        "2"
       ],
       "answer": "3"
     },
@@ -36472,9 +36472,9 @@
       "difficulty": 3,
       "question": "Wie viele Menschen in Ninive konnten nach Gottes Wort nicht Rechts und Links unterscheiden?",
       "options": [
-        "600 Jahre",
-        "10",
-        "2000",
+        "80000",
+        "150000",
+        "60000",
         "120000"
       ],
       "answer": "120000"
@@ -36487,10 +36487,10 @@
       "difficulty": 3,
       "question": "Wie viele Jahre war die Frau verkrümmt, bevor Jesus sie heilte?",
       "options": [
-        "52",
-        "185000",
+        "12",
+        "30",
         "18",
-        "tausend"
+        "8"
       ],
       "answer": "18"
     },
@@ -36503,9 +36503,9 @@
       "question": "Wie viele Männer speiste Jesus mit sieben Broten und einigen Fischen?",
       "options": [
         "3000",
-        "120000",
+        "5000",
         "4000",
-        "Acht"
+        "2000"
       ],
       "answer": "4000"
     },
@@ -36517,9 +36517,9 @@
       "difficulty": 3,
       "question": "Wie viele Körbe mit Brocken blieben nach der Speisung der Viertausend übrig?",
       "options": [
-        "17",
-        "1260",
-        "24",
+        "12",
+        "5",
+        "3",
         "7"
       ],
       "answer": "7"
@@ -36532,10 +36532,10 @@
       "difficulty": 3,
       "question": "Wie viele große Fische fingen die Jünger in Johannes 21?",
       "options": [
-        "einer",
+        "120",
         "153",
-        "180000",
-        "46"
+        "200",
+        "276"
       ],
       "answer": "153"
     },
@@ -36548,9 +36548,9 @@
       "question": "Wie viele Aussätzige heilte Jesus, von denen einer zurückkehrte?",
       "options": [
         "10",
-        "175",
+        "7",
         "12",
-        "Vierzig"
+        "Fünf"
       ],
       "answer": "10"
     },
@@ -36562,9 +36562,9 @@
       "difficulty": 2,
       "question": "Wie oft soll man nach Jesus vergeben, siebzigmal so viel?",
       "options": [
-        "350",
-        "23",
-        "700",
+        "3",
+        "10",
+        "12",
         "7"
       ],
       "answer": "7"
@@ -36577,10 +36577,10 @@
       "difficulty": 3,
       "question": "Wie viele Schweine stürzten sich etwa ins Meer, als Legion ausfuhr?",
       "options": [
-        "70",
-        "120 Jahre",
+        "1000",
+        "3000",
         "2000",
-        "6"
+        "1500"
       ],
       "answer": "2000"
     },
@@ -36593,9 +36593,9 @@
       "question": "Wie viele Jahre litt die Frau mit dem Blutfluss?",
       "options": [
         "12",
-        "3",
-        "6",
-        "66"
+        "7",
+        "10",
+        "14"
       ],
       "answer": "12"
     },
@@ -36607,10 +36607,10 @@
       "difficulty": 3,
       "question": "Wie alt war die Tochter des Jaïrus, die Jesus auferweckte?",
       "options": [
-        "666",
-        "110",
+        "7",
+        "16",
         "12",
-        "100"
+        "10"
       ],
       "answer": "12"
     },
@@ -36623,9 +36623,9 @@
       "question": "Wie viele Brote benutzte Jesus, um die Fünftausend zu speisen?",
       "options": [
         "5",
-        "1260",
-        "1",
-        "66"
+        "3",
+        "7",
+        "12"
       ],
       "answer": "5"
     },
@@ -36637,10 +36637,10 @@
       "difficulty": 3,
       "question": "Wie viele Jahre war der Tempel zu Jesu Zeit im Bau (so sagten die Juden)?",
       "options": [
-        "2000",
-        "46",
         "30",
-        "60"
+        "46",
+        "60",
+        "70"
       ],
       "answer": "46"
     },
@@ -36652,10 +36652,10 @@
       "difficulty": 2,
       "question": "Wie viele Tage erschien Jesus nach seiner Auferstehung, bevor er auffuhr?",
       "options": [
-        "6",
-        "300",
+        "30",
+        "50",
         "40",
-        "1. Korinther"
+        "80"
       ],
       "answer": "40"
     },
@@ -36667,10 +36667,10 @@
       "difficulty": 3,
       "question": "Wie viele Menschen waren mit Paulus auf dem Schiff, als es zerbrach?",
       "options": [
-        "8",
-        "5",
+        "153",
+        "300",
         "276",
-        "40"
+        "200"
       ],
       "answer": "276"
     },
@@ -36682,9 +36682,9 @@
       "difficulty": 3,
       "question": "Wie viele Tage tobte der Sturm vor Paulus' Schiffbruch (ohne Sonne und Sterne)?",
       "options": [
-        "Vier",
-        "800000",
-        "318",
+        "Sieben",
+        "Zehn",
+        "Einundzwanzig",
         "14"
       ],
       "answer": "14"
@@ -36697,8 +36697,8 @@
       "difficulty": 3,
       "question": "Wie viele Söhne des Skevas wurden von einem bösen Geist überwältigt?",
       "options": [
-        "147",
-        "32000",
+        "5",
+        "3",
         "Sechs",
         "7"
       ],
@@ -36712,10 +36712,10 @@
       "difficulty": 3,
       "question": "Wie viele Jahre lehrte Paulus in Ephesus?",
       "options": [
-        "86",
+        "2",
         "3",
-        "2. Johannes",
-        "4000"
+        "5",
+        "7"
       ],
       "answer": "3"
     },
@@ -36728,9 +36728,9 @@
       "question": "Wie viele Älteste sitzen um den Thron Gottes in der Offenbarung?",
       "options": [
         "24",
-        "777",
-        "1. Johannes",
-        "86"
+        "12",
+        "20",
+        "30"
       ],
       "answer": "24"
     },
@@ -36742,10 +36742,10 @@
       "difficulty": 3,
       "question": "Wie viele Tage weissagten die zwei Zeugen der Offenbarung?",
       "options": [
-        "4",
-        "31",
+        "1000",
+        "1290",
         "1260",
-        "150"
+        "2300"
       ],
       "answer": "1260"
     },
@@ -36757,9 +36757,9 @@
       "difficulty": 1,
       "question": "Wie viele Tage brauchte Gott, um die Welt zu erschaffen, bevor er ruhte?",
       "options": [
-        "30",
-        "600 Jahre",
-        "Neun",
+        "7",
+        "3",
+        "8",
         "6"
       ],
       "answer": "6"
@@ -36773,9 +36773,9 @@
       "question": "An welchem Tag schuf Gott die großen Lichter, Sonne und Mond?",
       "options": [
         "4",
-        "Zwanzig",
-        "250",
-        "Zwölf"
+        "Zwei",
+        "Sechs",
+        "Drei"
       ],
       "answer": "4"
     },
@@ -36788,9 +36788,9 @@
       "question": "Wie viele Menschen wurden durch die Wasser in Noahs Arche gerettet?",
       "options": [
         "8",
-        "110",
-        "400",
-        "205"
+        "6",
+        "12",
+        "4"
       ],
       "answer": "8"
     },
@@ -36802,10 +36802,10 @@
       "difficulty": 1,
       "question": "Wie viele Söhne hatte Jakob, die Väter der Stämme?",
       "options": [
-        "Drei",
+        "10",
         "12",
-        "1. Johannes",
-        "777"
+        "11",
+        "14"
       ],
       "answer": "12"
     },
@@ -36817,10 +36817,10 @@
       "difficulty": 3,
       "question": "Wie viele Personen aus Jakobs Haus kamen nach Ägypten?",
       "options": [
-        "12000",
+        "40",
         "70",
         "60",
-        "Alle sieben Jahre"
+        "90"
       ],
       "answer": "70"
     },
@@ -36832,9 +36832,9 @@
       "difficulty": 1,
       "question": "Wie viele Tage lag Jesu Leib im Grab, bevor er auferstand (Tagesteile)?",
       "options": [
-        "Neunundneunzig",
-        "38",
-        "Drei",
+        "Fünf",
+        "7",
+        "Zwei",
         "3"
       ],
       "answer": "3"
@@ -36847,10 +36847,10 @@
       "difficulty": 3,
       "question": "Wie viele Jünger nahm Jesus auf den Berg der Verklärung mit?",
       "options": [
-        "600 Jahre",
+        "Zwei",
         "Fünf",
         "3",
-        "Dreißig"
+        "Sieben"
       ],
       "answer": "3"
     },
@@ -36862,9 +36862,9 @@
       "difficulty": 1,
       "question": "Wie oft verleugnete Petrus Jesus, bevor der Hahn krähte?",
       "options": [
-        "450",
-        "30",
-        "18",
+        "2",
+        "4",
+        "7",
         "3"
       ],
       "answer": "3"
@@ -36878,7 +36878,7 @@
       "question": "Wie viele Stunden Finsternis fielen bei der Kreuzigung über das Land?",
       "options": [
         "Zwei",
-        "450",
+        "Sechs",
         "3",
         "Fünf"
       ],
@@ -36892,10 +36892,10 @@
       "difficulty": 2,
       "question": "Wie viele Verbrecher wurden neben Jesus gekreuzigt?",
       "options": [
-        "52",
-        "2000",
+        "3",
+        "4",
         "2",
-        "60"
+        "5"
       ],
       "answer": "2"
     },
@@ -36908,8 +36908,8 @@
       "question": "Wie viele warteten im Obergemach vor Pfingsten auf den Geist?",
       "options": [
         "200",
-        "30",
-        "2000",
+        "70",
+        "150",
         "120"
       ],
       "answer": "120"
@@ -36922,9 +36922,9 @@
       "difficulty": 3,
       "question": "Wie viele Talente erhielt der erste Knecht im Gleichnis von den Talenten?",
       "options": [
-        "32000",
-        "50",
-        "18",
+        "2",
+        "10",
+        "3",
         "5"
       ],
       "answer": "5"
@@ -36937,10 +36937,10 @@
       "difficulty": 2,
       "question": "Wie viele kluge Jungfrauen waren mit Öl bereit?",
       "options": [
-        "70",
+        "3",
         "5",
-        "200",
-        "2"
+        "7",
+        "10"
       ],
       "answer": "5"
     },
@@ -36954,8 +36954,8 @@
       "options": [
         "3",
         "10",
-        "Zwei",
-        "600"
+        "Sieben",
+        "12"
       ],
       "answer": "10"
     },
@@ -36967,10 +36967,10 @@
       "difficulty": 3,
       "question": "Für wie viele Denare hätte man nach den Jüngern Brot für die Menge kaufen können?",
       "options": [
-        "84",
-        "72",
+        "100",
+        "150",
         "200",
-        "einer"
+        "300"
       ],
       "answer": "200"
     },
@@ -36984,8 +36984,8 @@
       "options": [
         "12",
         "7",
-        "120 Jahre",
-        "Vierzig"
+        "18",
+        "20"
       ],
       "answer": "12"
     },
@@ -36997,9 +36997,9 @@
       "difficulty": 3,
       "question": "In wie viele Maß Mehl verbarg die Frau im Gleichnis den Sauerteig?",
       "options": [
-        "60",
-        "Fünf",
-        "1. Johannes",
+        "5",
+        "Sieben",
+        "2",
         "3"
       ],
       "answer": "3"
@@ -37012,9 +37012,9 @@
       "difficulty": 3,
       "question": "Wie viele Sperlinge wurden nach Jesu Wort für zwei Pfennige verkauft?",
       "options": [
-        "7000",
-        "1",
-        "2000",
+        "7",
+        "2",
+        "10",
         "5"
       ],
       "answer": "5"
@@ -37027,10 +37027,10 @@
       "difficulty": 2,
       "question": "Wie viele Tage lag Lazarus im Grab, bevor Jesus kam?",
       "options": [
-        "Zwölf",
+        "Drei",
         "4",
-        "18",
-        "38"
+        "7",
+        "2"
       ],
       "answer": "4"
     },
@@ -37042,9 +37042,9 @@
       "difficulty": 2,
       "question": "Wie viele Wasserkrüge ließ Jesus bei der Hochzeit in Kana füllen?",
       "options": [
-        "Alle sieben Jahre",
-        "200",
-        "84",
+        "4",
+        "8",
+        "10",
         "6"
       ],
       "answer": "6"
@@ -37057,10 +37057,10 @@
       "difficulty": 3,
       "question": "In welchem Alter begann König Joasch zu regieren?",
       "options": [
-        "Vier",
-        "2000",
+        "Fünf",
+        "Zwölf",
         "7",
-        "666"
+        "Neun"
       ],
       "answer": "7"
     },
@@ -37073,8 +37073,8 @@
       "question": "Wie alt war Josia, als er König von Juda wurde?",
       "options": [
         "8",
-        "480",
-        "Zwölf",
+        "12",
+        "7",
         "5"
       ],
       "answer": "8"
@@ -37087,10 +37087,10 @@
       "difficulty": 2,
       "question": "Wie viele Jahre Hungersnot in Ägypten sagte Josef voraus?",
       "options": [
-        "8",
+        "5",
         "7",
-        "205",
-        "Vierzig"
+        "10",
+        "12"
       ],
       "answer": "7"
     },
@@ -37102,9 +37102,9 @@
       "difficulty": 3,
       "question": "Wie viele fette und magere Kühe waren in Pharaos Traum (je)?",
       "options": [
-        "Zwölf",
-        "318",
-        "450",
+        "12",
+        "3",
+        "10",
         "7"
       ],
       "answer": "7"
@@ -40807,10 +40807,10 @@
       "difficulty": 3,
       "question": "Wie viele hebräische Jünglinge weigerten sich, das goldene Bild anzubeten?",
       "options": [
-        "38",
+        "Vier",
         "Drei",
-        "1. Johannes",
-        "50"
+        "Zwei",
+        "Sieben"
       ],
       "answer": "Drei"
     },
@@ -41107,10 +41107,10 @@
       "difficulty": 3,
       "question": "Wie viele Gemeinden erhalten zu Beginn der Offenbarung Briefe?",
       "options": [
-        "3000",
-        "70",
+        "3",
+        "12",
         "7",
-        "205"
+        "10"
       ],
       "answer": "7"
     },
@@ -41287,10 +41287,10 @@
       "difficulty": 3,
       "question": "An welchem Tag schuf Gott Vögel und Fische?",
       "options": [
-        "52",
-        "666",
+        "3",
+        "6",
         "5",
-        "Zwölf"
+        "4"
       ],
       "answer": "5"
     },
@@ -41302,10 +41302,10 @@
       "difficulty": 3,
       "question": "An welchem Tag schuf Gott Landtiere und Menschen?",
       "options": [
-        "350",
-        "1",
+        "5",
+        "4",
         "6",
-        "60"
+        "7"
       ],
       "answer": "6"
     },
@@ -41497,9 +41497,9 @@
       "difficulty": 3,
       "question": "Wie alt war Josef, als er vor dem Pharao stand?",
       "options": [
-        "147",
-        "666",
-        "120",
+        "25",
+        "40",
+        "33",
         "30"
       ],
       "answer": "30"
@@ -41617,10 +41617,10 @@
       "difficulty": 1,
       "question": "Wie viele Gebote standen auf den Tafeln?",
       "options": [
-        "1. Korinther",
-        "1000",
+        "7",
+        "12",
         "10",
-        "38"
+        "5"
       ],
       "answer": "10"
     },
@@ -41632,10 +41632,10 @@
       "difficulty": 3,
       "question": "Wie viele Kundschafter brachten einen furchtsamen Bericht zurück?",
       "options": [
-        "110",
+        "2",
         "10",
-        "32000",
-        "120"
+        "5",
+        "12"
       ],
       "answer": "10"
     },
@@ -41647,8 +41647,8 @@
       "difficulty": 2,
       "question": "Wie viele Jahre wanderte Israel wegen seines Unglaubens?",
       "options": [
-        "1. Korinther",
-        "700",
+        "30",
+        "70",
         "40",
         "60"
       ],
@@ -41709,8 +41709,8 @@
       "options": [
         "9",
         "5",
-        "276",
-        "5000"
+        "3",
+        "7"
       ],
       "answer": "5"
     },
@@ -41797,10 +41797,10 @@
       "difficulty": 3,
       "question": "In wie viele Königreiche zerfiel Israel nach Salomo?",
       "options": [
-        "185000",
+        "3",
         "2",
-        "20",
-        "24"
+        "4",
+        "5"
       ],
       "answer": "2"
     },
@@ -41978,9 +41978,9 @@
       "question": "Wie viele Brote speisten die Fünftausend?",
       "options": [
         "5",
-        "1005",
-        "Achtzehn",
-        "Zwanzig"
+        "12",
+        "7",
+        "3"
       ],
       "answer": "5"
     },
@@ -41992,10 +41992,10 @@
       "difficulty": 3,
       "question": "Wie viele Körbe mit Resten blieben nach den Fünftausend übrig?",
       "options": [
-        "147",
-        "600",
+        "7",
+        "10",
         "12",
-        "Drei"
+        "Sieben"
       ],
       "answer": "12"
     },
@@ -44122,10 +44122,10 @@
       "difficulty": 3,
       "question": "Wie viele Jahre regierte König Saul nach der Überlieferung?",
       "options": [
-        "5000",
-        "1005",
+        "20",
+        "30",
         "40",
-        "3. Johannes"
+        "70"
       ],
       "answer": "40"
     },
@@ -44137,10 +44137,10 @@
       "difficulty": 3,
       "question": "Wie viele Stämme folgten dem Haus David nach der Teilung?",
       "options": [
-        "800000",
+        "4",
         "2",
-        "9",
-        "Siebzig"
+        "3",
+        "5"
       ],
       "answer": "2"
     },
@@ -44152,9 +44152,9 @@
       "difficulty": 3,
       "question": "Wie viele Tage trotzte Goliat Israel, bevor David kam?",
       "options": [
-        "400",
+        "30",
         "14",
-        "110",
+        "60",
         "40"
       ],
       "answer": "40"
@@ -44167,10 +44167,10 @@
       "difficulty": 2,
       "question": "Wie viele Söhne hatte Jakob durch alle seine Frauen?",
       "options": [
-        "318",
+        "10",
         "12",
-        "3. Johannes",
-        "350"
+        "7",
+        "14"
       ],
       "answer": "12"
     },
@@ -44182,9 +44182,9 @@
       "difficulty": 3,
       "question": "In welchem Alter begann Jesus sein Wirken?",
       "options": [
-        "1260",
-        "930",
-        "1. Korinther",
+        "25",
+        "40",
+        "33",
         "30"
       ],
       "answer": "30"
@@ -44198,9 +44198,9 @@
       "question": "Wie viele wurden mit sieben Broten gespeist, neben Frauen und Kindern?",
       "options": [
         "4000",
-        "38",
-        "1000",
-        "800000"
+        "2000",
+        "5000",
+        "3000"
       ],
       "answer": "4000"
     },
@@ -44212,10 +44212,10 @@
       "difficulty": 3,
       "question": "Wie viele Jahre lag der Tempel etwa in Trümmern, die vorhergesagte Zahl?",
       "options": [
-        "2000",
+        "40",
         "70",
-        "14",
-        "39"
+        "50",
+        "100"
       ],
       "answer": "70"
     },
@@ -44902,10 +44902,10 @@
       "difficulty": 3,
       "question": "Wie viele Jahre brauchte Salomo, um den Tempel zu bauen?",
       "options": [
-        "1. Korinther",
-        "86",
+        "5",
+        "12",
         "7",
-        "Vierzig Jahre"
+        "10"
       ],
       "answer": "7"
     },
@@ -44919,8 +44919,8 @@
       "options": [
         "3",
         "4",
-        "1. Korinther",
-        "950"
+        "5",
+        "2"
       ],
       "answer": "4"
     },
@@ -44933,9 +44933,9 @@
       "question": "Wie viele Tage war Saulus nach dem Weg nach Damaskus ohne Augenlicht?",
       "options": [
         "3",
-        "Zwanzig",
-        "175",
-        "12000"
+        "Sieben",
+        "Zehn",
+        "Fünf"
       ],
       "answer": "3"
     },
@@ -44947,9 +44947,9 @@
       "difficulty": 2,
       "question": "Wie viele Männer behielt Gideon, die Wasser leckten?",
       "options": [
-        "17",
-        "Fünf",
-        "119",
+        "100",
+        "150",
+        "500",
         "300"
       ],
       "answer": "300"
@@ -44962,9 +44962,9 @@
       "difficulty": 3,
       "question": "Wie viele Tage trauerte Ägypten um Jakob?",
       "options": [
-        "430",
-        "205",
-        "930",
+        "40",
+        "90",
+        "50",
         "70"
       ],
       "answer": "70"
@@ -44978,9 +44978,9 @@
       "question": "Wie viele Söhne Jakobs zogen zuerst nach Ägypten, um Getreide zu kaufen?",
       "options": [
         "10",
-        "450",
-        "3000",
-        "40"
+        "7",
+        "12",
+        "8"
       ],
       "answer": "10"
     },
@@ -44992,10 +44992,10 @@
       "difficulty": 3,
       "question": "Wie viele Jünger nahm Jesus mit, um die Tochter des Jaïrus aufzuerwecken, neben den Eltern?",
       "options": [
-        "1100",
+        "5",
         "3",
-        "99",
-        "60"
+        "2",
+        "7"
       ],
       "answer": "3"
     },
@@ -45007,10 +45007,10 @@
       "difficulty": 3,
       "question": "Wie viele Dämonen trieb Jesus aus Maria Magdalena aus?",
       "options": [
-        "99",
+        "3",
         "7",
-        "38",
-        "8"
+        "5",
+        "12"
       ],
       "answer": "7"
     },
@@ -45024,8 +45024,8 @@
       "options": [
         "12",
         "7",
-        "50",
-        "110"
+        "18",
+        "10"
       ],
       "answer": "12"
     },
