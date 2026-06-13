@@ -105,6 +105,20 @@ const Map<String, Map<String, String>> _t = {
     'ru': 'Спасибо! Ваш отзыв учтён.',
   },
   'rateAlready': {'en': 'Already reported ✓', 'de': 'Schon gemeldet ✓', 'ru': 'Уже отмечено ✓'},
+  // Achievements
+  'achievements': {'en': 'Achievements', 'de': 'Erfolge', 'ru': 'Достижения'},
+  'achUnlockedToast': {'en': 'Unlocked', 'de': 'Freigeschaltet', 'ru': 'Открыто'},
+  'achUnlockedOn': {'en': 'Unlocked', 'de': 'Freigeschaltet am', 'ru': 'Открыто'},
+  'achHiddenHint': {
+    'en': 'Hidden — discover how to unlock it.',
+    'de': 'Versteckt — finde heraus, wie du es freischaltest.',
+    'ru': 'Скрыто — узнай, как открыть.',
+  },
+  'block1': {'en': 'The Journey', 'de': 'Die Reise', 'ru': 'Путь'},
+  'block2': {'en': 'Daily Streaks', 'de': 'Tagesserien', 'ru': 'Серии дней'},
+  'block3': {'en': 'Skill', 'de': 'Können', 'ru': 'Мастерство'},
+  'block4': {'en': 'Topic Mastery', 'de': 'Themen-Meisterschaft', 'ru': 'Мастерство тем'},
+  'block5': {'en': 'Hidden', 'de': 'Versteckt', 'ru': 'Скрытые'},
   // Kategorienamen je slug
   'cat.torah': {'en': 'Law (Torah)', 'de': 'Gesetz (Tora)', 'ru': 'Закон (Тора)'},
   'cat.history': {'en': 'History of Israel', 'de': 'Geschichte Israels', 'ru': 'История Израиля'},

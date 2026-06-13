@@ -4,6 +4,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'config.dart';
 import 'screens/home_screen.dart';
+import 'services/achievement_service.dart';
 import 'services/settings_service.dart';
 import 'services/stats_service.dart';
 import 'theme/app_theme.dart';
@@ -12,6 +13,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SettingsService.instance.init();
   await StatsService.instance.init();
+  await AchievementService.instance.init();
   await Supabase.initialize(
     url: AppConfig.supabaseUrl,
     anonKey: AppConfig.supabaseAnonKey,

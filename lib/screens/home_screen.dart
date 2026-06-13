@@ -9,6 +9,7 @@ import '../services/sound_service.dart';
 import '../services/stats_service.dart';
 import '../theme/app_theme.dart';
 import '../widgets/starfield.dart';
+import 'achievements_screen.dart';
 import 'hotseat_setup_screen.dart';
 import 'quiz_screen.dart';
 import 'settings_screen.dart';
@@ -183,17 +184,28 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Align(
-            alignment: Alignment.centerRight,
-            child: IconButton(
-              icon: const Icon(Icons.settings_rounded, color: AppColors.creamDim),
-              tooltip: 'Settings',
-              onPressed: () {
-                SoundService.instance.play(Sfx.tap);
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (_) => const SettingsScreen()));
-              },
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              IconButton(
+                icon: const Icon(Icons.emoji_events_rounded, color: AppColors.gold),
+                tooltip: tr('achievements'),
+                onPressed: () {
+                  SoundService.instance.play(Sfx.tap);
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => const AchievementsScreen()));
+                },
+              ),
+              IconButton(
+                icon: const Icon(Icons.settings_rounded, color: AppColors.creamDim),
+                tooltip: 'Settings',
+                onPressed: () {
+                  SoundService.instance.play(Sfx.tap);
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => const SettingsScreen()));
+                },
+              ),
+            ],
           ),
           // Einmaliger Effekt statt Endlosschleife – Dauer-Animationen
           // erzwingen sonst permanente Repaints (laggt auf Handys).

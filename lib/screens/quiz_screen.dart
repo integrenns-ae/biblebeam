@@ -5,6 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../data/difficulty_repository.dart';
 import '../l10n/strings.dart';
 import '../models/question.dart';
+import '../models/quiz_outcome.dart';
 import '../services/sound_service.dart';
 import '../theme/app_theme.dart';
 import '../widgets/starfield.dart';
@@ -37,6 +38,7 @@ class _QuizScreenState extends State<QuizScreen>
   int _streak = 0;
   int _bestStreak = 0;
   final List<bool> _results = [];
+  final List<AnsweredQuestion> _answered = []; // für Statistik/Achievements
   String? _picked;
   bool _locked = false;
 
@@ -82,6 +84,14 @@ class _QuizScreenState extends State<QuizScreen>
     if (_locked) return;
     _timer.stop();
     final correct = option != null && _current.isCorrect(option);
+    final elapsedMs = (_timer.value * _secondsPerQuestion * 1000).round();
+    _answered.add(AnsweredQuestion(
+      questionId: _current.id,
+      difficulty: _current.difficulty,
+      categories: _current.categories,
+      correct: correct,
+      elapsedMs: elapsedMs,
+    ));
     setState(() {
       _picked = option;
       _locked = true;
@@ -103,12 +113,19 @@ class _QuizScreenState extends State<QuizScreen>
   void _next() {
     if (!mounted) return;
     if (_index + 1 >= _questions.length) {
+      final outcome = QuizOutcome(
+        answers: _answered,
+        score: _score,
+        bestStreak: _bestStreak,
+        finishedAt: DateTime.now(),
+      );
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (_) => ResultScreen(
           score: _score,
           results: _results,
           bestStreak: _bestStreak,
           title: widget.title,
+          outcome: outcome,
         ),
       ));
       return;

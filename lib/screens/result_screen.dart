@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+import '../data/question_stats_repository.dart';
 import '../l10n/strings.dart';
+import '../models/quiz_outcome.dart';
+import '../services/achievement_service.dart';
 import '../services/sound_service.dart';
 import '../services/stats_service.dart';
 import '../theme/app_theme.dart';
@@ -12,6 +15,7 @@ class ResultScreen extends StatefulWidget {
   final List<bool> results;
   final int bestStreak;
   final String title;
+  final QuizOutcome outcome;
 
   const ResultScreen({
     super.key,
@@ -19,6 +23,7 @@ class ResultScreen extends StatefulWidget {
     required this.results,
     required this.bestStreak,
     required this.title,
+    required this.outcome,
   });
 
   @override
@@ -37,15 +42,41 @@ class _ResultScreenState extends State<ResultScreen> {
     results = widget.results;
     bestStreak = widget.bestStreak;
     SoundService.instance.play(Sfx.finish);
-    StatsService.instance.recordGame(
+    _finalize();
+  }
+
+  int get _correct => results.where((r) => r).length;
+
+  /// Statistik fortschreiben, Achievements auswerten, globale Statistik melden.
+  Future<void> _finalize() async {
+    await StatsService.instance.recordGame(
       correct: _correct,
       questions: results.length,
       score: score,
       streak: bestStreak,
     );
+    final newly = await AchievementService.instance.recordQuiz(widget.outcome);
+    if (mounted && newly.isNotEmpty) _showUnlocks(newly);
+
+    // Globale, anonyme Trefferquote melden -> evtl. „Schmaler Pfad".
+    final rare = await QuestionStatsRepository().recordAnswers(widget.outcome);
+    if (rare.isNotEmpty) {
+      final more = await AchievementService.instance.markNarrowPath();
+      if (mounted && more.isNotEmpty) _showUnlocks(more);
+    }
   }
 
-  int get _correct => results.where((r) => r).length;
+  void _showUnlocks(List<Achievement> list) {
+    final titles = list.map((a) => a.titleText).join(', ');
+    SoundService.instance.play(Sfx.correct);
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text('🏆 ${tr('achUnlockedToast')}: $titles',
+          style: AppTheme.ui(14, w: FontWeight.w600, c: AppColors.cream)),
+      duration: const Duration(seconds: 5),
+      behavior: SnackBarBehavior.floating,
+      backgroundColor: AppColors.indigo,
+    ));
+  }
 
   String get _verse {
     final ratio = results.isEmpty ? 0 : _correct / results.length;
