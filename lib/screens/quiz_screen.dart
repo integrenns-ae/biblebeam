@@ -2,6 +2,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+import '../data/difficulty_repository.dart';
+import '../l10n/strings.dart';
 import '../models/question.dart';
 import '../services/sound_service.dart';
 import '../theme/app_theme.dart';
@@ -37,6 +39,9 @@ class _QuizScreenState extends State<QuizScreen>
   final List<bool> _results = [];
   String? _picked;
   bool _locked = false;
+
+  final _diffRepo = DifficultyRepository();
+  final Set<String> _rated = {}; // pro Sitzung gemeldete Frage-IDs
 
   @override
   void initState() {
@@ -118,6 +123,109 @@ class _QuizScreenState extends State<QuizScreen>
       ..forward();
   }
 
+  String _diffLabel(int d) =>
+      tr(d <= 1 ? 'diffEasy' : (d >= 3 ? 'diffHard' : 'diffMedium'));
+
+  void _showRateSheet() {
+    final q = _current;
+    final already = _rated.contains(q.id);
+    showModalBottomSheet<void>(
+      context: context,
+      backgroundColor: AppColors.cardBg,
+      showDragHandle: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(22)),
+      ),
+      builder: (sheetCtx) => SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 4, 20, 20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(tr('rateQuestion'),
+                  textAlign: TextAlign.center,
+                  style: AppTheme.ui(17, w: FontWeight.w700, c: AppColors.gold)),
+              const SizedBox(height: 6),
+              Text('${tr('rateCurrent')}: ${_diffLabel(q.difficulty)}',
+                  textAlign: TextAlign.center,
+                  style: AppTheme.ui(13, c: AppColors.creamDim)),
+              const SizedBox(height: 18),
+              if (already)
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: Text(tr('rateAlready'),
+                      textAlign: TextAlign.center,
+                      style: AppTheme.ui(15, w: FontWeight.w600, c: AppColors.gold)),
+                )
+              else ...[
+                // Runter nur, wenn nicht schon leichteste Stufe.
+                _rateButton(
+                  icon: Icons.south_rounded,
+                  label: tr('rateTooEasy'),
+                  enabled: q.difficulty > 1,
+                  onTap: () => _submitRating(q.id, -1, sheetCtx),
+                ),
+                const SizedBox(height: 10),
+                // Hoch nur, wenn nicht schon schwerste Stufe.
+                _rateButton(
+                  icon: Icons.north_rounded,
+                  label: tr('rateTooHard'),
+                  enabled: q.difficulty < 3,
+                  onTap: () => _submitRating(q.id, 1, sheetCtx),
+                ),
+              ],
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _rateButton({
+    required IconData icon,
+    required String label,
+    required bool enabled,
+    required VoidCallback onTap,
+  }) {
+    final c = enabled ? AppColors.cream : AppColors.creamDim.withValues(alpha: 0.35);
+    return GestureDetector(
+      onTap: enabled ? onTap : null,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+        decoration: BoxDecoration(
+          color: AppColors.indigo,
+          borderRadius: BorderRadius.circular(14),
+          border: Border.all(
+            color: enabled ? AppColors.cardBorder : AppColors.cardBorder.withValues(alpha: 0.4),
+            width: 1.2,
+          ),
+        ),
+        child: Row(
+          children: [
+            Icon(icon, size: 20, color: c),
+            const SizedBox(width: 12),
+            Expanded(child: Text(label, style: AppTheme.ui(15, w: FontWeight.w500, c: c))),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future<void> _submitRating(String questionId, int direction, BuildContext sheetCtx) async {
+    setState(() => _rated.add(questionId));
+    Navigator.of(sheetCtx).pop();
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text(tr('rateThanks')),
+        duration: const Duration(seconds: 2),
+        behavior: SnackBarBehavior.floating,
+      ));
+    }
+    // Netzwerk-Aufruf im Hintergrund; Fehler sind unkritisch (kein Login nötig).
+    await _diffRepo.vote(questionId, direction);
+  }
+
   @override
   Widget build(BuildContext context) {
     final q = _current;
@@ -189,7 +297,22 @@ class _QuizScreenState extends State<QuizScreen>
             ],
           ),
         ),
-        const SizedBox(width: 8),
+        const SizedBox(width: 4),
+        // Crowd-Einstufung: Frage als zu leicht/zu schwer melden.
+        IconButton(
+          visualDensity: VisualDensity.compact,
+          tooltip: tr('rateQuestion'),
+          icon: Icon(
+            _rated.contains(_current.id)
+                ? Icons.outlined_flag_rounded
+                : Icons.flag_outlined,
+            size: 20,
+            color: _rated.contains(_current.id)
+                ? AppColors.gold
+                : AppColors.creamDim,
+          ),
+          onPressed: _showRateSheet,
+        ),
         SizedBox(
           width: 44,
           child: Text('${_index + 1}/${_questions.length}',

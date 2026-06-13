@@ -82,6 +82,29 @@ const Map<String, Map<String, String>> _t = {
     'de': 'Die Fragen sind derzeit auf Englisch.',
     'ru': 'Вопросы пока на английском.',
   },
+  // Crowd-Einstufung der Schwierigkeit
+  'rateQuestion': {
+    'en': 'Report difficulty',
+    'de': 'Schwierigkeit melden',
+    'ru': 'Сообщить о сложности',
+  },
+  'rateCurrent': {'en': 'Current level', 'de': 'Aktuelle Stufe', 'ru': 'Текущий уровень'},
+  'rateTooEasy': {
+    'en': 'Too easy for this level',
+    'de': 'Zu leicht für diese Stufe',
+    'ru': 'Слишком легко для уровня',
+  },
+  'rateTooHard': {
+    'en': 'Too hard for this level',
+    'de': 'Zu schwer für diese Stufe',
+    'ru': 'Слишком сложно для уровня',
+  },
+  'rateThanks': {
+    'en': 'Thanks! Your report counts.',
+    'de': 'Danke! Deine Meldung zählt.',
+    'ru': 'Спасибо! Ваш отзыв учтён.',
+  },
+  'rateAlready': {'en': 'Already reported ✓', 'de': 'Schon gemeldet ✓', 'ru': 'Уже отмечено ✓'},
   // Kategorienamen je slug
   'cat.torah': {'en': 'Law (Torah)', 'de': 'Gesetz (Tora)', 'ru': 'Закон (Тора)'},
   'cat.history': {'en': 'History of Israel', 'de': 'Geschichte Israels', 'ru': 'История Израиля'},
