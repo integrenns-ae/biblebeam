@@ -18,20 +18,42 @@ class QuestionRepository {
   /// Verfügbare Inhalts-Sprachen (für andere fällt es auf Englisch zurück).
   static const _available = {'en', 'de'};
 
-  static const _refreshInterval = Duration(hours: 6);
+  // Kurzer Takt während der aktiven Inhalts-/QA-Phase: Korrekturen erscheinen
+  // nach einem App-Neustart. (Später ggf. wieder erhöhen.)
+  static const _refreshInterval = Duration(minutes: 2);
 
   Future<QuestionPack> load(String lang) async {
     final code = _available.contains(lang) ? lang : 'en';
-    final cached = _memory[code];
-    if (cached != null) {
+    final inMem = _memory[code];
+    if (inMem != null) {
       _refreshInBackground(code);
-      return cached;
+      return inMem;
+    }
+
+    // Erststart dieser Sitzung: kurz versuchen, frisch aus Supabase zu laden,
+    // damit Korrekturen sofort sichtbar sind. Offline/langsam -> Fallback.
+    try {
+      final fresh = await ContentSync()
+          .fetchPack(code)
+          .timeout(const Duration(seconds: 4));
+      if (fresh != null && (fresh['questions'] as List).length >= 100) {
+        final pack = QuestionPack.fromJson(fresh);
+        _memory[code] = pack;
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('content_$code', json.encode(fresh));
+        await prefs.setInt(
+            'content_time_$code', DateTime.now().millisecondsSinceEpoch);
+        debugPrint('Content frisch geladen ($code): '
+            '${(fresh['questions'] as List).length} Fragen');
+        return pack;
+      }
+    } catch (e) {
+      debugPrint('Frisch-Laden ($code) fehlgeschlagen, nutze Cache/Asset: $e');
     }
 
     QuestionPack? pack = await _loadFromCache(code);
     pack ??= await _loadBundled(code);
     _memory[code] = pack;
-    _refreshInBackground(code);
     return pack;
   }
 
