@@ -22,6 +22,12 @@ USER="stu152339249"
 echo "==> Flutter-Web-Build (WASM-Renderer; eigener sw.js statt Flutters deprecated SW)"
 flutter build web --wasm --pwa-strategy=none
 
+# SW-Cache pro Deploy stempeln -> neuer Deploy verwirft den alten Cache,
+# Code-Assets (main.dart.wasm etc.) werden frisch geladen statt stale serviert.
+STAMP="$(date +%Y%m%d%H%M%S)"
+sed -i '' "s/const CACHE = '[^']*';/const CACHE = 'lichtpfad-$STAMP';/" build/web/sw.js
+echo "==> SW-Cache-Version: lichtpfad-$STAMP"
+
 read -r -s -p "SFTP-Passwort für $USER: " PW
 echo
 

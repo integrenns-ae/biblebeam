@@ -1,13 +1,15 @@
 // Lichtpfad PWA Service-Worker.
-// Strategie: stale-while-revalidate (Cache sofort, Update im Hintergrund).
-//  - Start ist schnell, auch bei langsamem Netz (alles kommt aus dem Cache)
-//  - jede Antwort wird im Hintergrund aktualisiert -> neue Deploys greifen
-//    beim übernächsten Start automatisch
-//  - offline: alles bisher Geladene funktioniert
-//  - Supabase-Aufrufe werden NIE gecached (dynamisch/auth)
+// Strategie:
+//  - Navigationen (index.html) NETWORK-FIRST -> neue Deploys sofort sichtbar,
+//    offline Fallback auf den Cache.
+//  - Übrige Dateien stale-while-revalidate (schneller Start, offline ok).
+//  - Der CACHE-Name wird bei jedem Deploy gestempelt (deploy.sh) -> ein neuer
+//    Deploy verwirft den alten Cache, Code-Assets werden frisch geladen.
+//  - Supabase-Aufrufe werden NIE gecached (dynamisch/auth).
 'use strict';
 
-const CACHE = 'lichtpfad-v2';
+// Platzhalter wird von deploy.sh pro Deploy ersetzt (z. B. lichtpfad-20260624…).
+const CACHE = 'lichtpfad-v3';
 
 self.addEventListener('install', () => self.skipWaiting());
 
@@ -32,6 +34,29 @@ self.addEventListener('fetch', (event) => {
   const isFont =
     url.host === 'fonts.gstatic.com' || url.host === 'fonts.googleapis.com';
   if (!sameOrigin && !isFont) return; // z. B. Supabase: durchreichen, nie cachen
+
+  // Navigationen (die Seite selbst) network-first: neue Deploys erscheinen
+  // sofort beim ersten Reload; offline Fallback auf den Cache.
+  if (req.mode === 'navigate') {
+    event.respondWith(
+      (async () => {
+        const cache = await caches.open(CACHE);
+        try {
+          const fresh = await fetch(req);
+          if (fresh && fresh.ok) cache.put(req, fresh.clone());
+          return fresh;
+        } catch (_) {
+          return (
+            (await cache.match(req)) ||
+            (await cache.match('index.html')) ||
+            (await cache.match('./')) ||
+            Response.error()
+          );
+        }
+      })(),
+    );
+    return;
+  }
 
   event.respondWith(
     (async () => {
