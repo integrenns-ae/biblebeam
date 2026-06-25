@@ -1,7 +1,5 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-import '../config.dart';
-
 class ReviewOption {
   final String id;
   final int sort;
@@ -24,24 +22,18 @@ class ReviewQuestion {
 }
 
 /// Lädt/Speichert Fragen für den Review-Modus über Supabase.
-/// Schreiben erfordert eine Reviewer-Sitzung (siehe [signInReviewer]).
+///
+/// Lesen läuft über den anon-Key (nur approved Fragen, wie im Spiel).
+/// Schreiben läuft über die SECURITY-DEFINER-RPC [review_save_question], die
+/// den Zugangscode serverseitig prüft — kein Admin-Login im Client.
 class ReviewRepository {
   SupabaseClient get _db => Supabase.instance.client;
 
-  bool get isSignedIn => _db.auth.currentSession != null;
-
-  /// Meldet das Reviewer-Konto an. Wirft bei Fehler.
-  Future<void> signInReviewer() async {
-    if (!AppConfig.reviewerConfigured) {
-      throw 'Reviewer-Konto noch nicht konfiguriert (lib/config.dart).';
-    }
-    await _db.auth.signInWithPassword(
-      email: AppConfig.reviewerEmail,
-      password: AppConfig.reviewerPassword,
-    );
+  /// Prüft den Zugangscode serverseitig (Gate beim Betreten des Reviews).
+  Future<bool> checkCode(String code) async {
+    final ok = await _db.rpc('review_check_code', params: {'p_code': code});
+    return ok == true;
   }
-
-  Future<void> signOut() => _db.auth.signOut();
 
   /// Kategorien (Roh-Tags) für den Filter.
   Future<List<({String slug, String? kind})>> fetchCategories() async {
@@ -100,20 +92,20 @@ class ReviewRepository {
   }
 
   /// Korrekturen einer Frage in der gewählten Sprache speichern.
-  Future<void> saveQuestion(ReviewQuestion q, String lang) async {
-    await _db.from('question_translations').upsert({
-      'question_id': q.id,
-      'lang': lang,
-      'prompt': q.prompt.trim(),
-    }, onConflict: 'question_id,lang');
-
-    for (final o in q.options) {
-      await _db.from('answer_option_translations').upsert({
-        'option_id': o.id,
-        'lang': lang,
-        'text': o.text.trim(),
-      }, onConflict: 'option_id,lang');
-      await _db.from('answer_options').update({'is_correct': o.isCorrect}).eq('id', o.id);
-    }
+  /// [code] = der serverseitig geprüfte Zugangscode der Session.
+  Future<void> saveQuestion(ReviewQuestion q, String lang, String code) async {
+    await _db.rpc('review_save_question', params: {
+      'p_code': code,
+      'p_question_id': q.id,
+      'p_lang': lang,
+      'p_prompt': q.prompt.trim(),
+      'p_options': q.options
+          .map((o) => {
+                'id': o.id,
+                'text': o.text.trim(),
+                'is_correct': o.isCorrect,
+              })
+          .toList(),
+    });
   }
 }

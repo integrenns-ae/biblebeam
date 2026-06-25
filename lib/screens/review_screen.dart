@@ -6,7 +6,9 @@ import '../theme/app_theme.dart';
 import '../widgets/starfield.dart';
 
 class ReviewScreen extends StatefulWidget {
-  const ReviewScreen({super.key});
+  /// Serverseitig geprüfter Zugangscode (vom Settings-Gate übergeben).
+  final String code;
+  const ReviewScreen({super.key, required this.code});
 
   @override
   State<ReviewScreen> createState() => _ReviewScreenState();
@@ -21,7 +23,9 @@ class _ReviewScreenState extends State<ReviewScreen> {
   List<ReviewQuestion> _questions = [];
   int _index = 0;
   bool _loadingList = false;
-  bool _canSave = false;
+  // Code wurde im Settings-Gate bereits serverseitig geprüft; die RPC prüft
+  // ihn beim Speichern erneut.
+  final bool _canSave = true;
   String? _error;
 
   @override
@@ -29,11 +33,6 @@ class _ReviewScreenState extends State<ReviewScreen> {
     super.initState();
     // Standard: Deutsch (Umschalter erlaubt EN bei Bedarf).
     _lang = 'de';
-    _repo.signInReviewer().then((_) {
-      if (mounted) setState(() => _canSave = true);
-    }).catchError((_) {
-      if (mounted) setState(() => _canSave = false);
-    });
     _repo.fetchCategories().then((c) {
       if (mounted) setState(() => _cats = c);
     }).catchError((_) {});
@@ -59,7 +58,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
 
   Future<void> _save(ReviewQuestion q) async {
     try {
-      await _repo.saveQuestion(q, _lang);
+      await _repo.saveQuestion(q, _lang, widget.code);
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(tr('saved')), duration: const Duration(milliseconds: 900)),
@@ -101,18 +100,6 @@ class _ReviewScreenState extends State<ReviewScreen> {
                         style: AppTheme.ui(19, w: FontWeight.w600)),
                   ],
                 ),
-                if (!_canSave)
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 6),
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF3A2E12),
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: const Color(0xFF5C4E2A)),
-                    ),
-                    child: Text(tr('saveDisabled'),
-                        style: AppTheme.ui(12, c: AppColors.goldBright)),
-                  ),
                 const SizedBox(height: 8),
                 _controls(),
                 const SizedBox(height: 12),

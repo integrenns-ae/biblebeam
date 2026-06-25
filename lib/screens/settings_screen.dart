@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../config.dart';
+import '../data/review_repository.dart';
 import '../l10n/strings.dart';
 import '../services/settings_service.dart';
 import '../services/sound_service.dart';
@@ -206,12 +206,24 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  void _trySubmit(BuildContext dialogCtx, BuildContext pageCtx, String code,
-      void Function(void Function()) setLocal, void Function(String?) setErr) {
-    if (code.trim() == AppConfig.reviewCode) {
-      Navigator.of(dialogCtx).pop();
-      Navigator.of(pageCtx).push(
-          MaterialPageRoute(builder: (_) => const ReviewScreen()));
+  Future<void> _trySubmit(BuildContext dialogCtx, BuildContext pageCtx,
+      String code,
+      void Function(void Function()) setLocal,
+      void Function(String?) setErr) async {
+    final trimmed = code.trim();
+    // Code wird serverseitig geprüft (kein Klartext-Vergleich im Client).
+    bool ok;
+    try {
+      ok = await ReviewRepository().checkCode(trimmed);
+    } catch (_) {
+      ok = false;
+    }
+    if (ok) {
+      if (dialogCtx.mounted) Navigator.of(dialogCtx).pop();
+      if (pageCtx.mounted) {
+        Navigator.of(pageCtx).push(
+            MaterialPageRoute(builder: (_) => ReviewScreen(code: trimmed)));
+      }
     } else {
       setLocal(() => setErr(tr('wrongCode')));
     }
