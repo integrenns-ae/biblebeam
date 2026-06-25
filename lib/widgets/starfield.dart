@@ -127,7 +127,8 @@ class _SpacePainter extends CustomPainter {
     }
     canvas.drawRect(rect, Paint()..shader = _baseShader);
 
-    // 2) Langsam driftende Nebel-Glows -> animiertes Space-Gradient
+    // 2) Driftende, atmende Nebel-Glows -> deutlich sichtbares animiertes
+    //    Space-Gradient (kräftige Farben, große Bewegung, ~15-25 s Perioden).
     final big = max(size.width, size.height);
     void nebula(double nx, double ny, double radF, Color c, double a) {
       final center = Offset(nx * size.width, ny * size.height);
@@ -142,14 +143,28 @@ class _SpacePainter extends CustomPainter {
       );
     }
 
-    nebula(0.30 + 0.06 * sin(time * 0.06), 0.24 + 0.05 * cos(time * 0.05),
-        0.55, const Color(0xFF3A2E7A), 0.34); // indigo-violett
-    nebula(0.76 + 0.05 * sin(time * 0.045 + 1.5),
-        0.66 + 0.06 * cos(time * 0.05 + 2.0), 0.50, const Color(0xFF1E3A6E),
-        0.30); // tiefblau
-    nebula(0.55 + 0.07 * sin(time * 0.04 + 3.0),
-        0.92 + 0.04 * cos(time * 0.06 + 1.0), 0.46, const Color(0xFF5A2E6E),
-        0.22); // magenta-violett
+    // baseA + „Atmen" der Helligkeit, damit die Bewegung klar auffällt.
+    double breathe(double base, double amp, double speed, double ph) =>
+        (base + amp * sin(time * speed + ph)).clamp(0.0, 1.0);
+
+    nebula(
+        0.30 + 0.16 * sin(time * 0.34),
+        0.22 + 0.13 * cos(time * 0.30),
+        0.62,
+        const Color(0xFF6A4DEB), // helles Indigo-Violett
+        breathe(0.52, 0.16, 0.5, 0.0));
+    nebula(
+        0.74 + 0.17 * sin(time * 0.27 + 1.5),
+        0.64 + 0.15 * cos(time * 0.31 + 2.0),
+        0.56,
+        const Color(0xFF2E7BE0), // kräftiges Blau
+        breathe(0.48, 0.16, 0.45, 2.0));
+    nebula(
+        0.52 + 0.15 * sin(time * 0.40 + 3.0),
+        0.90 + 0.12 * cos(time * 0.36 + 1.0),
+        0.50,
+        const Color(0xFFA84CE0), // Magenta-Violett
+        breathe(0.42, 0.16, 0.55, 1.0));
 
     // 3) Flimmernde weiße Sterne
     final sp = Paint();
