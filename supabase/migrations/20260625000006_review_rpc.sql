@@ -28,7 +28,8 @@ create or replace function public.review_check_code(p_code text)
 returns boolean
 language plpgsql
 security definer
-set search_path = public
+-- extensions im Pfad, falls pgcrypto (crypt/gen_salt) dort statt in public liegt.
+set search_path = public, extensions
 as $$
 declare
   v_hash text;
@@ -56,7 +57,8 @@ create or replace function public.review_save_question(
 returns void
 language plpgsql
 security definer
-set search_path = public
+-- extensions im Pfad, falls pgcrypto (crypt/gen_salt) dort statt in public liegt.
+set search_path = public, extensions
 as $$
 declare
   v_opt jsonb;
@@ -106,8 +108,10 @@ grant execute on function public.review_save_question(text, uuid, text, text, js
 notify pgrst, 'reload schema';
 
 -- ----------------------------------------------------------------------------
--- EINMALIG manuell ausfuehren (NICHT committen), um den Zugangscode zu setzen:
+-- EINMALIG manuell ausfuehren (NICHT committen), um den Zugangscode zu setzen.
+-- search_path mitsetzen, falls pgcrypto in 'extensions' liegt:
 --
+--   set search_path = public, extensions;
 --   insert into review_config (key, value)
 --   values ('review_code_hash', crypt('DEIN-NEUER-CODE', gen_salt('bf')))
 --   on conflict (key) do update set value = excluded.value;
