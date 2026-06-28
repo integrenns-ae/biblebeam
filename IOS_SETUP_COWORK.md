@@ -5,6 +5,12 @@ ein und bringst sie zum ersten Mal auf einem iPhone/Simulator zum Laufen. Ziel i
 Weg Richtung **App-Store-Launch**. Arbeite die Schritte der Reihe nach ab, **verifiziere
 nach jedem Schritt** und brich bei Fehlern ab, statt blind weiterzumachen.
 
+> **Entscheidung des Nutzers (wichtig):** Zuerst nur **auf dem eigenen iPhone testen**
+> mit einer **kostenlosen Apple-ID** (persönliches Signing-Team, Signatur läuft nach 7
+> Tagen ab — zum Testen ok). Das **Apple Developer Program (99 $/Jahr) wird bewusst
+> SPÄTER gekauft**, erst wenn TestFlight/App-Store ansteht. Also jetzt **keine Lizenz
+> kaufen, kein TestFlight einrichten** — und den Nutzer auch nicht danach fragen.
+
 ---
 
 ## Projekt-Kontext (alles bereits vorhanden)
@@ -81,20 +87,23 @@ Erwartung: **Xcode jetzt ✓**, CocoaPods ✓. Falls noch ✗, die genannten Hin
 ## Schritt 6 — Erster Start
 
 - Simulator: `open -a Simulator` dann `flutter devices`, danach `flutter run -d "<simulator-id>"`.
-- Echtes iPhone (per Kabel, „diesem Computer vertrauen"): `flutter devices`, `flutter run -d "<iphone-id>"`.
-  Beim ersten Mal in Xcode ein **Signing-Team** wählen (Apple-ID des Nutzers; kostenlose ID
-  reicht zum Testen, Signatur läuft nach 7 Tagen ab).
+- **Echtes iPhone ist das Ziel dieses Auftrags** (per Kabel, „diesem Computer vertrauen"):
+  `flutter devices`, `flutter run -d "<iphone-id>"`.
+  Beim ersten Mal in Xcode (Runner → Signing & Capabilities) die **kostenlose Apple-ID**
+  des Nutzers als **persönliches Signing-Team** wählen („Personal Team"). Kein bezahltes
+  Konto nötig; die Signatur läuft nach 7 Tagen ab — fürs Testen völlig ausreichend.
+  Falls ein Provisioning-/Signing-Fehler kommt: dem Nutzer erklären, dass er die App auf dem
+  iPhone unter Einstellungen → Allgemein → VPN & Geräteverwaltung dem Entwickler vertrauen muss.
 - Eine komplette Solo-Quizrunde durchspielen; auf Renderfehler/Plugin-Fehler achten
   (supabase_flutter, shared_preferences laufen via CocoaPods).
 
 ## Schritt 7 — Bericht an den Nutzer
 
-Fasse zusammen: Was installiert/geändert wurde, ob die App auf Simulator und/oder iPhone
-lief, und die **offenen Entscheidungen**:
-- **Apple Developer Program (99 $/Jahr)** — nötig für TestFlight (Familie/Gemeinde testet
-  drahtlos) und App-Store-Release. Ohne: nur eigenes Testen mit kostenloser Apple-ID (7-Tage-Signatur).
+Fasse zusammen: Was installiert/geändert wurde und ob die App auf dem **echten iPhone**
+(und/oder Simulator) lief. **Nächste Schritte sind bewusst SPÄTER** (nicht Teil dieses Auftrags):
+- **Apple Developer Program (99 $/Jahr)** — wird erst gekauft, wenn TestFlight/App-Store ansteht.
 - **In-App-Kauf 5 € (Unlock):** Paket `in_app_purchase` ist noch NICHT im `pubspec.yaml`;
-  Einbau + App-Store-Connect-Produkt sind ein eigener späterer Schritt.
+  Einbau + App-Store-Connect-Produkt kommen später.
 
 ---
 
