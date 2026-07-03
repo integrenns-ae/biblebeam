@@ -37,8 +37,50 @@
 
   <title>Lichtpfad – Bibelquiz</title>
   <link rel="manifest" href="manifest.json">
+
+  <style>
+    /* Weltraum-Nebel-Hintergrund (web/nebula.js) hinter der Flutter-App.
+       Flutter wird im Web transparent gerendert (Scaffold + Starfield),
+       damit der Nebel durchscheint. */
+    html { background: #0c0f16; }
+    body { margin: 0; background: transparent; }
+    #space {
+      position: fixed; inset: 0; z-index: -1;
+      pointer-events: none; overflow: hidden; background: #0c0f16;
+    }
+    .neb-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .neb-stars { position: absolute; inset: 0; }
+    .neb-star {
+      position: absolute; border-radius: 50%; opacity: 0;
+      animation-name: neb-twinkle; animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+    @keyframes neb-twinkle { 0%,100% { opacity: .05 } 50% { opacity: .95 } }
+
+    /* Fallback ohne WebGL: geblurte, morphende Farbflächen */
+    .neb-fallback { position: absolute; inset: 0; overflow: hidden; filter: blur(60px); }
+    .neb-blob { position: absolute; display: block; border-radius: 45% 55% 52% 48%; opacity: .55; }
+    .b1 { width: 65vmax; height: 65vmax; left: -12vmax; top: -18vmax;
+      background: radial-gradient(closest-side, #2b3e6b, transparent);
+      animation: neb-morph 20s ease-in-out infinite; }
+    .b2 { width: 58vmax; height: 58vmax; right: -16vmax; top: 8vmax;
+      background: radial-gradient(closest-side, #7a4a2b, transparent);
+      animation: neb-morph 26s ease-in-out infinite reverse; }
+    .b3 { width: 48vmax; height: 48vmax; left: 22vmax; bottom: -14vmax;
+      background: radial-gradient(closest-side, #c9a86a, transparent);
+      animation: neb-morph 30s ease-in-out infinite; }
+    @keyframes neb-morph {
+      0%,100% { border-radius: 45% 55% 52% 48%; transform: translate(0,0) scale(1) }
+      50% { border-radius: 55% 45% 46% 54%; transform: translate(4vmax,-3vmax) scale(1.12) }
+    }
+    .neb-readmask { position: absolute; inset: 0; filter: none;
+      background: radial-gradient(ellipse 62% 42% at 50% 50%, #0c0f16 0%, rgba(12,15,22,0) 72%); }
+    .neb-static .neb-blob { animation: none; }
+  </style>
 </head>
 <body>
+  <!-- Nebel-Hintergrund-Layer (wird von nebula.js gefüllt) -->
+  <div id="space"></div>
   <!--
     You can customize the "flutter_bootstrap.js" script.
     This is useful to provide a custom configuration to the Flutter loader
@@ -56,6 +98,8 @@
       });
     }
   </script>
+  <!-- Nebel-Hintergrund starten (vor Flutter, damit er sofort da ist) -->
+  <script src="nebula.js" defer></script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

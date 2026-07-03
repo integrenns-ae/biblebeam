@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -29,7 +30,8 @@ class AppTheme {
     final textTheme = GoogleFonts.cormorantGaramondTextTheme(base.textTheme)
         .apply(bodyColor: AppColors.cream, displayColor: AppColors.cream);
     return base.copyWith(
-      scaffoldBackgroundColor: AppColors.night,
+      // Im Web transparent, damit der WebGL-Nebel (nebula.js) durchscheint.
+      scaffoldBackgroundColor: kIsWeb ? Colors.transparent : AppColors.night,
       colorScheme: base.colorScheme.copyWith(
         primary: AppColors.gold,
         secondary: AppColors.goldBright,

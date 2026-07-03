@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
@@ -19,6 +20,9 @@ class Starfield extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Im Web scheint der WebGL-Nebel (web/nebula.js) durch die transparente
+    // Flutter-Oberfläche – hier also KEINEN eigenen Hintergrund zeichnen.
+    if (kIsWeb) return child;
     return Stack(
       fit: StackFit.expand,
       children: [
