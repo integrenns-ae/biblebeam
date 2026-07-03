@@ -82,24 +82,24 @@
     ' vec2 p=vec2((uv.x-0.5)*aspect,uv.y-0.5);',
     ' float t=u_time*0.02;',
     // Domain-Warping: fbm(p + fbm(p+t))
-    ' vec2 warp=vec2(fbm(p*2.4+vec2(0.0,t)),fbm(p*2.4+vec2(4.7,-t)));',
-    ' float n=fbm(p*2.6+1.7*warp+0.3*t);n=n*0.5+0.5;',
-    // großräumige Maske -> viel dunkler Leerraum zwischen den Wolken
-    ' float mask=fbm(p*0.9+7.0-0.15*t)*0.5+0.5;',
-    ' mask=smoothstep(0.56,0.9,mask);',
-    ' float density=pow(clamp(n,0.0,1.0),2.4)*mask;',
+    ' vec2 warp=vec2(fbm(p*1.7+vec2(0.0,t)),fbm(p*1.7+vec2(4.7,-t)));',
+    ' float n=fbm(p*1.9+1.7*warp+0.3*t);n=n*0.5+0.5;',
+    // großräumige Maske -> dunkler Leerraum zwischen den (größeren) Wolken
+    ' float mask=fbm(p*0.62+7.0-0.15*t)*0.5+0.5;',
+    ' mask=smoothstep(0.46,0.86,mask);',
+    ' float density=pow(clamp(n,0.0,1.0),1.9)*mask;',
     // additive Farbmischung: jede Akzentfarbe hat ihre eigene Zone (gold/braun/blau)
-    ' float sel=fbm(p*1.7+3.3+0.2*t)*0.5+0.5;',
+    ' float sel=fbm(p*1.2+3.3+0.2*t)*0.5+0.5;',
     ' float zGold=smoothstep(0.52,0.95,sel);',
     ' float zBraun=smoothstep(0.52,0.95,1.0-sel);',
     ' float zBlau=smoothstep(0.34,0.0,abs(sel-0.5));',
     ' vec3 col=vec3(0.0);',
-    ' col+=u_c1*density*zGold*1.55;',
-    ' col+=u_c2*density*zBraun*1.30;',
-    ' col+=u_c3*density*zBlau*1.15;',
+    ' col+=u_c1*density*zGold*1.95;',
+    ' col+=u_c2*density*zBraun*1.65;',
+    ' col+=u_c3*density*zBlau*1.45;',
     // warme Glut in den dichtesten Kernen
     ' float core=smoothstep(0.72,1.0,density);',
-    ' col+=vec3(0.72,0.88,1.0)*core*0.55;',
+    ' col+=vec3(0.72,0.88,1.0)*core*0.72;',
     // Lesbarkeits-Zone: dimmt die (verwackelt wallende) Bildmitte weich ab
     ' float band=0.175+0.05*snoise(vec2(uv.x*2.4,t));',
     ' float r=smoothstep(band*0.55,band*1.85,abs(uv.y-0.5));',
