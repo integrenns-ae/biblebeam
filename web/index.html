@@ -93,6 +93,17 @@
     // Eigener PWA-Service-Worker (Flutters eingebauter ist deprecated;
     // Build erfolgt mit --pwa-strategy=none, damit nur dieser registriert wird).
     if ('serviceWorker' in navigator) {
+      var hadController = !!navigator.serviceWorker.controller;
+      var refreshing = false;
+      // Übernimmt ein neuer Service-Worker die Kontrolle (neuer Deploy), einmal
+      // neu laden -> index.html UND App-Code kommen konsistent aus der neuen
+      // Cache-Generation. Verhindert "neuer Hintergrund blitzt, dann alter".
+      // Beim Erstbesuch (kein Vorgänger-SW) NICHT neu laden.
+      navigator.serviceWorker.addEventListener('controllerchange', function () {
+        if (!hadController || refreshing) return;
+        refreshing = true;
+        window.location.reload();
+      });
       window.addEventListener('load', function () {
         navigator.serviceWorker.register('sw.js');
       });

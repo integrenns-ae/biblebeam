@@ -35,29 +35,10 @@ self.addEventListener('fetch', (event) => {
     url.host === 'fonts.gstatic.com' || url.host === 'fonts.googleapis.com';
   if (!sameOrigin && !isFont) return; // z. B. Supabase: durchreichen, nie cachen
 
-  // Navigationen (die Seite selbst) network-first: neue Deploys erscheinen
-  // sofort beim ersten Reload; offline Fallback auf den Cache.
-  if (req.mode === 'navigate') {
-    event.respondWith(
-      (async () => {
-        const cache = await caches.open(CACHE);
-        try {
-          const fresh = await fetch(req);
-          if (fresh && fresh.ok) cache.put(req, fresh.clone());
-          return fresh;
-        } catch (_) {
-          return (
-            (await cache.match(req)) ||
-            (await cache.match('index.html')) ||
-            (await cache.match('./')) ||
-            Response.error()
-          );
-        }
-      })(),
-    );
-    return;
-  }
-
+  // Alles (inkl. index.html) einheitlich stale-while-revalidate: index.html und
+  // App-Code kommen so immer aus DERSELBEN Cache-Generation -> nie "neue Seite +
+  // alter Code". Aktualität kommt über den Cache-Stempel je Deploy + den
+  // controllerchange-Reload in index.html.
   event.respondWith(
     (async () => {
       const cache = await caches.open(CACHE);
