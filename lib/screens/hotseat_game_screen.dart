@@ -128,13 +128,76 @@ class _HotseatGameScreenState extends State<HotseatGameScreen>
               final wide = cons.maxWidth > 820;
               return Padding(
                 padding: EdgeInsets.all(wide ? 28 : 16),
-                child: wide ? _wideLayout() : _narrowLayout(),
+                child: Column(
+                  children: [
+                    _topBar(),
+                    const SizedBox(height: 10),
+                    Expanded(child: wide ? _wideLayout() : _narrowLayout()),
+                  ],
+                ),
               );
             },
           ),
         ),
       ),
     );
+  }
+
+  Widget _topBar() {
+    return Row(
+      children: [
+        GestureDetector(
+          onTap: _confirmLeave,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
+            decoration: BoxDecoration(
+              color: AppColors.cardBg,
+              borderRadius: BorderRadius.circular(999),
+              border: Border.all(color: AppColors.cardBorder),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(Icons.close_rounded, size: 16, color: AppColors.creamDim),
+                const SizedBox(width: 6),
+                Text(tr('leave'),
+                    style: AppTheme.ui(12, w: FontWeight.w600, c: AppColors.creamDim)),
+              ],
+            ),
+          ),
+        ),
+        const Spacer(),
+      ],
+    );
+  }
+
+  Future<void> _confirmLeave() async {
+    SoundService.instance.play(Sfx.tap);
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: AppColors.cardBg,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
+        title: Text(tr('leaveGame'),
+            style: AppTheme.ui(17, w: FontWeight.w700, c: AppColors.cream)),
+        content: Text(tr('leaveGameMsg'),
+            style: AppTheme.ui(14, c: AppColors.creamDim)),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: Text(tr('cancel'), style: AppTheme.ui(14, c: AppColors.cream)),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: Text(tr('leave'),
+                style: AppTheme.ui(14, w: FontWeight.w700, c: AppColors.gold)),
+          ),
+        ],
+      ),
+    );
+    if (ok == true && mounted) {
+      Navigator.of(context).popUntil((r) => r.isFirst);
+    }
   }
 
   // -------------------- Layouts --------------------
@@ -337,10 +400,10 @@ class _HotseatGameScreenState extends State<HotseatGameScreen>
   /// falsch = matter Umriss, noch offen = ganz blass.
   Widget _pips(List<bool> res, int total, Color color, bool active, double pulse,
       bool wide) {
-    final sz = wide ? 15.0 : 12.0;
+    final sz = wide ? 26.0 : 17.0;
     return Wrap(
-      spacing: 3,
-      runSpacing: 3,
+      spacing: wide ? 5 : 3,
+      runSpacing: wide ? 5 : 3,
       alignment: wide ? WrapAlignment.center : WrapAlignment.start,
       children: List.generate(total, (i) {
         if (i < res.length) {
@@ -350,7 +413,7 @@ class _HotseatGameScreenState extends State<HotseatGameScreen>
                 size: sz,
                 color: color,
                 shadows: [
-                  Shadow(color: color.withValues(alpha: glow), blurRadius: 8)
+                  Shadow(color: color.withValues(alpha: glow), blurRadius: 12)
                 ]);
           }
           return Icon(Icons.star_border_rounded,

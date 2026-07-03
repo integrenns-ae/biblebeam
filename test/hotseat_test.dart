@@ -27,9 +27,10 @@ void main() {
     await tester.pump(const Duration(milliseconds: 300));
     expect(tester.takeException(), isNull);
 
-    // Erste Frage (Spieler 1) sichtbar, Score-Sterne vorhanden.
+    // Erste Frage (Spieler 1) sichtbar, Score-Sterne + Verlassen-Button vorhanden.
     expect(find.text('Frage a1?'), findsOneWidget);
     expect(find.byIcon(Icons.star_border_rounded), findsWidgets);
+    expect(find.byIcon(Icons.close_rounded), findsOneWidget); // Verlassen-Button
     // In der Antwortphase gibt es noch KEINEN Weiter-Pfeil.
     expect(find.byKey(const Key('hotseat-next')), findsNothing);
 
