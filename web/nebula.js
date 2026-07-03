@@ -44,7 +44,7 @@
       if (reduce) {
         s.style.opacity = (0.25 + Math.random() * 0.5).toFixed(2);
       } else {
-        var dur = (2.5 + Math.random() * 4); // 2.5–6.5 s
+        var dur = (5 + Math.random() * 7); // 5–12 s (langsameres Flimmern)
         s.style.animationDuration = dur.toFixed(2) + 's';
         s.style.animationDelay = (-Math.random() * dur).toFixed(2) + 's';
       }
@@ -80,7 +80,7 @@
     ' vec2 uv=gl_FragCoord.xy/u_res;',
     ' float aspect=u_res.x/u_res.y;',
     ' vec2 p=vec2((uv.x-0.5)*aspect,uv.y-0.5);',
-    ' float t=u_time*0.06;',
+    ' float t=u_time*0.02;',
     // Domain-Warping: fbm(p + fbm(p+t))
     ' vec2 warp=vec2(fbm(p*2.4+vec2(0.0,t)),fbm(p*2.4+vec2(4.7,-t)));',
     ' float n=fbm(p*2.6+1.7*warp+0.3*t);n=n*0.5+0.5;',
@@ -99,7 +99,7 @@
     ' col+=u_c3*density*zBlau*1.15;',
     // warme Glut in den dichtesten Kernen
     ' float core=smoothstep(0.72,1.0,density);',
-    ' col+=vec3(0.96,0.86,0.63)*core*0.55;',
+    ' col+=vec3(0.72,0.88,1.0)*core*0.55;',
     // Lesbarkeits-Zone: dimmt die (verwackelt wallende) Bildmitte weich ab
     ' float band=0.175+0.05*snoise(vec2(uv.x*2.4,t));',
     ' float r=smoothstep(band*0.55,band*1.85,abs(uv.y-0.5));',
@@ -149,9 +149,9 @@
 
     var uRes = gl.getUniformLocation(pr, 'u_res');
     var uTime = gl.getUniformLocation(pr, 'u_time');
-    gl.uniform3f(gl.getUniformLocation(pr, 'u_c1'), 0.788, 0.659, 0.416); // Gold #c9a86a
-    gl.uniform3f(gl.getUniformLocation(pr, 'u_c2'), 0.478, 0.290, 0.169); // Erdbraun #7a4a2b
-    gl.uniform3f(gl.getUniformLocation(pr, 'u_c3'), 0.169, 0.243, 0.420); // Nachtblau #2b3e6b
+    gl.uniform3f(gl.getUniformLocation(pr, 'u_c1'), 0.494, 0.784, 1.000); // Hellblau #7ec8ff
+    gl.uniform3f(gl.getUniformLocation(pr, 'u_c2'), 0.231, 0.478, 0.851); // Azurblau #3b7ad9
+    gl.uniform3f(gl.getUniformLocation(pr, 'u_c3'), 0.333, 0.400, 0.820); // Blauviolett #5566d1
 
     root.appendChild(c);
     var SCALE = 0.45;
