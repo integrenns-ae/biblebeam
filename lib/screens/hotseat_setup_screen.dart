@@ -124,27 +124,26 @@ class _HotseatSetupScreenState extends State<HotseatSetupScreen> {
                 Text('${tr('rounds')} (${tr('player1')} & ${tr('player2')})',
                     style: AppTheme.ui(14, w: FontWeight.w600, c: AppColors.gold)),
                 const SizedBox(height: 8),
-                Row(
-                  children: [4, 6, 8, 10].map((n) {
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [4, 6, 8, 10, 20].map((n) {
                     final sel = _count == n;
-                    return Padding(
-                      padding: const EdgeInsets.only(right: 8),
-                      child: GestureDetector(
-                        onTap: () => setState(() => _count = n),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 18, vertical: 10),
-                          decoration: BoxDecoration(
-                            color: sel ? AppColors.gold : AppColors.cardBg,
-                            borderRadius: BorderRadius.circular(999),
-                            border: Border.all(
-                                color: sel ? AppColors.gold : AppColors.cardBorder),
-                          ),
-                          child: Text('$n',
-                              style: AppTheme.ui(14,
-                                  w: FontWeight.w700,
-                                  c: sel ? AppColors.nightDeep : AppColors.cream)),
+                    return GestureDetector(
+                      onTap: () => setState(() => _count = n),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 18, vertical: 10),
+                        decoration: BoxDecoration(
+                          color: sel ? AppColors.gold : AppColors.cardBg,
+                          borderRadius: BorderRadius.circular(999),
+                          border: Border.all(
+                              color: sel ? AppColors.gold : AppColors.cardBorder),
                         ),
+                        child: Text('$n',
+                            style: AppTheme.ui(14,
+                                w: FontWeight.w700,
+                                c: sel ? AppColors.nightDeep : AppColors.cream)),
                       ),
                     );
                   }).toList(),
