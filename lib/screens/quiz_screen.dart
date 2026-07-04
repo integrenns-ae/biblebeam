@@ -61,6 +61,7 @@ class _QuizScreenState extends State<QuizScreen>
               question: q.question,
               options: q.options.toList()..shuffle(rnd),
               answer: q.answer,
+              reference: q.reference,
             ))
         .toList();
     _timer = AnimationController(

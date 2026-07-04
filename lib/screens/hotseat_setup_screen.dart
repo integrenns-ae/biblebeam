@@ -70,6 +70,7 @@ class _HotseatSetupScreenState extends State<HotseatSetupScreen> {
           question: q.question,
           options: q.options.toList()..shuffle(rnd),
           answer: q.answer,
+          reference: q.reference,
         );
     Navigator.of(context).push(MaterialPageRoute(
       builder: (_) => HotseatGameScreen(
