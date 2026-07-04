@@ -13,6 +13,7 @@ import 'achievements_screen.dart';
 import 'hotseat_setup_screen.dart';
 import 'quiz_screen.dart';
 import 'settings_screen.dart';
+import 'wisdom_sky_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -187,6 +188,15 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
+              IconButton(
+                icon: const Icon(Icons.auto_awesome_rounded, color: AppColors.goldBright),
+                tooltip: tr('skyTitle'),
+                onPressed: () {
+                  SoundService.instance.play(Sfx.tap);
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => const WisdomSkyScreen()));
+                },
+              ),
               IconButton(
                 icon: const Icon(Icons.emoji_events_rounded, color: AppColors.gold),
                 tooltip: tr('achievements'),

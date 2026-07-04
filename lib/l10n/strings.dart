@@ -127,6 +127,48 @@ const Map<String, Map<String, String>> _t = {
   'block3': {'en': 'Skill', 'de': 'Können', 'ru': 'Мастерство'},
   'block4': {'en': 'Topic Mastery', 'de': 'Themen-Meisterschaft', 'ru': 'Мастерство тем'},
   'block5': {'en': 'Hidden', 'de': 'Versteckt', 'ru': 'Скрытые'},
+  // Sternbild der Weisheit (Daniel 12,3)
+  'skyTitle': {
+    'en': 'Constellation of Wisdom',
+    'de': 'Sternbild der Weisheit',
+    'ru': 'Созвездие мудрости',
+  },
+  'skyVerse': {
+    'en': 'Those who are wise will shine like the brightness of the heavens, and those who lead many to righteousness, like the stars for ever and ever.',
+    'de': 'Und die Verständigen werden leuchten wie des Himmels Glanz, und die vielen zur Gerechtigkeit weisen, wie die Sterne immer und ewiglich.',
+    'ru': 'И разумные будут сиять, как светила на тверди, и обратившие многих к правде — как звёзды, вовеки, навсегда.',
+  },
+  'skyRef': {'en': 'Daniel 12:3', 'de': 'Daniel 12,3', 'ru': 'Даниил 12:3'},
+  'skyStarsLabel': {
+    'en': 'shining stars',
+    'de': 'leuchtende Sterne',
+    'ru': 'сияющих звёзд',
+  },
+  'skyEmpty': {
+    'en': 'Answer questions correctly to kindle your sky.',
+    'de': 'Beantworte Fragen richtig, um deinen Himmel zu entzünden.',
+    'ru': 'Отвечай верно, чтобы зажечь своё небо.',
+  },
+  'skyNext': {
+    'en': 'more to the next constellation',
+    'de': 'bis zum nächsten Sternbild',
+    'ru': 'до следующего созвездия',
+  },
+  'skyRank0': {'en': 'The First Spark', 'de': 'Der erste Funke', 'ru': 'Первая искра'},
+  'skyRank1': {'en': 'First Lights', 'de': 'Erste Lichter', 'ru': 'Первые огни'},
+  'skyRank2': {'en': 'A Walking Path', 'de': 'Wandelnder Pfad', 'ru': 'Идущий путь'},
+  'skyRank3': {'en': 'A Shining Path', 'de': 'Leuchtender Pfad', 'ru': 'Сияющий путь'},
+  'skyRank4': {'en': 'A Radiant Covenant', 'de': 'Strahlender Bund', 'ru': 'Сияющий завет'},
+  'skyRank5': {
+    'en': 'Brightness of the Heavens',
+    'de': 'Himmelsglanz',
+    'ru': 'Небесное сияние',
+  },
+  'skyRank6': {
+    'en': 'Like the Stars, Forever',
+    'de': 'Wie die Sterne, ewig',
+    'ru': 'Как звёзды, навеки',
+  },
   // Kategorienamen je slug
   'cat.torah': {'en': 'Law (Torah)', 'de': 'Gesetz (Tora)', 'ru': 'Закон (Тора)'},
   'cat.history': {'en': 'History of Israel', 'de': 'Geschichte Israels', 'ru': 'История Израиля'},
