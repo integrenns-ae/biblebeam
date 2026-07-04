@@ -18,6 +18,7 @@ psql "$CONN" -t -A -o /tmp/db_dump.json <<'SQL'
 select coalesce(json_agg(j), '[]') from (
   select q.id, q.difficulty,
     (select jsonb_object_agg(t.lang, t.prompt) from question_translations t where t.question_id=q.id) as prompts,
+    (select jsonb_object_agg(t.lang, t.explanation) from question_translations t where t.question_id=q.id and t.explanation is not null and t.explanation <> '') as explanations,
     (select jsonb_agg(jsonb_build_object('sort',o.sort,'correct',o.is_correct,
         'texts',(select jsonb_object_agg(ot.lang, ot.text) from answer_option_translations ot where ot.option_id=o.id))
        order by o.sort) from answer_options o where o.question_id=q.id) as options,

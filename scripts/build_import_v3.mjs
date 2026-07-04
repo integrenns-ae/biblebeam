@@ -59,8 +59,11 @@ items.forEach((it, n) => {
   const qid = uuid('q:' + id)
   const difficulty = LEVEL[it.level] || 2
   questions.push(`(${q(qid)}, ${difficulty}, 'approved', 'hard-v3')`)
-  qTr.push(`(${q(qid)}, 'de', ${q(it.q_de.trim())})`)
-  qTr.push(`(${q(qid)}, 'en', ${q(it.q_en.trim())})`)
+  // explanation = Bibelstelle (bei der Auflösung angezeigt); leer -> null
+  const refDe = (it.ref_de || '').trim()
+  const refEn = (it.ref_en || '').trim()
+  qTr.push(`(${q(qid)}, 'de', ${q(it.q_de.trim())}, ${refDe ? q(refDe) : 'null'})`)
+  qTr.push(`(${q(qid)}, 'en', ${q(it.q_en.trim())}, ${refEn ? q(refEn) : 'null'})`)
 
   // Optionen gemischt einsetzen, Paar DE/EN zusammenhalten.
   const order = shuffledOrder(id)
@@ -97,7 +100,7 @@ const lines = ['-- AUTO-GENERIERT (build_import_v2.mjs) – 2000 Phrasen-Fragen,
 lines.push(...batch('categories', 'id, slug, kind, sort', cats, '(slug) do nothing'))
 lines.push(...batch('category_translations', 'category_id, lang, name', catTr, 'do nothing'))
 lines.push(...batch('questions', 'id, difficulty, status, source', questions, '(id) do nothing'))
-lines.push(...batch('question_translations', 'question_id, lang, prompt', qTr, 'do nothing'))
+lines.push(...batch('question_translations', 'question_id, lang, prompt, explanation', qTr, 'do nothing'))
 lines.push(...batch('answer_options', 'id, question_id, is_correct, sort', opts, '(id) do nothing'))
 lines.push(...batch('answer_option_translations', 'option_id, lang, text', optTr, 'do nothing'))
 lines.push(...batch('question_categories', 'question_id, category_id', qCat, 'do nothing'))

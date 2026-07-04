@@ -428,16 +428,35 @@ class _HotseatGameScreenState extends State<HotseatGameScreen>
   // -------------------- Banner (Zug / Auflösung) --------------------
   Widget _turnBanner() {
     if (_phase == _Phase.reveal) {
+      final ref = _q.reference;
       return Container(
         padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 9),
         decoration: BoxDecoration(
           color: AppColors.gold.withValues(alpha: 0.16),
-          borderRadius: BorderRadius.circular(999),
+          borderRadius: BorderRadius.circular(18),
           border: Border.all(color: AppColors.gold),
         ),
-        child: Text('${tr('correctAnswer')}: ${_q.answer}',
-            textAlign: TextAlign.center,
-            style: AppTheme.ui(15, w: FontWeight.w700, c: AppColors.goldBright)),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('${tr('correctAnswer')}: ${_q.answer}',
+                textAlign: TextAlign.center,
+                style: AppTheme.ui(15, w: FontWeight.w700, c: AppColors.goldBright)),
+            if (ref != null) ...[
+              const SizedBox(height: 5),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Icon(Icons.menu_book_rounded,
+                      size: 14, color: AppColors.creamDim),
+                  const SizedBox(width: 5),
+                  Text(ref,
+                      style: AppTheme.ui(13, w: FontWeight.w600, c: AppColors.creamDim)),
+                ],
+              ),
+            ],
+          ],
+        ),
       ).animate(key: ValueKey('rev_${_turn}_$_idx')).fadeIn(duration: 220.ms);
     }
     return Container(

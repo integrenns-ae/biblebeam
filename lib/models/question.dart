@@ -20,6 +20,7 @@ class Question {
   final String question;
   final List<String> options;
   final String answer;
+  final String? reference; // Bibelstelle (bei Auflösung), optional
 
   const Question({
     required this.id,
@@ -28,6 +29,7 @@ class Question {
     required this.question,
     required this.options,
     required this.answer,
+    this.reference,
   });
 
   factory Question.fromJson(Map<String, dynamic> j) => Question(
@@ -37,6 +39,9 @@ class Question {
         question: j['question'] as String,
         options: (j['options'] as List).cast<String>(),
         answer: j['answer'] as String,
+        reference: (j['reference'] as String?)?.trim().isEmpty ?? true
+            ? null
+            : (j['reference'] as String).trim(),
       );
 
   bool isCorrect(String option) => option == answer;

@@ -66,7 +66,7 @@ class ContentSync {
       final page = await db
           .from('questions')
           .select('id, difficulty, '
-              'question_translations(prompt), '
+              'question_translations(prompt, explanation), '
               'answer_options(sort, is_correct, answer_option_translations(text)), '
               'question_categories(categories(slug, kind))')
           .eq('status', 'approved')
@@ -116,6 +116,7 @@ class ContentSync {
         regionCounts[r] = (regionCounts[r] ?? 0) + 1;
       }
 
+      final reference = (trs.first['explanation'] as String?)?.trim();
       questions.add({
         'id': q['id'],
         'categories': regions.toList(),
@@ -123,6 +124,7 @@ class ContentSync {
         'question': prompt,
         'options': texts,
         'answer': answer,
+        if (reference != null && reference.isNotEmpty) 'reference': reference,
       });
     }
 

@@ -4,13 +4,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:bibelquiz/models/question.dart';
 import 'package:bibelquiz/screens/hotseat_game_screen.dart';
 
-Question q(String id, String correct) => Question(
+Question q(String id, String correct, {String? reference}) => Question(
       id: id,
       categories: const ['general'],
       difficulty: 2,
       question: 'Frage $id?',
       options: [correct, 'Falsch A', 'Falsch B', 'Falsch C'],
       answer: correct,
+      reference: reference,
     );
 
 void main() {
@@ -18,7 +19,7 @@ void main() {
       (tester) async {
     await tester.pumpWidget(MaterialApp(
       home: HotseatGameScreen(
-        questions1: [q('a1', 'Richtig1'), q('a2', 'Richtig2')],
+        questions1: [q('a1', 'Richtig1', reference: 'Ester 5,2'), q('a2', 'Richtig2')],
         questions2: [q('b1', 'RichtigX'), q('b2', 'RichtigY')],
         name1: 'Papa',
         name2: 'Kind',
@@ -39,6 +40,7 @@ void main() {
     await tester.pump(const Duration(milliseconds: 300));
     expect(find.byKey(const Key('hotseat-next')), findsOneWidget);
     expect(find.byIcon(Icons.star_rounded), findsWidgets); // erster Stern glüht
+    expect(find.text('Ester 5,2'), findsOneWidget); // Bibelstelle bei Auflösung
 
     // Weiter -> nächster Zug ist Spieler 2 mit dessen Frage.
     await tester.tap(find.byKey(const Key('hotseat-next')));

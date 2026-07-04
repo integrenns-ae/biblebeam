@@ -51,6 +51,7 @@ for (const lang of ['en', 'de']) {
     if (regions.size === 0) regions.add('general')
     for (const r of regions) regionCounts[r] = (regionCounts[r] || 0) + 1
 
+    const reference = (q.explanations?.[lang] || '').trim() // Bibelstelle (optional)
     questions.push({
       id: q.id,
       categories: [...regions],
@@ -58,6 +59,7 @@ for (const lang of ['en', 'de']) {
       question: prompt,
       options: texts,
       answer,
+      ...(reference ? { reference } : {}),
     })
   }
   const categories = REGIONS

@@ -243,6 +243,27 @@ class _QuizScreenState extends State<QuizScreen>
     await _diffRepo.vote(questionId, direction);
   }
 
+  /// Bibelstelle bei der Auflösung (zum Nachschlagen / bei Streitfällen).
+  Widget _refChip(String reference) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      decoration: BoxDecoration(
+        color: AppColors.gold.withValues(alpha: 0.12),
+        borderRadius: BorderRadius.circular(999),
+        border: Border.all(color: AppColors.gold.withValues(alpha: 0.5)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const Icon(Icons.menu_book_rounded, size: 14, color: AppColors.gold),
+          const SizedBox(width: 6),
+          Text(reference,
+              style: AppTheme.ui(13, w: FontWeight.w600, c: AppColors.goldBright)),
+        ],
+      ),
+    ).animate(key: ValueKey('ref_${_current.id}')).fadeIn(duration: 250.ms);
+  }
+
   @override
   Widget build(BuildContext context) {
     final q = _current;
@@ -262,20 +283,29 @@ class _QuizScreenState extends State<QuizScreen>
                 Expanded(
                   child: Center(
                     child: SingleChildScrollView(
-                      child: Text(
-                        q.question,
-                        key: ValueKey(q.id),
-                        textAlign: TextAlign.center,
-                        style: AppTheme.dark().textTheme.headlineSmall!.copyWith(
-                              color: AppColors.cream,
-                              height: 1.35,
-                              fontSize: 30,
-                              fontWeight: FontWeight.w600,
-                            ),
-                      )
-                          .animate(key: ValueKey(q.id))
-                          .fadeIn(duration: 350.ms)
-                          .moveY(begin: 12, end: 0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            q.question,
+                            key: ValueKey(q.id),
+                            textAlign: TextAlign.center,
+                            style: AppTheme.dark().textTheme.headlineSmall!.copyWith(
+                                  color: AppColors.cream,
+                                  height: 1.35,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                          )
+                              .animate(key: ValueKey(q.id))
+                              .fadeIn(duration: 350.ms)
+                              .moveY(begin: 12, end: 0),
+                          if (_locked && q.reference != null) ...[
+                            const SizedBox(height: 14),
+                            _refChip(q.reference!),
+                          ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
