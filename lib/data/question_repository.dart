@@ -6,11 +6,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/question.dart';
 import 'content_sync.dart';
 
-/// Liefert den Fragenkatalog je Sprache – mit drei Quellen:
-///   1. lokaler Cache (zuletzt aus Supabase synchronisiert)
-///   2. gebündeltes Asset (Fallback, sofort verfügbar, offline)
-///   3. Hintergrund-Sync aus Supabase (max. alle 6 h) → aktualisiert den Cache
-/// Review-Korrekturen erscheinen damit spätestens beim nächsten App-Start.
+/// Liefert den Fragenkatalog je Sprache:
+///   1. gebündeltes Asset (beim Deploy aktuell, sofort verfügbar, offline)
+///   2. localStorage-Cache – nur wenn er MEHR Fragen hat als das Asset
+///      (also neuer als dieser Build); sonst verdeckt ein alter Cache das Asset.
+///   3. Hintergrund-Sync aus Supabase (gedrosselt) → aktualisiert den Cache
+///      für die nächste Sitzung.
 class QuestionRepository {
   final Map<String, QuestionPack> _memory = {};
   final Set<String> _refreshing = {};
@@ -30,30 +31,20 @@ class QuestionRepository {
       return inMem;
     }
 
-    // Erststart dieser Sitzung: kurz versuchen, frisch aus Supabase zu laden,
-    // damit Korrekturen sofort sichtbar sind. Offline/langsam -> Fallback.
-    try {
-      final fresh = await ContentSync()
-          .fetchPack(code)
-          .timeout(const Duration(seconds: 4));
-      if (fresh != null && (fresh['questions'] as List).length >= 100) {
-        final pack = QuestionPack.fromJson(fresh);
-        _memory[code] = pack;
-        final prefs = await SharedPreferences.getInstance();
-        await prefs.setString('content_$code', json.encode(fresh));
-        await prefs.setInt(
-            'content_time_$code', DateTime.now().millisecondsSinceEpoch);
-        debugPrint('Content frisch geladen ($code): '
-            '${(fresh['questions'] as List).length} Fragen');
-        return pack;
-      }
-    } catch (e) {
-      debugPrint('Frisch-Laden ($code) fehlgeschlagen, nutze Cache/Asset: $e');
-    }
-
-    QuestionPack? pack = await _loadFromCache(code);
-    pack ??= await _loadBundled(code);
+    // Das gebündelte Asset ist beim Deploy aktuell -> sofort anzeigen (kein
+    // blockierender Netzwerk-Fetch, der bei großem Bestand ins Timeout läuft).
+    // Den localStorage-Cache nur bevorzugen, wenn er MEHR Fragen hat als das
+    // Asset (also neuer als dieser Build) – ein veralteter, kleinerer Cache darf
+    // das aktuelle Asset nicht verdecken. Die Hintergrund-Aktualisierung hält
+    // den Cache für die nächste Sitzung frisch.
+    final bundled = await _loadBundled(code);
+    final cached = await _loadFromCache(code);
+    final pack = (cached != null &&
+            cached.questions.length > bundled.questions.length)
+        ? cached
+        : bundled;
     _memory[code] = pack;
+    _refreshInBackground(code);
     return pack;
   }
 
