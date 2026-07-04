@@ -95,60 +95,72 @@ class _WisdomSkyScreenState extends State<WisdomSkyScreen>
 
   @override
   Widget build(BuildContext context) {
-    final rank = _rank();
     return Scaffold(
       body: Starfield(
         child: SafeArea(
-          child: Stack(
-            children: [
-              Positioned.fill(
-                child: RepaintBoundary(
-                  child: CustomPaint(painter: _SkyPainter(_stars, _t)),
-                ),
-              ),
-              // Lesbarkeits-Schleier oben & unten
-              _scrim(top: true),
-              _scrim(top: false),
-              Column(
+          child: LayoutBuilder(
+            builder: (context, cons) {
+              final wide = cons.maxWidth > 820;
+              final rank = _rank();
+              return Stack(
                 children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: IconButton(
-                      icon: const Icon(Icons.arrow_back_rounded,
-                          color: AppColors.creamDim),
-                      onPressed: () => Navigator.of(context).pop(),
+                  Positioned.fill(
+                    child: RepaintBoundary(
+                      child: CustomPaint(painter: _SkyPainter(_stars, _t)),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 28),
-                    child: Column(
-                      children: [
-                        Text(tr('skyTitle'),
-                            textAlign: TextAlign.center,
-                            style: AppTheme.ui(15,
-                                w: FontWeight.w700, c: AppColors.gold)),
-                        const SizedBox(height: 14),
-                        Text('„${tr('skyVerse')}"',
-                            textAlign: TextAlign.center,
-                            style: AppTheme.dark()
-                                .textTheme
-                                .titleMedium!
-                                .copyWith(
-                                    color: AppColors.cream,
-                                    fontStyle: FontStyle.italic,
-                                    height: 1.45)),
-                        const SizedBox(height: 8),
-                        Text('— ${tr('skyRef')}',
-                            style: AppTheme.ui(12, c: AppColors.creamDim)),
-                      ],
-                    ),
+                  // Lesbarkeits-Schleier oben & unten
+                  _scrim(top: true),
+                  _scrim(top: false),
+                  Column(
+                    children: [
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: IconButton(
+                          icon: const Icon(Icons.arrow_back_rounded,
+                              color: AppColors.creamDim),
+                          onPressed: () => Navigator.of(context).pop(),
+                        ),
+                      ),
+                      Center(
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(maxWidth: 760),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 28),
+                            child: Column(
+                              children: [
+                                Text(tr('skyTitle'),
+                                    textAlign: TextAlign.center,
+                                    style: AppTheme.ui(wide ? 20 : 15,
+                                        w: FontWeight.w700, c: AppColors.gold)),
+                                SizedBox(height: wide ? 20 : 14),
+                                Text('„${tr('skyVerse')}"',
+                                    textAlign: TextAlign.center,
+                                    style: AppTheme.dark()
+                                        .textTheme
+                                        .titleMedium!
+                                        .copyWith(
+                                            color: AppColors.cream,
+                                            fontStyle: FontStyle.italic,
+                                            fontSize: wide ? 27 : 18,
+                                            height: 1.5)),
+                                SizedBox(height: wide ? 12 : 8),
+                                Text('— ${tr('skyRef')}',
+                                    style: AppTheme.ui(wide ? 15 : 12,
+                                        c: AppColors.creamDim)),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      const Spacer(),
+                      _footer(rank, wide),
+                      SizedBox(height: wide ? 28 : 16),
+                    ],
                   ),
-                  const Spacer(),
-                  _footer(rank),
-                  const SizedBox(height: 16),
                 ],
-              ),
-            ],
+              );
+            },
           ),
         ),
       ),
@@ -179,47 +191,56 @@ class _WisdomSkyScreenState extends State<WisdomSkyScreen>
     );
   }
 
-  Widget _footer(({String name, int curAt, int? nextAt, String? nextName}) rank) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: Column(
-        children: [
-          Text('$_count',
-              style: AppTheme.dark().textTheme.displayMedium!.copyWith(
-                    color: AppColors.cream,
-                    fontWeight: FontWeight.w800,
-                    shadows: const [
-                      Shadow(color: AppColors.gold, blurRadius: 22)
-                    ],
-                  )),
-          Text(tr('skyStarsLabel'),
-              style: AppTheme.ui(13, c: AppColors.creamDim)),
-          const SizedBox(height: 12),
-          Text(rank.name,
-              style: AppTheme.ui(17, w: FontWeight.w700, c: AppColors.goldBright)),
-          if (_count == 0) ...[
-            const SizedBox(height: 8),
-            Text(tr('skyEmpty'),
-                textAlign: TextAlign.center,
-                style: AppTheme.ui(13, c: AppColors.creamDim)),
-          ] else if (rank.nextAt != null) ...[
-            const SizedBox(height: 10),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(6),
-              child: LinearProgressIndicator(
-                value: ((_count - rank.curAt) / (rank.nextAt! - rank.curAt))
-                    .clamp(0.0, 1.0),
-                minHeight: 6,
-                backgroundColor: AppColors.cardBorder,
-                valueColor: const AlwaysStoppedAnimation(AppColors.gold),
-              ),
-            ),
-            const SizedBox(height: 6),
-            Text('${rank.nextAt! - _count} ${tr('skyNext')} · ${rank.nextName}',
-                textAlign: TextAlign.center,
-                style: AppTheme.ui(12, c: AppColors.creamDim)),
-          ],
-        ],
+  Widget _footer(
+      ({String name, int curAt, int? nextAt, String? nextName}) rank, bool wide) {
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 560),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Column(
+            children: [
+              Text('$_count',
+                  style: AppTheme.dark().textTheme.displayMedium!.copyWith(
+                        color: AppColors.cream,
+                        fontWeight: FontWeight.w800,
+                        fontSize: wide ? 80 : 52,
+                        shadows: const [
+                          Shadow(color: AppColors.gold, blurRadius: 24)
+                        ],
+                      )),
+              Text(tr('skyStarsLabel'),
+                  style: AppTheme.ui(wide ? 16 : 13, c: AppColors.creamDim)),
+              SizedBox(height: wide ? 16 : 12),
+              Text(rank.name,
+                  textAlign: TextAlign.center,
+                  style: AppTheme.ui(wide ? 24 : 17,
+                      w: FontWeight.w700, c: AppColors.goldBright)),
+              if (_count == 0) ...[
+                SizedBox(height: wide ? 12 : 8),
+                Text(tr('skyEmpty'),
+                    textAlign: TextAlign.center,
+                    style: AppTheme.ui(wide ? 15 : 13, c: AppColors.creamDim)),
+              ] else if (rank.nextAt != null) ...[
+                SizedBox(height: wide ? 14 : 10),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(6),
+                  child: LinearProgressIndicator(
+                    value: ((_count - rank.curAt) / (rank.nextAt! - rank.curAt))
+                        .clamp(0.0, 1.0),
+                    minHeight: wide ? 8 : 6,
+                    backgroundColor: AppColors.cardBorder,
+                    valueColor: const AlwaysStoppedAnimation(AppColors.gold),
+                  ),
+                ),
+                SizedBox(height: wide ? 8 : 6),
+                Text('${rank.nextAt! - _count} ${tr('skyNext')} · ${rank.nextName}',
+                    textAlign: TextAlign.center,
+                    style: AppTheme.ui(wide ? 15 : 12, c: AppColors.creamDim)),
+              ],
+            ],
+          ),
+        ),
       ),
     );
   }
