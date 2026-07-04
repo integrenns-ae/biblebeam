@@ -48,8 +48,9 @@
       position: fixed; inset: 0; z-index: -1;
       pointer-events: none; overflow: hidden; background: #0c0f16;
     }
-    .neb-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-    .neb-stars { position: absolute; inset: 0; }
+    /* Canvas (opak) unten, Sterne darüber – sonst verdeckt der Nebel die Sterne. */
+    .neb-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 0; }
+    .neb-stars { position: absolute; inset: 0; z-index: 1; }
     .neb-star {
       position: absolute; border-radius: 50%; opacity: 0;
       animation-name: neb-twinkle; animation-timing-function: ease-in-out;
