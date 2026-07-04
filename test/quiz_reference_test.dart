@@ -39,4 +39,33 @@ void main() {
     await tester.pumpWidget(const SizedBox());
     await tester.pump(const Duration(seconds: 1));
   });
+
+  testWidgets('Zeitablauf löst die weiße Explosions-Blende aus', (tester) async {
+    final pool = List.generate(
+      10,
+      (i) => Question(
+        id: 'q$i',
+        categories: const ['general'],
+        difficulty: 2,
+        question: 'Frage $i?',
+        options: const ['A', 'B', 'C', 'D'],
+        answer: 'A',
+      ),
+    );
+    bool whiteFlash(Widget w) => w is ColoredBox && w.color == Colors.white;
+
+    await tester.pumpWidget(MaterialApp(home: QuizScreen(pool: pool, title: 'T')));
+    await tester.pump(const Duration(milliseconds: 100));
+    expect(find.byWidgetPredicate(whiteFlash), findsNothing); // vor Ablauf: keine Blende
+
+    // 20s-Timer ablaufen lassen -> Komet erreicht das Ende -> Explosion.
+    await tester.pump(const Duration(seconds: 20));
+    await tester.pump(const Duration(milliseconds: 150)); // Blende blüht auf
+    expect(find.byWidgetPredicate(whiteFlash), findsOneWidget);
+
+    // Auto-Weiter (1900ms) abwarten, dann sauber abhängen.
+    await tester.pump(const Duration(milliseconds: 2000));
+    await tester.pumpWidget(const SizedBox());
+    await tester.pump(const Duration(seconds: 1));
+  });
 }

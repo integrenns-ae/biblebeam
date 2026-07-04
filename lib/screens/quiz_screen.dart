@@ -30,9 +30,10 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   late final List<Question> _questions;
   late final AnimationController _timer;
+  late final AnimationController _flash; // weiße Explosions-Blende bei Zeitablauf
   int _index = 0;
   int _score = 0;
   int _streak = 0;
@@ -70,12 +71,15 @@ class _QuizScreenState extends State<QuizScreen>
     )..addStatusListener((s) {
         if (s == AnimationStatus.completed && !_locked) _onPick(null);
       });
+    _flash = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 1000));
     _timer.forward();
   }
 
   @override
   void dispose() {
     _timer.dispose();
+    _flash.dispose();
     super.dispose();
   }
 
@@ -84,6 +88,8 @@ class _QuizScreenState extends State<QuizScreen>
   void _onPick(String? option) {
     if (_locked) return;
     _timer.stop();
+    final timeout = option == null; // Komet hat das Ende erreicht -> Explosion
+    if (timeout) _flash.forward(from: 0);
     final correct = option != null && _current.isCorrect(option);
     final elapsedMs = (_timer.value * _secondsPerQuestion * 1000).round();
     _answered.add(AnsweredQuestion(
@@ -108,7 +114,8 @@ class _QuizScreenState extends State<QuizScreen>
       }
     });
     SoundService.instance.play(correct ? Sfx.correct : Sfx.wrong);
-    Future.delayed(const Duration(milliseconds: 1400), _next);
+    // Bei Zeitablauf länger warten, damit nach der Explosion die Auflösung sichtbar ist.
+    Future.delayed(Duration(milliseconds: timeout ? 1900 : 1400), _next);
   }
 
   void _next() {
@@ -269,11 +276,13 @@ class _QuizScreenState extends State<QuizScreen>
   Widget build(BuildContext context) {
     final q = _current;
     return Scaffold(
-      body: Starfield(
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
+      body: Stack(
+        children: [
+          Starfield(
+            child: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
               children: [
                 _topBar(),
                 const SizedBox(height: 16),
@@ -316,6 +325,9 @@ class _QuizScreenState extends State<QuizScreen>
             ),
           ),
         ),
+      ),
+          _flashOverlay(),
+        ],
       ),
     );
   }
@@ -400,22 +412,38 @@ class _QuizScreenState extends State<QuizScreen>
   }
 
   Widget _timerBar() {
-    return AnimatedBuilder(
-      animation: _timer,
-      builder: (_, _) {
-        final remaining = 1 - _timer.value;
-        return ClipRRect(
-          borderRadius: BorderRadius.circular(4),
-          child: LinearProgressIndicator(
-            value: _locked ? remaining : remaining,
-            minHeight: 4,
-            backgroundColor: AppColors.cardBorder,
-            valueColor: AlwaysStoppedAnimation(
-              Color.lerp(AppColors.wrong, AppColors.gold, remaining)!,
-            ),
-          ),
-        );
-      },
+    return SizedBox(
+      height: 16,
+      child: AnimatedBuilder(
+        animation: _timer,
+        builder: (_, _) => CustomPaint(
+          painter: _CometPainter(_timer.value),
+          size: Size.infinite,
+        ),
+      ),
+    );
+  }
+
+  /// Weiße Explosions-Blende, wenn der Komet das Ende erreicht (Zeitablauf).
+  Widget _flashOverlay() {
+    return Positioned.fill(
+      child: IgnorePointer(
+        child: AnimatedBuilder(
+          animation: _flash,
+          builder: (_, _) {
+            final t = _flash.value;
+            if (t == 0) return const SizedBox.shrink();
+            // schnelles Aufblenden -> kurz halten -> ausklingen (ca. 1 s)
+            final double op = t < 0.06
+                ? t / 0.06
+                : (t < 0.5 ? 1.0 : (1 - (t - 0.5) / 0.5));
+            return Opacity(
+              opacity: op.clamp(0.0, 1.0),
+              child: const ColoredBox(color: Colors.white),
+            );
+          },
+        ),
+      ),
     );
   }
 
@@ -480,4 +508,70 @@ class _QuizScreenState extends State<QuizScreen>
     }
     return tile;
   }
+}
+
+/// Timer als Komet: heller Kopf, der von links nach rechts fliegt, mit
+/// ausklingendem Gold-Schweif dahinter. Erreicht der Kopf das Ende (Zeitablauf),
+/// löst die Explosions-Blende aus (siehe _flashOverlay).
+class _CometPainter extends CustomPainter {
+  final double progress; // 0..1 verstrichene Zeit (Kopf wandert links -> rechts)
+  const _CometPainter(this.progress);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final w = size.width, cy = size.height / 2;
+    final headX = progress.clamp(0.0, 1.0) * w;
+
+    // Basis-Schiene (dezent)
+    canvas.drawLine(
+      Offset(0, cy),
+      Offset(w, cy),
+      Paint()
+        ..color = AppColors.cardBorder.withValues(alpha: 0.6)
+        ..strokeWidth = 3
+        ..strokeCap = StrokeCap.round,
+    );
+    if (headX <= 0.5) return;
+
+    final tailLen = headX < w * 0.30 ? headX : w * 0.30;
+    final tailStart = headX - tailLen;
+
+    // weicher, breiter Glüh-Schweif
+    final glowRect = Rect.fromLTRB(tailStart, cy - 5, headX, cy + 5);
+    canvas.drawRRect(
+      RRect.fromRectAndRadius(glowRect, const Radius.circular(6)),
+      Paint()
+        ..shader = LinearGradient(
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+          colors: [AppColors.gold.withValues(alpha: 0), AppColors.gold.withValues(alpha: 0.35)],
+        ).createShader(glowRect)
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4),
+    );
+
+    // kompakter Kern-Schweif
+    final rect = Rect.fromLTRB(tailStart, cy - 2.5, headX, cy + 2.5);
+    canvas.drawRRect(
+      RRect.fromRectAndRadius(rect, const Radius.circular(3)),
+      Paint()
+        ..shader = LinearGradient(
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+          colors: [AppColors.gold.withValues(alpha: 0), AppColors.goldBright],
+        ).createShader(rect),
+    );
+
+    // Komet-Kopf: Glühen + heller Kern
+    canvas.drawCircle(
+      Offset(headX, cy),
+      9,
+      Paint()
+        ..color = AppColors.goldBright.withValues(alpha: 0.45)
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8),
+    );
+    canvas.drawCircle(Offset(headX, cy), 4.5, Paint()..color = Colors.white);
+  }
+
+  @override
+  bool shouldRepaint(covariant _CometPainter old) => old.progress != progress;
 }
