@@ -1,0 +1,204 @@
+{
+  "note": "Kategorie 'Tricky' (Knifflige Fragen). KEINE Ablenker — stattdessen wird die ueberraschende Antwort durch eine Bibelstelle + kurze Erklaerung bewiesen. Reveal-Format: Frage -> Aufloesen -> Antwort + Vers + Begruendung. Felder: q_de/q_en, answer_de/answer_en, ref_de/ref_en (Bibelstelle), why_de/why_en (Begruendung), categories [Testament, Buch, 'Tricky']. Ziel: 100 Stueck. Dies ist der Muster-Satz (18) zum Review.",
+  "format": "tricky-reveal-v1",
+  "questions": [
+    {
+      "q_de": "Welche „Erfindung\" aus Adams Zeit benutzen wir heute noch täglich?",
+      "q_en": "Which 'invention' from Adam's time do we still use every day?",
+      "answer_de": "Brot",
+      "answer_en": "Bread",
+      "ref_de": "1. Mose 3,19",
+      "ref_en": "Genesis 3:19",
+      "why_de": "„Im Schweiße deines Angesichts sollst du dein Brot essen\" — Brot gehörte schon zu Adams Welt.",
+      "why_en": "\"By the sweat of your brow you shall eat bread\" — bread already belonged to Adam's world.",
+      "categories": ["OT", "Genesis", "Tricky"]
+    },
+    {
+      "q_de": "Wer waren die ersten Menschen, die nähen konnten?",
+      "q_en": "Who were the first people who could sew?",
+      "answer_de": "Adam und Eva",
+      "answer_en": "Adam and Eve",
+      "ref_de": "1. Mose 3,7",
+      "ref_en": "Genesis 3:7",
+      "why_de": "Sie „hefteten Feigenblätter zusammen und machten sich Schurze\" — die erste Näharbeit.",
+      "why_en": "They \"sewed fig leaves together and made themselves coverings\" — the first sewing.",
+      "categories": ["OT", "Genesis", "Tricky"]
+    },
+    {
+      "q_de": "Außer der Schlange — welches Tier sprach in der Bibel noch mit Worten?",
+      "q_en": "Besides the serpent — which animal else spoke with words in the Bible?",
+      "answer_de": "Bileams Eselin",
+      "answer_en": "Balaam's donkey",
+      "ref_de": "4. Mose 22,28",
+      "ref_en": "Numbers 22:28",
+      "why_de": "„Da tat der HERR der Eselin den Mund auf, und sie sprach zu Bileam.\"",
+      "why_en": "\"Then the LORD opened the mouth of the donkey, and she spoke to Balaam.\"",
+      "categories": ["OT", "Numbers", "Tricky"]
+    },
+    {
+      "q_de": "Welche zwei Männer kamen in den Himmel, ohne je zu sterben?",
+      "q_en": "Which two men went to heaven without ever dying?",
+      "answer_de": "Henoch und Elia",
+      "answer_en": "Enoch and Elijah",
+      "ref_de": "1. Mose 5,24; 2. Könige 2,11",
+      "ref_en": "Genesis 5:24; 2 Kings 2:11",
+      "why_de": "Henoch „wandelte mit Gott, und Gott nahm ihn hinweg\"; Elia fuhr „im Wetter gen Himmel\".",
+      "why_en": "Enoch \"walked with God, and God took him\"; Elijah went up \"by a whirlwind into heaven\".",
+      "categories": ["OT", "2 Kings", "Tricky"]
+    },
+    {
+      "q_de": "Welche Frucht aß Eva vom verbotenen Baum?",
+      "q_en": "Which fruit did Eve eat from the forbidden tree?",
+      "answer_de": "Die Bibel nennt keinen Apfel — nur „Frucht\"",
+      "answer_en": "The Bible names no apple — only 'fruit'",
+      "ref_de": "1. Mose 3,6",
+      "ref_en": "Genesis 3:6",
+      "why_de": "„Sie nahm von der Frucht und aß\" — von einem Apfel steht nichts; das ist spätere Tradition.",
+      "why_en": "\"She took of its fruit and ate\" — an apple is never mentioned; that is later tradition.",
+      "categories": ["OT", "Genesis", "Tricky"]
+    },
+    {
+      "q_de": "War es wirklich ein Wal, der Jona verschlang?",
+      "q_en": "Was it really a whale that swallowed Jonah?",
+      "answer_de": "Nein, „ein großer Fisch\"",
+      "answer_en": "No, 'a great fish'",
+      "ref_de": "Jona 2,1",
+      "ref_en": "Jonah 1:17",
+      "why_de": "„Aber der HERR ließ einen großen Fisch kommen, Jona zu verschlingen\" — von einem Wal steht nichts.",
+      "why_en": "\"But the LORD appointed a great fish to swallow up Jonah\" — a whale is never named.",
+      "categories": ["OT", "Jonah", "Tricky"]
+    },
+    {
+      "q_de": "Nahm Noah von jedem Tier wirklich nur ein Paar?",
+      "q_en": "Did Noah really take only one pair of every animal?",
+      "answer_de": "Nein — von den reinen Tieren je sieben Paare",
+      "answer_en": "No — seven pairs of every clean animal",
+      "ref_de": "1. Mose 7,2",
+      "ref_en": "Genesis 7:2",
+      "why_de": "„Von allem reinen Vieh nimm zu dir je sieben\" — nur von den unreinen je ein Paar.",
+      "why_en": "\"Take seven pairs of all clean animals\" — only one pair of the unclean.",
+      "categories": ["OT", "Genesis", "Tricky"]
+    },
+    {
+      "q_de": "Wie viele Weise besuchten das Jesuskind?",
+      "q_en": "How many wise men visited the child Jesus?",
+      "answer_de": "Die Bibel nennt keine Zahl — nur drei Gaben",
+      "answer_en": "The Bible gives no number — only three gifts",
+      "ref_de": "Matthäus 2,11",
+      "ref_en": "Matthew 2:11",
+      "why_de": "Genannt sind Gold, Weihrauch und Myrrhe; „drei Könige\" ist Überlieferung, nicht Bibeltext.",
+      "why_en": "Gold, frankincense and myrrh are named; 'three kings' is tradition, not the text.",
+      "categories": ["NT", "Matthew", "Tricky"]
+    },
+    {
+      "q_de": "Wer wurde der älteste Mensch der ganzen Bibel?",
+      "q_en": "Who became the oldest person in the entire Bible?",
+      "answer_de": "Metuschelach (Methusalem), 969 Jahre",
+      "answer_en": "Methuselah, 969 years",
+      "ref_de": "1. Mose 5,27",
+      "ref_en": "Genesis 5:27",
+      "why_de": "„Sein ganzes Alter ward neunhundertneunundsechzig Jahre, und er starb.\"",
+      "why_en": "\"All the days of Methuselah were 969 years, and he died.\"",
+      "categories": ["OT", "Genesis", "Tricky"]
+    },
+    {
+      "q_de": "Wie lautet der kürzeste Vers der Bibel (auf Deutsch)?",
+      "q_en": "What is the shortest verse in the Bible (in English)?",
+      "answer_de": "„Jesus weinte.\"",
+      "answer_en": "\"Jesus wept.\"",
+      "ref_de": "Johannes 11,35",
+      "ref_en": "John 11:35",
+      "why_de": "Am Grab des Lazarus steht der kürzeste Vers — nur zwei Worte.",
+      "why_en": "At Lazarus' tomb stands the shortest verse — only two words.",
+      "categories": ["NT", "John", "Tricky"]
+    },
+    {
+      "q_de": "In welchem Buch der Bibel wird Gott mit keinem Wort erwähnt?",
+      "q_en": "In which book of the Bible is God never mentioned by name?",
+      "answer_de": "Im Buch Ester",
+      "answer_en": "The book of Esther",
+      "ref_de": "Ester",
+      "ref_en": "Esther",
+      "why_de": "Das ganze Buch erzählt Gottes Rettung — ohne seinen Namen je zu nennen.",
+      "why_en": "The whole book tells of God's rescue — without ever naming him.",
+      "categories": ["OT", "Esther", "Tricky"]
+    },
+    {
+      "q_de": "Drei Männer wurden in den Feuerofen geworfen — wie viele sah man darin?",
+      "q_en": "Three men were thrown into the furnace — how many were seen in it?",
+      "answer_de": "Vier — ein Vierter war bei ihnen",
+      "answer_en": "Four — a fourth was with them",
+      "ref_de": "Daniel 3,25",
+      "ref_en": "Daniel 3:25",
+      "why_de": "„Ich sehe aber vier Männer frei im Feuer umhergehen … und der vierte ist wie ein Sohn der Götter.\"",
+      "why_en": "\"I see four men unbound, walking in the fire … and the fourth is like a son of the gods.\"",
+      "categories": ["OT", "Daniel", "Tricky"]
+    },
+    {
+      "q_de": "Welche Redensart von „Milch und Honig\" stammt direkt aus der Bibel?",
+      "q_en": "Which saying about 'milk and honey' comes straight from the Bible?",
+      "answer_de": "Ein Land, „darin Milch und Honig fließt\"",
+      "answer_en": "A land 'flowing with milk and honey'",
+      "ref_de": "2. Mose 3,8",
+      "ref_en": "Exodus 3:8",
+      "why_de": "Gott verheißt Mose ein Land, „darin Milch und Honig fließt\" — bis heute ein Bild für Überfluss.",
+      "why_en": "God promises Moses a land 'flowing with milk and honey' — still an image of abundance.",
+      "categories": ["OT", "Exodus", "Tricky"]
+    },
+    {
+      "q_de": "Wer war der erste „Tierforscher\", der allen Tieren Namen gab?",
+      "q_en": "Who was the first 'zoologist' who gave all the animals their names?",
+      "answer_de": "Adam",
+      "answer_en": "Adam",
+      "ref_de": "1. Mose 2,19",
+      "ref_en": "Genesis 2:19",
+      "why_de": "„Wie der Mensch jedes Tier nennen würde, so sollte es heißen\" — Adam benannte sie alle.",
+      "why_en": "\"Whatever the man called each creature, that was its name\" — Adam named them all.",
+      "categories": ["OT", "Genesis", "Tricky"]
+    },
+    {
+      "q_de": "Wer war der erste Mensch in der Bibel, der betrunken wurde?",
+      "q_en": "Who was the first person in the Bible to get drunk?",
+      "answer_de": "Noah",
+      "answer_en": "Noah",
+      "ref_de": "1. Mose 9,21",
+      "ref_en": "Genesis 9:21",
+      "why_de": "Nach der Flut pflanzte er einen Weinberg, „trank von dem Wein und ward trunken\".",
+      "why_en": "After the flood he planted a vineyard, \"drank of the wine and became drunk\".",
+      "categories": ["OT", "Genesis", "Tricky"]
+    },
+    {
+      "q_de": "Was war die allererste Frage, die Gott einem Menschen stellte?",
+      "q_en": "What was the very first question God asked a human?",
+      "answer_de": "„Wo bist du?\"",
+      "answer_en": "\"Where are you?\"",
+      "ref_de": "1. Mose 3,9",
+      "ref_en": "Genesis 3:9",
+      "why_de": "Gott rief dem versteckten Adam zu: „Wo bist du?\" — die erste Frage an den Menschen.",
+      "why_en": "God called to the hiding Adam: \"Where are you?\" — the first question to humankind.",
+      "categories": ["OT", "Genesis", "Tricky"]
+    },
+    {
+      "q_de": "Wer gab die erste freche Gegenfrage, um Gott auszuweichen?",
+      "q_en": "Who gave the first cheeky counter-question to dodge God?",
+      "answer_de": "Kain: „Bin ich meines Bruders Hüter?\"",
+      "answer_en": "Cain: \"Am I my brother's keeper?\"",
+      "ref_de": "1. Mose 4,9",
+      "ref_en": "Genesis 4:9",
+      "why_de": "Auf Gottes Frage nach Abel antwortet Kain ausweichend mit einer Gegenfrage.",
+      "why_en": "To God's question about Abel, Cain answers evasively with a counter-question.",
+      "categories": ["OT", "Genesis", "Tricky"]
+    },
+    {
+      "q_de": "Wer machte die erste Kleidung aus Tierfell?",
+      "q_en": "Who made the first clothing out of animal skin?",
+      "answer_de": "Gott — für Adam und Eva",
+      "answer_en": "God — for Adam and Eve",
+      "ref_de": "1. Mose 3,21",
+      "ref_en": "Genesis 3:21",
+      "why_de": "„Gott der HERR machte Adam und seiner Frau Röcke von Fellen und zog sie ihnen an.\"",
+      "why_en": "\"The LORD God made garments of skins for Adam and his wife and clothed them.\"",
+      "categories": ["OT", "Genesis", "Tricky"]
+    }
+  ]
+}

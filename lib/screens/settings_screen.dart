@@ -151,7 +151,7 @@ class SettingsScreen extends StatelessWidget {
                 ),
                 const Spacer(),
                 Center(
-                  child: Text('Queezra · v1.0',
+                  child: Text('Queezra · v2.0',
                       style: AppTheme.ui(12, c: AppColors.creamDim)),
                 ),
               ],
