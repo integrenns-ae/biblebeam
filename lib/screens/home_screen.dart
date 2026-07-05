@@ -225,7 +225,7 @@ class _HomeScreenState extends State<HomeScreen> {
               .then()
               .shimmer(duration: 2400.ms, color: AppColors.cream),
           const SizedBox(height: 10),
-          Text('Lichtpfad',
+          Text('Queezra',
               style: GoogleFontsTitle.of(46),
               textAlign: TextAlign.center),
           const SizedBox(height: 4),

@@ -29,7 +29,7 @@ class BibelquizApp extends StatelessWidget {
     return ValueListenableBuilder<String>(
       valueListenable: SettingsService.instance.locale,
       builder: (context, lang, _) => MaterialApp(
-        title: 'Lichtpfad – Bible Quiz',
+        title: 'Queezra – Bible Quiz',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.dark(),
         locale: Locale(lang),

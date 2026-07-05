@@ -9,7 +9,7 @@
 'use strict';
 
 // Platzhalter wird von deploy.sh pro Deploy ersetzt (z. B. lichtpfad-20260624…).
-const CACHE = 'lichtpfad-v3';
+const CACHE = 'queezra-v1';
 
 self.addEventListener('install', () => self.skipWaiting());
 
