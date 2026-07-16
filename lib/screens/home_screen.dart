@@ -13,6 +13,7 @@ import 'achievements_screen.dart';
 import 'hotseat_setup_screen.dart';
 import 'quiz_screen.dart';
 import 'settings_screen.dart';
+import 'survival_screen.dart';
 import 'wisdom_sky_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -30,12 +31,18 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<QuestionPack> _futureFor(String lang) =>
       _futures[lang] ??= _repo.load(lang);
 
+  /// Pool nach aktuellem Schwierigkeits-Filter (0 = alle) und optional Kategorie.
+  List<Question> _pool(QuestionPack pack, {String? category}) {
+    final base = category == null ? pack.questions : pack.byCategory(category);
+    if (_difficulty > 0) {
+      return base.where((q) => q.difficulty == _difficulty).toList();
+    }
+    return base;
+  }
+
   void _startQuiz(QuestionPack pack, {String? category}) {
     SoundService.instance.play(Sfx.tap);
-    var pool = category == null ? pack.questions : pack.byCategory(category);
-    if (_difficulty > 0) {
-      pool = pool.where((q) => q.difficulty == _difficulty).toList();
-    }
+    final pool = _pool(pack, category: category);
     if (pool.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(tr('noQuestions'))),
@@ -48,6 +55,20 @@ class _HomeScreenState extends State<HomeScreen> {
             pack.categories.firstWhere((c) => c.slug == category).name);
     Navigator.of(context).push(MaterialPageRoute(
       builder: (_) => QuizScreen(pool: pool, title: title, categorySlug: category),
+    ));
+  }
+
+  void _startSurvival(QuestionPack pack) {
+    SoundService.instance.play(Sfx.tap);
+    final pool = _pool(pack);
+    if (pool.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(tr('noQuestions'))),
+      );
+      return;
+    }
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (_) => SurvivalScreen(pool: pool, title: tr('endless')),
     ));
   }
 
@@ -98,6 +119,40 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             },
           )),
+        ),
+      ),
+    );
+  }
+
+  Widget _endlessButton(QuestionPack pack) {
+    return GestureDetector(
+      onTap: () => _startSurvival(pack),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(40),
+          color: AppColors.cardBg,
+          border: Border.all(color: AppColors.goldBright),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Icon(Icons.all_inclusive_rounded,
+                color: AppColors.goldBright, size: 20),
+            const SizedBox(width: 8),
+            Text(tr('endless'),
+                style: AppTheme.ui(15, w: FontWeight.w600, c: AppColors.goldBright)),
+            ValueListenableBuilder<int>(
+              valueListenable: StatsService.instance.survivalBest,
+              builder: (_, best, _) => best > 0
+                  ? Padding(
+                      padding: const EdgeInsets.only(left: 8),
+                      child: Text('· ${tr('survivalBest')} $best',
+                          style: AppTheme.ui(12, c: AppColors.creamDim)),
+                    )
+                  : const SizedBox.shrink(),
+            ),
+          ],
         ),
       ),
     );
@@ -234,6 +289,8 @@ class _HomeScreenState extends State<HomeScreen> {
               style: AppTheme.ui(14, c: AppColors.creamDim)),
           const SizedBox(height: 22),
           _QuickPlayButton(onTap: () => _startQuiz(pack)),
+          const SizedBox(height: 12),
+          _endlessButton(pack),
           const SizedBox(height: 12),
           _twoPlayerButton(pack),
           const SizedBox(height: 20),

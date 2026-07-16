@@ -31,6 +31,17 @@ const Map<String, Map<String, String>> _t = {
     'de': 'Keine Fragen für diesen Filter.',
     'ru': 'Нет вопросов для этого фильтра.',
   },
+  // Endlos-/Survival-Modus
+  'endless': {'en': 'Endless', 'de': 'Endlos', 'ru': 'Бесконечный'},
+  'gameOver': {'en': 'Game over', 'de': 'Vorbei!', 'ru': 'Игра окончена'},
+  'survived': {
+    'en': 'correct answers',
+    'de': 'richtige Antworten',
+    'ru': 'правильных ответов',
+  },
+  'newBest': {'en': 'New record!', 'de': 'Neuer Rekord!', 'ru': 'Новый рекорд!'},
+  'retry': {'en': 'Again', 'de': 'Nochmal', 'ru': 'Ещё раз'},
+  'survivalBest': {'en': 'record', 'de': 'Rekord', 'ru': 'рекорд'},
   // 2-Spieler (Hotseat)
   'twoPlayers': {'en': '2 Players', 'de': '2 Spieler', 'ru': '2 игрока'},
   'duelSetup': {'en': 'Local duel', 'de': 'Duell am Gerät', 'ru': 'Дуэль на устройстве'},

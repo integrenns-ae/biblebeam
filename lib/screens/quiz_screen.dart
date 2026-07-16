@@ -8,11 +8,17 @@ import '../models/question.dart';
 import '../models/quiz_outcome.dart';
 import '../services/sound_service.dart';
 import '../theme/app_theme.dart';
+import '../widgets/answer_tile.dart';
+import '../widgets/comet_painter.dart';
 import '../widgets/starfield.dart';
 import 'result_screen.dart';
 
 const _roundLength = 10;
-const _secondsPerQuestion = 20;
+
+/// Zeit pro Frage nach Schwierigkeit: schwer 20 s (Basis), mittel +5 s,
+/// leicht +10 s. Pro Frage bemessen, damit auch im „Alle"-Filter und bei
+/// Kategorie-Spielen jede Frage ihre eigene Zeit bekommt.
+int _secondsFor(Question q) => 20 + (3 - q.difficulty.clamp(1, 3)) * 5;
 
 class QuizScreen extends StatefulWidget {
   final List<Question> pool;
@@ -40,6 +46,7 @@ class _QuizScreenState extends State<QuizScreen>
   int _bestStreak = 0;
   final List<bool> _results = [];
   final List<AnsweredQuestion> _answered = []; // für Statistik/Achievements
+  int _secs = 20; // Zeit der aktuellen Frage (schwierigkeitsabhängig)
   String? _picked;
   bool _locked = false;
 
@@ -65,9 +72,10 @@ class _QuizScreenState extends State<QuizScreen>
               reference: q.reference,
             ))
         .toList();
+    _secs = _secondsFor(_questions.first);
     _timer = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: _secondsPerQuestion),
+      duration: Duration(seconds: _secs),
     )..addStatusListener((s) {
         if (s == AnimationStatus.completed && !_locked) _onPick(null);
       });
@@ -91,7 +99,7 @@ class _QuizScreenState extends State<QuizScreen>
     final timeout = option == null; // Komet hat das Ende erreicht -> Explosion
     if (timeout) _flash.forward(from: 0);
     final correct = option != null && _current.isCorrect(option);
-    final elapsedMs = (_timer.value * _secondsPerQuestion * 1000).round();
+    final elapsedMs = (_timer.value * _secs * 1000).round();
     _answered.add(AnsweredQuestion(
       questionId: _current.id,
       difficulty: _current.difficulty,
@@ -113,7 +121,11 @@ class _QuizScreenState extends State<QuizScreen>
         _streak = 0;
       }
     });
-    SoundService.instance.play(correct ? Sfx.correct : Sfx.wrong);
+    if (correct) {
+      SoundService.instance.playCorrect(streak: _streak);
+    } else {
+      SoundService.instance.play(Sfx.wrong);
+    }
     // Bei Zeitablauf länger warten, damit nach der Explosion die Auflösung sichtbar ist.
     Future.delayed(Duration(milliseconds: timeout ? 1900 : 1400), _next);
   }
@@ -140,10 +152,12 @@ class _QuizScreenState extends State<QuizScreen>
     }
     setState(() {
       _index++;
+      _secs = _secondsFor(_current);
       _picked = null;
       _locked = false;
     });
     _timer
+      ..duration = Duration(seconds: _secs)
       ..reset()
       ..forward();
   }
@@ -320,7 +334,12 @@ class _QuizScreenState extends State<QuizScreen>
                   ),
                 ),
                 const SizedBox(height: 16),
-                ...q.options.map(_optionTile),
+                ...q.options.map((o) => AnswerTile(
+                      text: o,
+                      state: _optionState(o),
+                      locked: _locked,
+                      onTap: () => _onPick(o),
+                    )),
               ],
             ),
           ),
@@ -411,18 +430,7 @@ class _QuizScreenState extends State<QuizScreen>
     );
   }
 
-  Widget _timerBar() {
-    return SizedBox(
-      height: 16,
-      child: AnimatedBuilder(
-        animation: _timer,
-        builder: (_, _) => CustomPaint(
-          painter: _CometPainter(_timer.value),
-          size: Size.infinite,
-        ),
-      ),
-    );
-  }
+  Widget _timerBar() => CometTimerBar(progress: _timer);
 
   /// Weiße Explosions-Blende, wenn der Komet das Ende erreicht (Zeitablauf).
   Widget _flashOverlay() {
@@ -447,131 +455,10 @@ class _QuizScreenState extends State<QuizScreen>
     );
   }
 
-  Widget _optionTile(String option) {
-    final isCorrect = _current.isCorrect(option);
-    final isPicked = _picked == option;
-
-    Color bg = AppColors.cardBg;
-    Color border = AppColors.cardBorder;
-    Color text = AppColors.cream;
-    Widget? trailing;
-
-    if (_locked) {
-      if (isCorrect) {
-        bg = AppColors.gold.withValues(alpha: 0.18);
-        border = AppColors.gold;
-        text = AppColors.goldBright;
-        trailing = const Icon(Icons.check_circle_rounded, color: AppColors.gold);
-      } else if (isPicked) {
-        bg = AppColors.wrong.withValues(alpha: 0.14);
-        border = AppColors.wrong;
-        text = AppColors.creamDim;
-        trailing =
-            const Icon(Icons.remove_circle_outline_rounded, color: AppColors.wrong);
-      } else {
-        text = AppColors.creamDim.withValues(alpha: 0.6);
-      }
-    }
-
-    Widget tile = GestureDetector(
-      onTap: _locked ? null : () => _onPick(option),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 250),
-        margin: const EdgeInsets.only(bottom: 12),
-        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
-        decoration: BoxDecoration(
-          color: bg,
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: border, width: 1.4),
-          boxShadow: (_locked && isCorrect)
-              ? [
-                  BoxShadow(
-                      color: AppColors.gold.withValues(alpha: 0.45),
-                      blurRadius: 22,
-                      spreadRadius: 1)
-                ]
-              : null,
-        ),
-        child: Row(
-          children: [
-            Expanded(
-                child: Text(option, style: AppTheme.ui(18, w: FontWeight.w500, c: text))),
-            ?trailing,
-          ],
-        ),
-      ),
-    );
-
-    // Richtige Antwort leuchtet beim Aufdecken kurz auf.
-    if (_locked && isCorrect) {
-      tile = tile.animate().shimmer(duration: 900.ms, color: AppColors.goldBright);
-    }
-    return tile;
+  AnswerState _optionState(String option) {
+    if (!_locked) return AnswerState.normal;
+    if (_current.isCorrect(option)) return AnswerState.correct;
+    if (_picked == option) return AnswerState.wrongPicked;
+    return AnswerState.dimmed;
   }
-}
-
-/// Timer als Komet: heller Kopf, der von links nach rechts fliegt, mit
-/// ausklingendem Gold-Schweif dahinter. Erreicht der Kopf das Ende (Zeitablauf),
-/// löst die Explosions-Blende aus (siehe _flashOverlay).
-class _CometPainter extends CustomPainter {
-  final double progress; // 0..1 verstrichene Zeit (Kopf wandert links -> rechts)
-  const _CometPainter(this.progress);
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final w = size.width, cy = size.height / 2;
-    final headX = progress.clamp(0.0, 1.0) * w;
-
-    // Basis-Schiene (dezent)
-    canvas.drawLine(
-      Offset(0, cy),
-      Offset(w, cy),
-      Paint()
-        ..color = AppColors.cardBorder.withValues(alpha: 0.6)
-        ..strokeWidth = 3
-        ..strokeCap = StrokeCap.round,
-    );
-    if (headX <= 0.5) return;
-
-    final tailLen = headX < w * 0.30 ? headX : w * 0.30;
-    final tailStart = headX - tailLen;
-
-    // weicher, breiter Glüh-Schweif
-    final glowRect = Rect.fromLTRB(tailStart, cy - 5, headX, cy + 5);
-    canvas.drawRRect(
-      RRect.fromRectAndRadius(glowRect, const Radius.circular(6)),
-      Paint()
-        ..shader = LinearGradient(
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
-          colors: [AppColors.gold.withValues(alpha: 0), AppColors.gold.withValues(alpha: 0.35)],
-        ).createShader(glowRect)
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4),
-    );
-
-    // kompakter Kern-Schweif
-    final rect = Rect.fromLTRB(tailStart, cy - 2.5, headX, cy + 2.5);
-    canvas.drawRRect(
-      RRect.fromRectAndRadius(rect, const Radius.circular(3)),
-      Paint()
-        ..shader = LinearGradient(
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
-          colors: [AppColors.gold.withValues(alpha: 0), AppColors.goldBright],
-        ).createShader(rect),
-    );
-
-    // Komet-Kopf: Glühen + heller Kern
-    canvas.drawCircle(
-      Offset(headX, cy),
-      9,
-      Paint()
-        ..color = AppColors.goldBright.withValues(alpha: 0.45)
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8),
-    );
-    canvas.drawCircle(Offset(headX, cy), 4.5, Paint()..color = Colors.white);
-  }
-
-  @override
-  bool shouldRepaint(covariant _CometPainter old) => old.progress != progress;
 }
