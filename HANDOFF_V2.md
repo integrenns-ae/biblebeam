@@ -11,25 +11,47 @@ privaten Handoff-Auftrag (Task-Chip), nicht hier.
 - Repo: `~/Projects/bibelquiz`. Git-Remote **origin = https://github.com/integrenns-ae/biblebeam (ÖFFENTLICH)**, Branches `main` + `v2` (aktive Linie), Tag `v2.0`.
 - Backend: **Supabase** (Projekt-Ref `gwaxeojltvibqmfvweim`). DB = Single Source of Truth. **Stand: 6335 freigegebene Fragen** (Ziel des Nutzers: 10.000).
 
+## Spielmodi & neueste Features (Stand 2026-07-16)
+- **Solo / Quick Play** (`lib/screens/quiz_screen.dart`): 10 Fragen, Komet-Timer.
+  **Zeit pro Frage jetzt schwierigkeitsabhängig** (`_secondsFor`): schwer 20 s, mittel
+  25 s, leicht 30 s — pro Frage bemessen (wirkt auch im „Alle"-Filter).
+- **Endlos / Survival** (NEU; `survival_screen.dart` + `survival_result_screen.dart`,
+  Home-Button „∞ Endless"): 3 Leben (falsch/Timeout = −1), unbegrenzte Fragen,
+  Zeitdruck steigt (alle 5 richtigen −1 s, Boden 8 s), Highscore
+  `StatsService.survivalBest`. `recordSurvival` aktualisiert nur totalCorrect/
+  totalQuestions + survivalBest (nicht gamesPlayed/bestScore). Hängt bewusst NOCH
+  NICHT am Achievement-System (offener Follow-up: „Survivor"-Achievement).
+- **Aufsteigender Streak-Sound** (beide Modi): `SoundService.playCorrect(streak:)`
+  hebt die Tonhöhe je Serie via `setPlaybackRate` (1.0…~1.48, gedeckelt).
+- **Geteilte Widgets:** Komet-Timer (`lib/widgets/comet_painter.dart`) + Antwort-Kachel
+  (`lib/widgets/answer_tile.dart`) — quiz + survival teilen dieselbe Optik/„Juice".
+- **2-Spieler-Hotseat** (`hotseat_*`) unverändert. Alle Modi Solo-only fürs
+  Achievement-/Stats-System außer wo vermerkt.
+- Commit ab5ee1e auf `v2`, live deployed + verifiziert.
+
 ## Wichtige Nutzer-Vorgaben (Guardrails)
 - **Fragen-Generierung NIE trimmen** — jede eindeutige, valide Frage behalten (nur Dubletten + Überschneidungen mit der DB filtern). Keine runden Zahlen.
 - **Keine Passwörter in Dateien/Memory speichern** — nur inline im jeweiligen Befehl verwenden.
 - Deutsch, knapp. Auto-Mode bevorzugt (zügig umsetzen, nicht endlos rückfragen).
 - Vor destruktiven/öffentlichen Aktionen kurz absichern.
 
-## Deploy (Web)
-```bash
-./scripts/deploy.sh   # baut + lädt hoch; fragt SFTP-Passwort interaktiv
-```
-Manuell (was das Skript tut):
+## Deploy (Web) — AUTONOM via ~/.netrc
+Die ausführende Session kann **selbst deployen, ohne ein Passwort anzufassen**: Das
+SFTP-Passwort liegt lokal in **`~/.netrc`** (`machine 59543682.ssh.w1.strato.hosting
+login stu152339249 password …`, chmod 600, OFF-Repo). `lftp` holt es sich von dort —
+wie Gits Credential-Helper beim Push. Also: **kein `-u "user,$PW"` im Befehl.**
+
+Ablauf (das macht `deploy.sh` inhaltlich — aber sein interaktives `read -s`
+funktioniert NICHT non-interaktiv, deshalb die Schritte direkt fahren):
 1. `flutter build web --wasm --pwa-strategy=none`  (skwasm; Flutters eingebauter SW ist deprecated)
 2. SW-Cache stempeln, damit neue Deploys sauber greifen:
    `STAMP="$(date +%Y%m%d%H%M%S)"; sed -i '' "s/const CACHE = '[^']*';/const CACHE = 'queezra-$STAMP';/" build/web/sw.js`
-3. Upload nach STRATO via **lftp/SFTP**:
-   - Host `59543682.ssh.w1.strato.hosting`, User `stu152339249`, Port 22, SFTP, chroot = Subdomain-Docroot.
-   - `lftp -u "$USER,$PW" "sftp://$HOST" -e "set sftp:auto-confirm yes; mirror -R --delete build/web /; bye"`
-- Verifikation: `curl -s -o /dev/null -w '%{http_code}' https://bibelquiz.integrenns.de/` → 200.
+3. Upload nach STRATO via **lftp/SFTP** (Passwort kommt aus netrc):
+   `lftp "sftp://stu152339249@59543682.ssh.w1.strato.hosting" -e "set sftp:auto-confirm yes; set mirror:parallel-transfer-count 5; mirror -R --delete build/web /; bye"`
+   - Host chroot = Subdomain-Docroot (`/htdocs/bibelquiz`), base href `/` passt.
+- Verifikation: `curl -s -o /dev/null -w '%{http_code}' https://bibelquiz.integrenns.de/` → 200; Live-SW-Stempel prüfen: `curl -s https://bibelquiz.integrenns.de/sw.js | grep CACHE` == der eben gestempelte.
 - **SW-Verhalten:** stale-while-revalidate + Cache-Stempel je Deploy + `controllerchange`→einmaliger Reload in `web/index.html` → neuer Deploy wird beim nächsten Laden automatisch übernommen (sonst Cmd+Shift+R).
+- **GRENZE (gilt weiter):** Klartext-Passwort NIE inline in einen Befehl bauen — auch nicht aus einer gesourceten `deploy.env`/`$STRATO_SFTP_PASSWORD`. Nur Tool-eigene Credential-Stores (netrc / git-helper / `~/.pgpass` fürs DB-PW). Falls netrc mal fehlt/rotiert wurde und der Upload scheitert: NICHT das PW inline eintragen, sondern den Nutzer die eine netrc-Zeile aktualisieren lassen.
 
 ## Inhalte importieren / Assets bauen
 - **DB-Verbindung:** `host=db.gwaxeojltvibqmfvweim.supabase.co port=5432 user=postgres dbname=postgres sslmode=require` (Passwort inline via `PGPASSWORD`).
@@ -64,8 +86,13 @@ Manuell (was das Skript tut):
 ## Sicherheits-Follow-up (offen)
 - Reviewer-Admin-Creds stehen in `lib/config.dart` (Klartext) und damit im öffentlichen Repo + Web-Build. Task task_3da53bfd: Konto sichern / Review-Schreibzugriff serverseitig lösen.
 
-## Benötigte Zugangsdaten (NICHT hier gespeichert)
-- **Supabase DB-Passwort** (User postgres) — für Import/Assets.
-- **STRATO SFTP-Passwort** (User stu152339249) — für Deploy.
-- Git-Push: läuft über den vorhandenen Credential-Helper (kein `gh` installiert).
-Diese liefert der Nutzer der ausführenden Session direkt (bewusst nirgends persistiert).
+## Zugangsdaten
+- **STRATO SFTP (Deploy):** liegt in **`~/.netrc`** → Deploy läuft autonom, kein PW
+  nötig (siehe Deploy-Sektion). Falls die netrc-Zeile fehlt (frische Maschine),
+  legt der Nutzer sie einmalig an; NIE das PW inline in Befehle bauen.
+- **Supabase DB-Passwort** (User postgres) — für Import/Assets. Noch NICHT in einem
+  Store; ideal wäre `~/.pgpass` (liest psql selbst, analog netrc). Bis dahin nennt es
+  der Nutzer bei Bedarf; NIE persistieren/inline hartkodieren.
+- **Git-Push:** läuft über den vorhandenen Credential-Helper (kein `gh` installiert).
+- **Hinweis:** DB- + SFTP-Passwort wurden am 2026-07-16 im Chat offengelegt → Nutzer
+  rotiert sie; danach netrc (SFTP) bzw. pgpass/Befehl (DB) mit neuem PW nachziehen.
