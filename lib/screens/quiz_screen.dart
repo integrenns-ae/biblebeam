@@ -11,6 +11,7 @@ import '../theme/app_theme.dart';
 import '../widgets/answer_tile.dart';
 import '../widgets/comet_painter.dart';
 import '../widgets/starfield.dart';
+import '../widgets/supernova_overlay.dart';
 import 'result_screen.dart';
 
 const _roundLength = 10;
@@ -39,7 +40,7 @@ class _QuizScreenState extends State<QuizScreen>
     with TickerProviderStateMixin {
   late final List<Question> _questions;
   late final AnimationController _timer;
-  late final AnimationController _flash; // weiße Explosions-Blende bei Zeitablauf
+  late final AnimationController _flash; // weiße Supernova bei Zeitablauf
   int _index = 0;
   int _score = 0;
   int _streak = 0;
@@ -80,7 +81,7 @@ class _QuizScreenState extends State<QuizScreen>
         if (s == AnimationStatus.completed && !_locked) _onPick(null);
       });
     _flash = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 1000));
+        vsync: this, duration: const Duration(milliseconds: 2400));
     _timer.forward();
   }
 
@@ -126,8 +127,9 @@ class _QuizScreenState extends State<QuizScreen>
     } else {
       SoundService.instance.play(Sfx.wrong);
     }
-    // Bei Zeitablauf länger warten, damit nach der Explosion die Auflösung sichtbar ist.
-    Future.delayed(Duration(milliseconds: timeout ? 1900 : 1400), _next);
+    // Bei Zeitablauf erst nach dem Vollweiß der Supernova umschalten -> die neue
+    // Frage taucht dann aus dem ausblendenden Weiß auf.
+    Future.delayed(Duration(milliseconds: timeout ? 2100 : 1400), _next);
   }
 
   void _next() {
@@ -345,7 +347,7 @@ class _QuizScreenState extends State<QuizScreen>
           ),
         ),
       ),
-          _flashOverlay(),
+          SupernovaOverlay(progress: _flash),
         ],
       ),
     );
@@ -431,29 +433,6 @@ class _QuizScreenState extends State<QuizScreen>
   }
 
   Widget _timerBar() => CometTimerBar(progress: _timer);
-
-  /// Weiße Explosions-Blende, wenn der Komet das Ende erreicht (Zeitablauf).
-  Widget _flashOverlay() {
-    return Positioned.fill(
-      child: IgnorePointer(
-        child: AnimatedBuilder(
-          animation: _flash,
-          builder: (_, _) {
-            final t = _flash.value;
-            if (t == 0) return const SizedBox.shrink();
-            // schnelles Aufblenden -> kurz halten -> ausklingen (ca. 1 s)
-            final double op = t < 0.06
-                ? t / 0.06
-                : (t < 0.5 ? 1.0 : (1 - (t - 0.5) / 0.5));
-            return Opacity(
-              opacity: op.clamp(0.0, 1.0),
-              child: const ColoredBox(color: Colors.white),
-            );
-          },
-        ),
-      ),
-    );
-  }
 
   AnswerState _optionState(String option) {
     if (!_locked) return AnswerState.normal;

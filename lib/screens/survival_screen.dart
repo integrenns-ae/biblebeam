@@ -8,6 +8,7 @@ import '../theme/app_theme.dart';
 import '../widgets/answer_tile.dart';
 import '../widgets/comet_painter.dart';
 import '../widgets/starfield.dart';
+import '../widgets/supernova_overlay.dart';
 import 'survival_result_screen.dart';
 
 const _startLives = 3;
@@ -30,7 +31,7 @@ class _SurvivalScreenState extends State<SurvivalScreen>
   static const _heartColor = Color(0xFFE06A7A);
 
   late final AnimationController _timer;
-  late final AnimationController _flash; // weiße Explosions-Blende bei Zeitablauf
+  late final AnimationController _flash; // weiße Supernova bei Zeitablauf
 
   final _rnd = Random();
   late final List<Question> _deck; // gemischter Vorrat, wird bei Erschöpfung neu gemischt
@@ -60,7 +61,7 @@ class _SurvivalScreenState extends State<SurvivalScreen>
         if (s == AnimationStatus.completed && !_locked) _onPick(null);
       });
     _flash = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 1000));
+        vsync: this, duration: const Duration(milliseconds: 2400));
     _timer.forward();
   }
 
@@ -118,7 +119,8 @@ class _SurvivalScreenState extends State<SurvivalScreen>
     } else {
       SoundService.instance.play(Sfx.wrong);
     }
-    Future.delayed(Duration(milliseconds: timeout ? 1900 : 1400), _next);
+    // Bei Zeitablauf erst nach dem Vollweiß der Supernova umschalten.
+    Future.delayed(Duration(milliseconds: timeout ? 2100 : 1400), _next);
   }
 
   void _next() {
@@ -215,7 +217,7 @@ class _SurvivalScreenState extends State<SurvivalScreen>
               ),
             ),
           ),
-          _flashOverlay(),
+          SupernovaOverlay(progress: _flash),
         ],
       ),
     );
@@ -292,25 +294,4 @@ class _SurvivalScreenState extends State<SurvivalScreen>
     ).animate(key: ValueKey('ref_${_current.id}')).fadeIn(duration: 250.ms);
   }
 
-  /// Weiße Explosions-Blende, wenn der Komet das Ende erreicht (Zeitablauf).
-  Widget _flashOverlay() {
-    return Positioned.fill(
-      child: IgnorePointer(
-        child: AnimatedBuilder(
-          animation: _flash,
-          builder: (_, _) {
-            final t = _flash.value;
-            if (t == 0) return const SizedBox.shrink();
-            final double op = t < 0.06
-                ? t / 0.06
-                : (t < 0.5 ? 1.0 : (1 - (t - 0.5) / 0.5));
-            return Opacity(
-              opacity: op.clamp(0.0, 1.0),
-              child: const ColoredBox(color: Colors.white),
-            );
-          },
-        ),
-      ),
-    );
-  }
 }
