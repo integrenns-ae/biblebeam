@@ -61,7 +61,7 @@ class _SurvivalScreenState extends State<SurvivalScreen>
         if (s == AnimationStatus.completed && !_locked) _onPick(null);
       });
     _flash = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 2400));
+        vsync: this, duration: const Duration(milliseconds: 1000));
     _timer.forward();
   }
 
@@ -120,7 +120,7 @@ class _SurvivalScreenState extends State<SurvivalScreen>
       SoundService.instance.play(Sfx.wrong);
     }
     // Bei Zeitablauf erst nach dem Vollweiß der Supernova umschalten.
-    Future.delayed(Duration(milliseconds: timeout ? 2100 : 1400), _next);
+    Future.delayed(Duration(milliseconds: timeout ? 880 : 1400), _next);
   }
 
   void _next() {

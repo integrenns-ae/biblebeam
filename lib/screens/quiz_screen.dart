@@ -81,7 +81,7 @@ class _QuizScreenState extends State<QuizScreen>
         if (s == AnimationStatus.completed && !_locked) _onPick(null);
       });
     _flash = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 2400));
+        vsync: this, duration: const Duration(milliseconds: 1000));
     _timer.forward();
   }
 
@@ -129,7 +129,7 @@ class _QuizScreenState extends State<QuizScreen>
     }
     // Bei Zeitablauf erst nach dem Vollweiß der Supernova umschalten -> die neue
     // Frage taucht dann aus dem ausblendenden Weiß auf.
-    Future.delayed(Duration(milliseconds: timeout ? 2100 : 1400), _next);
+    Future.delayed(Duration(milliseconds: timeout ? 880 : 1400), _next);
   }
 
   void _next() {

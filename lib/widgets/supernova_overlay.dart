@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 /// ~2 s zur vollständig weißen Fläche und blendet dann aus, um die nächste
 /// Frage freizugeben.
 ///
-/// Erwartet einen Controller mit Dauer ~2400 ms (`progress` 0..1):
+/// Erwartet einen Controller mit Dauer ~1000 ms (`progress` 0..1):
 /// 0.00–0.83 ausbreiten bis vollweiß · 0.83–0.90 halten · 0.90–1.0 auflösen.
 /// Gemeinsam von Solo-Quiz und Endlos-Modus genutzt.
 class SupernovaOverlay extends StatelessWidget {
