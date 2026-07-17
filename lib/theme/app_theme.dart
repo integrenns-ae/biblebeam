@@ -71,3 +71,27 @@ class CategoryStyle {
   static CategoryStyle of(String slug) =>
       _map[slug] ?? const CategoryStyle(Icons.help_outline_rounded, AppColors.gold);
 }
+
+/// Farbcode je Schwierigkeit: leicht = Hellblau, mittel = Gold, schwer = Rot.
+/// Steuert den Kometen-Schweif und das Stufen-Label (sichtbar auch im
+/// „Alle"-Filter, wo die Stufe pro Frage wechselt).
+class DifficultyStyle {
+  final Color base;
+  final Color bright;
+  final String labelKey; // tr()-Schlüssel
+
+  const DifficultyStyle(this.base, this.bright, this.labelKey);
+
+  static const _easy =
+      DifficultyStyle(Color(0xFF3E9BD6), Color(0xFF8FD4F5), 'diffEasy'); // hellblau
+  static const _medium =
+      DifficultyStyle(AppColors.gold, AppColors.goldBright, 'diffMedium'); // gelb/gold
+  static const _hard =
+      DifficultyStyle(Color(0xFFDE4A43), Color(0xFFFF8577), 'diffHard'); // rot
+
+  static DifficultyStyle of(int difficulty) {
+    if (difficulty <= 1) return _easy;
+    if (difficulty >= 3) return _hard;
+    return _medium;
+  }
+}

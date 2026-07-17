@@ -10,7 +10,10 @@ import '../theme/app_theme.dart';
 /// damit das Timer-Feeling an einer Stelle lebt.
 class CometPainter extends CustomPainter {
   final double progress; // 0..1 verstrichene Zeit (Kopf wandert links -> rechts)
-  const CometPainter(this.progress);
+  final Color base; // Schweif-Grundfarbe (nach Schwierigkeit)
+  final Color bright; // heller Kopf-/Schweif-Ton
+  const CometPainter(this.progress,
+      {this.base = AppColors.gold, this.bright = AppColors.goldBright});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -39,7 +42,7 @@ class CometPainter extends CustomPainter {
         ..shader = LinearGradient(
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
-          colors: [AppColors.gold.withValues(alpha: 0), AppColors.gold.withValues(alpha: 0.35)],
+          colors: [base.withValues(alpha: 0), base.withValues(alpha: 0.35)],
         ).createShader(glowRect)
         ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4),
     );
@@ -52,7 +55,7 @@ class CometPainter extends CustomPainter {
         ..shader = LinearGradient(
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
-          colors: [AppColors.gold.withValues(alpha: 0), AppColors.goldBright],
+          colors: [base.withValues(alpha: 0), bright],
         ).createShader(rect),
     );
 
@@ -65,7 +68,7 @@ class CometPainter extends CustomPainter {
       Offset(headX, cy),
       9 * headScale,
       Paint()
-        ..color = AppColors.goldBright.withValues(alpha: 0.45)
+        ..color = bright.withValues(alpha: 0.45)
         ..maskFilter = MaskFilter.blur(BlurStyle.normal, 8 * headScale),
     );
     canvas.drawCircle(
@@ -73,13 +76,22 @@ class CometPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CometPainter old) => old.progress != progress;
+  bool shouldRepaint(covariant CometPainter old) =>
+      old.progress != progress || old.base != base || old.bright != bright;
 }
 
 /// Kleiner Wrapper, der den Komet-Timer an einen Controller bindet.
+/// `base`/`bright` färben den Schweif nach Schwierigkeit ein.
 class CometTimerBar extends StatelessWidget {
   final Animation<double> progress;
-  const CometTimerBar({super.key, required this.progress});
+  final Color base;
+  final Color bright;
+  const CometTimerBar({
+    super.key,
+    required this.progress,
+    this.base = AppColors.gold,
+    this.bright = AppColors.goldBright,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +100,7 @@ class CometTimerBar extends StatelessWidget {
       child: AnimatedBuilder(
         animation: progress,
         builder: (_, _) => CustomPaint(
-          painter: CometPainter(progress.value),
+          painter: CometPainter(progress.value, base: base, bright: bright),
           size: Size.infinite,
         ),
       ),

@@ -7,6 +7,7 @@ import '../services/sound_service.dart';
 import '../theme/app_theme.dart';
 import '../widgets/answer_tile.dart';
 import '../widgets/comet_painter.dart';
+import '../widgets/difficulty_tag.dart';
 import '../widgets/starfield.dart';
 import '../widgets/supernova_overlay.dart';
 import 'survival_result_screen.dart';
@@ -171,8 +172,14 @@ class _SurvivalScreenState extends State<SurvivalScreen>
                   children: [
                     _topBar(),
                     const SizedBox(height: 16),
-                    CometTimerBar(progress: _timer),
-                    const SizedBox(height: 28),
+                    CometTimerBar(
+                      progress: _timer,
+                      base: DifficultyStyle.of(q.difficulty).base,
+                      bright: DifficultyStyle.of(q.difficulty).bright,
+                    ),
+                    const SizedBox(height: 10),
+                    DifficultyTag(difficulty: q.difficulty),
+                    const SizedBox(height: 18),
                     Expanded(
                       child: Center(
                         child: SingleChildScrollView(
