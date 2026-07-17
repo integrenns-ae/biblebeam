@@ -56,9 +56,9 @@ class CometPainter extends CustomPainter {
         ).createShader(rect),
     );
 
-    // Kopf wächst in den letzten 20 % der Zeit stufenlos auf 200 % Größe.
+    // Kopf wächst in den letzten 20 % der Zeit stufenlos auf 300 % Größe.
     final p = progress.clamp(0.0, 1.0);
-    final headScale = p <= 0.8 ? 1.0 : 1.0 + (p - 0.8) / 0.2;
+    final headScale = p <= 0.8 ? 1.0 : 1.0 + (p - 0.8) / 0.2 * 2.0;
 
     // Komet-Kopf: Glühen + heller Kern
     canvas.drawCircle(
