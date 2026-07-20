@@ -62,14 +62,25 @@ Sprach-/Autorenzahl, KJV 1611, Vulgata/Hieronymus).
 Themen-Mix steuern (nicht von Kapitelzahlen dominieren lassen; „mittel" braucht
 Volumen an Reihenfolge-/Struktur-/Trivia-Fragen).
 
-**RESTSCHRITTE (neue Session):**
-1. **1000 Fragen generieren** — Multi-Agent-Workflow (token-intensiv, Nutzer hat
-   eingewilligt): systematisch über Themenfelder fächern, nach Rubrik auf 30/35/35
-   einstufen, dreisprachig index-gleich, Синодальный-Guardrails, **adversarial
-   faktengeprüft** (falsche Zahlen abfangen), dedupliziert (untereinander + gegen
-   die bestehenden ~6335). Ausgabe → `data/questions_bibel_v4.json` (ersetzt/erweitert
-   den Pilot). Guardrail: NICHT trimmen, keine runden Zahlen.
-2. `node scripts/build_import_v4.mjs` → `supabase/seed_bibel_v4.sql`
+**ARBEITSTEILUNG (vom Nutzer so gewünscht):**
+- **NEUE Session = NUR Generierung.** Erzeugt die 1000 Fragen und committet/pusht
+  die Datei. **KEIN DB-Import, KEIN Deploy, KEINE Passwörter** — das übernimmt eine
+  separate Deploy-Session. (Der Nutzer will NICHT, dass die generierende Session
+  ums Deployen „kämpft".)
+- **Deploy-Session (separat) = DB + Live.** Zieht die fertige Datei, importiert,
+  baut Assets, deployt.
+
+**Schritt 1 — NEUE Session (nur das!):** 1000 Fragen generieren — Multi-Agent-
+Workflow (token-intensiv, Nutzer hat eingewilligt): systematisch über Themenfelder
+fächern, nach Rubrik auf 30/35/35 einstufen, dreisprachig index-gleich,
+Синодальный-Guardrails, **adversarial faktengeprüft** (falsche Zahlen abfangen),
+dedupliziert (untereinander + gegen die bestehenden ~6335). Ausgabe →
+`data/questions_bibel_v4.json` (ersetzt/erweitert den Pilot), dann committen +
+pushen. Guardrail: NICHT trimmen, keine runden Zahlen. **DANACH STOPP** — dem
+Nutzer melden, dass die Datei fertig + gepusht ist. NICHT weiter zu DB/Deploy.
+
+**Schritte 2–5 — Deploy-Session (NICHT die generierende Session):**
+2. `git pull` (falls nötig); `node scripts/build_import_v4.mjs` → `supabase/seed_bibel_v4.sql`
 3. `psql "<conn>" -v ON_ERROR_STOP=1 -f supabase/seed_bibel_v4.sql` (DB-PW aus `~/.pgpass`)
 4. `./scripts/refresh-assets.sh` (baut `questions_{en,de,ru}.json` echt aus der DB)
 5. commit + Deploy (netrc). Verifizieren: Kategorie „Über die Bibel/О Библии" im
