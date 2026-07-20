@@ -11,6 +11,77 @@ privaten Handoff-Auftrag (Task-Chip), nicht hier.
 - Repo: `~/Projects/bibelquiz`. Git-Remote **origin = https://github.com/integrenns-ae/biblebeam (ÖFFENTLICH)**, Branches `main` + `v2` (aktive Linie), Tag `v2.0`.
 - Backend: **Supabase** (Projekt-Ref `gwaxeojltvibqmfvweim`). DB = Single Source of Truth. **Stand: 6335 freigegebene Fragen** (Ziel des Nutzers: 10.000).
 
+## LAUFENDE AUFGABE (2026-07-17): Kategorie „Bibel" — dreisprachig, Ziel 1000 Fragen
+**Ziel:** Neue Quiz-Kategorie mit Fakten ÜBER die Bibel als Buch (Aufbau, Kanon,
+Statistik, Übersetzungsgeschichte) — NICHT biblische Inhalte/Geschichten. 1000
+Fragen, alle in de/en/ru.
+
+**STATUS: Integration fertig + committet. Pilot (78 Fragen) gebaut, im lokalen
+Preview verifiziert (de/en/ru), korrekt eingestuft. NOCH NICHT in der DB, NICHT
+deployed.**
+
+**Was eingebaut ist (committet):**
+- **Neue Kategorie „bibel"** als eigene Region (nicht aus Buch-Tag abgeleitet):
+  Region-Slug in `scripts/build_assets_from_db.mjs` (REGIONS + `if (c.slug==='bibel')`)
+  und `lib/data/content_sync.dart` (`_regions` + slug-Sonderfall); Icon/Farbe in
+  `lib/theme/app_theme.dart` (`CategoryStyle 'bibel'`); Name `cat.bibel` (de/en/ru)
+  in `lib/l10n/strings.dart`. Fragen tragen den Tag `["bibel"]` (kind=type), der
+  Importer legt die DB-Kategorie automatisch an.
+- **Russisch als Inhaltssprache aktiviert** (mit EN-Fallback für den restlichen
+  Katalog): `question_repository.dart` `_available={'en','de','ru'}`;
+  `build_assets_from_db.mjs` baut jetzt auch `ru` mit `pick()`-Fallback auf `en`;
+  `pubspec.yaml` registriert `assets/questions_ru.json`. **`questions_ru.json` ist
+  aktuell nur ein Bootstrap (EN-Kopie)** — `refresh-assets.sh` regeneriert es echt
+  aus der DB (dann RU wo vorhanden, sonst EN).
+- **Importer `scripts/build_import_v4.mjs`** (Kopie von v3): dreisprachig
+  (de/en/ru), ID-Präfix `v4b-`, source `bibel-v4`, Tag „bibel", CAT_NAMES für
+  de/en/ru. Liest `data/questions_bibel_v4.json` (Array). `on conflict do nothing`.
+- **Pilot-Daten:** `data/questions_bibel_v4.json` (78 Fragen, korrekt eingestuft
+  31 leicht / 17 mittel / 30 schwer). `scripts/build_pilot_local.mjs` = temporäres
+  Preview-Werkzeug (merged Pilot lokal in Assets OHNE DB — nur zum Ansehen).
+
+**Entscheidungen/Guardrails (Nutzer bestätigt):**
+- Protestantischer 66-Bücher-Kanon als Basis; Kanon-/Anzahl-/Reihenfolge-Fragen
+  mit „protestantischer Kanon" qualifiziert.
+- **Синодальный-Fallen vermeiden:** Kapitelzahlen kanon-abhängig! Daniel (12 prot.
+  vs 14 orthodox) + „Buch vor Römer" (orthodox = Judas, nicht Apg) wurden aus dem
+  Pilot ENTFERNT. Psalmennummerierung im RU als „Псалом 118 (119)" behandeln.
+  Nachbar-Fragen nur in tradiitions­übergreifend gleichen Zonen (Pentateuch, kleine
+  Propheten, Evangelien).
+- Übersetzungszahl „~700 Sprachen (vollständige Bibel, 2020er)"; Verse „~31.000".
+- Autorschaften nur unstrittig; strittige (Hebräer/Prediger/Hiob/2.Petrus/Psalmen)
+  ausgelassen, Evangelien/Offb/Apg nur „traditionell zugeschrieben".
+
+**RUBRIK (fest einbauen, Nutzer bestätigt):** leicht=Allgemeinwissen (Bücherzahlen,
+erstes/letztes Buch, Testament, unstrittige Paulus-Briefe, Luther/Gutenberg);
+mittel=Bibelkenntnis/Trivia (Nachbarbuch, 12 kleine Propheten, längstes/kürzestes
+Kapitel, Septuaginta, Pentateuch-Begriff, Psalmenzahl 150); schwer=exakte
+Zahlen/Daten (Kapitelzahlen einzelner Bücher, Gesamtverse, längster Vers,
+Sprach-/Autorenzahl, KJV 1611, Vulgata/Hieronymus).
+**ZIEL-VERTEILUNG der 1000: 30 % leicht / 35 % mittel / 35 % schwer** — über den
+Themen-Mix steuern (nicht von Kapitelzahlen dominieren lassen; „mittel" braucht
+Volumen an Reihenfolge-/Struktur-/Trivia-Fragen).
+
+**RESTSCHRITTE (neue Session):**
+1. **1000 Fragen generieren** — Multi-Agent-Workflow (token-intensiv, Nutzer hat
+   eingewilligt): systematisch über Themenfelder fächern, nach Rubrik auf 30/35/35
+   einstufen, dreisprachig index-gleich, Синодальный-Guardrails, **adversarial
+   faktengeprüft** (falsche Zahlen abfangen), dedupliziert (untereinander + gegen
+   die bestehenden ~6335). Ausgabe → `data/questions_bibel_v4.json` (ersetzt/erweitert
+   den Pilot). Guardrail: NICHT trimmen, keine runden Zahlen.
+2. `node scripts/build_import_v4.mjs` → `supabase/seed_bibel_v4.sql`
+3. `psql "<conn>" -v ON_ERROR_STOP=1 -f supabase/seed_bibel_v4.sql` (DB-PW aus `~/.pgpass`)
+4. `./scripts/refresh-assets.sh` (baut `questions_{en,de,ru}.json` echt aus der DB)
+5. commit + Deploy (netrc). Verifizieren: Kategorie „Über die Bibel/О Библии" im
+   Grid, RU-Frage spielbar.
+- **`~/.pgpass` einrichten** (einmalig, analog netrc; psql liest es selbst):
+  ```bash
+  umask 077
+  read -r -s -p "Supabase DB-Passwort: " PW && printf 'db.gwaxeojltvibqmfvweim.supabase.co:5432:postgres:postgres:%s\n' "$PW" >> ~/.pgpass && chmod 600 ~/.pgpass && unset PW && echo " ✓"
+  ```
+- Kleinigkeit: Settings-Text „Questions are currently in English" (strings.dart) ist
+  nach RU-Aktivierung veraltet → anpassen.
+
 ## Spielmodi & neueste Features (Stand 2026-07-16)
 - **Solo / Quick Play** (`lib/screens/quiz_screen.dart`): 10 Fragen, Komet-Timer.
   **Zeit pro Frage jetzt schwierigkeitsabhängig** (`_secondsFor`): schwer 20 s, mittel

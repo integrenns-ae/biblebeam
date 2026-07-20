@@ -181,6 +181,7 @@ const Map<String, Map<String, String>> _t = {
     'ru': 'Как звёзды, навеки',
   },
   // Kategorienamen je slug
+  'cat.bibel': {'en': 'About the Bible', 'de': 'Über die Bibel', 'ru': 'О Библии'},
   'cat.torah': {'en': 'Law (Torah)', 'de': 'Gesetz (Tora)', 'ru': 'Закон (Тора)'},
   'cat.history': {'en': 'History of Israel', 'de': 'Geschichte Israels', 'ru': 'История Израиля'},
   'cat.wisdom': {'en': 'Wisdom & Poetry', 'de': 'Weisheit & Poesie', 'ru': 'Мудрость и поэзия'},

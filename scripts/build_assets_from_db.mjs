@@ -13,6 +13,7 @@ import { fileURLToPath } from 'node:url'
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 
 const REGIONS = [
+  ['bibel', 'Bible Facts'],
   ['torah', 'Law (Torah)'], ['history', 'History of Israel'],
   ['wisdom', 'Wisdom & Poetry'], ['prophets', 'Prophets'],
   ['gospels', 'Gospels (Jesus)'], ['church', 'Early Church'],
@@ -30,28 +31,38 @@ add('revelation', ['revelation'])
 
 const rows = JSON.parse(readFileSync('/tmp/db_dump.json', 'utf8'))
 
-for (const lang of ['en', 'de']) {
+for (const lang of ['en', 'de', 'ru']) {
+  // Fuer RU faellt jedes noch nicht uebersetzte Feld auf Englisch zurueck,
+  // damit ru-Nutzer den GANZEN Katalog sehen (RU wo vorhanden, sonst EN).
+  const pick = (obj) => {
+    if (!obj) return ''
+    const v = obj[lang]
+    if (v != null && String(v).trim()) return String(v)
+    if (lang === 'ru' && obj.en != null) return String(obj.en)
+    return ''
+  }
   const questions = []
   const regionCounts = {}
   for (const q of rows) {
-    const prompt = (q.prompts?.[lang] || '').trim()
+    const prompt = pick(q.prompts).trim()
     if (!prompt) continue
     const opts = (q.options || [])
-      .filter((o) => (o.texts?.[lang] || '').trim())
+      .filter((o) => pick(o.texts).trim())
       .sort((a, b) => (a.sort ?? 0) - (b.sort ?? 0))
-    const texts = opts.map((o) => o.texts[lang].trim())
+    const texts = opts.map((o) => pick(o.texts).trim())
     let answer = null
     opts.forEach((o, i) => { if (o.correct) answer = texts[i] })
     if (texts.length < 2 || !answer) continue
 
     const regions = new Set()
     for (const c of q.cats || []) {
-      if (c.kind === 'book') regions.add(BOOK_REGION[c.slug] || 'general')
+      if (c.slug === 'bibel') regions.add('bibel')
+      else if (c.kind === 'book') regions.add(BOOK_REGION[c.slug] || 'general')
     }
     if (regions.size === 0) regions.add('general')
     for (const r of regions) regionCounts[r] = (regionCounts[r] || 0) + 1
 
-    const reference = (q.explanations?.[lang] || '').trim() // Bibelstelle (optional)
+    const reference = pick(q.explanations).trim() // Bibelstelle (optional)
     questions.push({
       id: q.id,
       categories: [...regions],

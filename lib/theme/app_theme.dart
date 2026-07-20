@@ -58,6 +58,7 @@ class CategoryStyle {
   const CategoryStyle(this.icon, this.tint);
 
   static const _map = {
+    'bibel': CategoryStyle(Icons.auto_stories_rounded, Color(0xFF8FB8E0)),
     'torah': CategoryStyle(Icons.menu_book_rounded, Color(0xFFE7B85C)),
     'history': CategoryStyle(Icons.castle_rounded, Color(0xFFC98A5E)),
     'wisdom': CategoryStyle(Icons.light_mode_rounded, Color(0xFFE0C36A)),

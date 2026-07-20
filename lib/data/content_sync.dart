@@ -8,6 +8,7 @@ class ContentSync {
   static const _pageSize = 1000;
 
   static const _regions = [
+    {'slug': 'bibel', 'name': 'Bible Facts'},
     {'slug': 'torah', 'name': 'Law (Torah)'},
     {'slug': 'history', 'name': 'History of Israel'},
     {'slug': 'wisdom', 'name': 'Wisdom & Poetry'},
@@ -108,7 +109,12 @@ class ContentSync {
       final regions = <String>{};
       for (final qc in (q['question_categories'] as List?) ?? const []) {
         final cat = qc['categories'] as Map<String, dynamic>?;
-        if (cat == null || cat['kind'] != 'book') continue;
+        if (cat == null) continue;
+        if (cat['slug'] == 'bibel') {
+          regions.add('bibel');
+          continue;
+        }
+        if (cat['kind'] != 'book') continue;
         regions.add(_bookRegion[cat['slug']] ?? 'general');
       }
       if (regions.isEmpty) regions.add('general');

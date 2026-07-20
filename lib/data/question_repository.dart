@@ -17,7 +17,7 @@ class QuestionRepository {
   final Set<String> _refreshing = {};
 
   /// Verfügbare Inhalts-Sprachen (für andere fällt es auf Englisch zurück).
-  static const _available = {'en', 'de'};
+  static const _available = {'en', 'de', 'ru'};
 
   // Kurzer Takt während der aktiven Inhalts-/QA-Phase: Korrekturen erscheinen
   // nach einem App-Neustart. (Später ggf. wieder erhöhen.)
